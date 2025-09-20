@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <nav>
+        <a href="/" class="<%= currentPage === 'home' ? 'active' : '' %>">Home</a>
+        <a href="/about" class="<%= currentPage === 'about' ? 'active' : '' %>">About Me</a>
+        <a href="/mission" class="<%= currentPage === 'mission' ? 'active' : '' %>">Mission</a>
+        <a href="/projects" class="<%= currentPage === 'projects' ? 'active' : '' %>">Projects</a>
+        <a href="/contact" class="<%= currentPage === 'contact' ? 'active' : '' %>">Contact</a>
+    </nav>

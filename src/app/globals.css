@@ -14,13 +14,34 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #082126; /* dark teal */
     --foreground: #ededed;
   }
+}
+
+.dark {
+  --background: #082126; /* dark teal */
+  --foreground: #ededed;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: .35; }
+  50% { opacity: .8; }
+}
+
+.scroll-cue {
+  animation: blink 2.2s ease-in-out infinite;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  pointer-events: none;
 }

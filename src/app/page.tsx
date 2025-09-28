@@ -1,103 +1,681 @@
 import Image from "next/image";
+import { Reveal } from "@/components/Reveal";
+import { ScrollCue } from "@/components/ScrollCue";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <>
+    <section id="home" className="relative min-h-[calc(100vh-80px)] flex items-center justify-center py-8">
+      <div className="grid gap-10 lg:grid-cols-2 items-center w-full">
+        <div className="flex justify-center lg:justify-start">
+          <div className="rounded-full overflow-hidden" style={{ width: 440, height: 440 }}>
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
+              src="https://id-preview--fe1a8458-0fa4-49b8-8556-e879eaf54aad.lovable.app/assets/profile-headshot-Bv4Z_5Dq.jpg"
+              alt="Joel Torres headshot"
+              width={880}
+              height={880}
+              className="h-full w-full object-cover"
           priority
         />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+        <div>
+          <p className="text-foreground/70">Hi, I’m Joel,</p>
+          <h1 className="text-6xl font-extrabold tracking-tight">BA&IS Student</h1>
+          <p className="mt-6 text-foreground/80 text-base lg:text-lg max-w-prose">
+            I’m exploring how AI, automation, and backend systems can streamline the way organizations work. Right now, I’m focused on learning, building projects, and documenting the journey.
+          </p>
+          <div className="mt-10 flex gap-3">
+            <a
+              href="mailto:joelatorres1305@gmail.com"
+              className="inline-flex items-center gap-2 rounded-2xl border px-5 py-3 text-sm font-medium hover:bg-white/5 dark:hover:bg-white/10 transition"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2v.01L12 12 4 6.01V6h16ZM4 18V8.14l8 5.85 8-5.85V18H4Z"/>
+              </svg>
+              Email
         </a>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+              href="https://www.linkedin.com/in/joel-torres-psu/"
+              className="inline-flex items-center gap-2 rounded-2xl border px-5 py-3 text-sm font-medium hover:bg-white/5 dark:hover:bg.white/10 transition"
+              aria-label="Connect on LinkedIn"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M20.45 20.45h-3.56v-5.56c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.13 1.45-2.13 2.94v5.65H9.35V9h3.41v1.56h.05c.47-.9 1.62-1.85 3.33-1.85 3.56 0 4.22 2.35 4.22 5.41v6.33ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.56V9h3.56v11.45Z"/>
+              </svg>
+              Connect
+            </a>
+          </div>
+        </div>
+      </div>
+      <ScrollCue />
+    </section>
+
+    <section id="about" className="py-28">
+      <Reveal>
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-6xl font-extrabold tracking-tight leading-[0.95] mb-6">About me</h2>
+            <p className="text-foreground/80 text-lg max-w-2xl">
+              Hi, I&apos;m Joel Torres — an entrepreneurial Business Analytics & Information Systems student at Penn State with a growing interest in AI, automation, and backend systems.
+            </p>
+          </div>
+          
+          <div className="space-y-16">
+            {/* Before Section */}
+            <div className="grid gap-8 lg:grid-cols-2 items-center">
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
+                  <h3 className="text-2xl font-bold">Experience</h3>
+                </div>
+                <div className="space-y-4">
+                  <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                    <h4 className="font-semibold mb-2">Powerwashing & Door-to-Door Sales</h4>
+                    <p className="text-foreground/80 text-sm">
+                      Started with powerwashing services and moved into door-to-door sales internships. This experience taught me resilience, communication skills, and how to handle rejection while building persistence.
+                    </p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                    <h4 className="font-semibold mb-2">COD Sharpened Sales Skills</h4>
+                    <p className="text-foreground/80 text-sm">
+                      The challenging environment of door-to-door sales sharpened and retaught me the fundamentals of sales. It was one of the hardest things I&apos;ve ever done, but it built discipline and the ability to perform under pressure.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex justify-center">
+                <div className="relative group">
+                  {/* Glow effect background */}
+                  <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-blue-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  
+                  {/* Main image container */}
+                  <div className="relative w-80 h-80 rounded-2xl overflow-hidden bg-white/10 border border-white/20 shadow-2xl group-hover:shadow-blue-500/25 transition-all duration-500 group-hover:scale-105">
+                    <Image
+                      src="https://d2kbz8dqbfngbz.cloudfront.net/r562wf%2Fpreview%2F71285262%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=image%2Fpng&Expires=1758929600&Signature=dekmASNwO8Ynxzks2xAv7rQAiV5yFNEFKIp-fd2zROOtbxkpEgvAGZ9DpyFjaRsNe3DDRo-GXBLQDams2Rt45Z5UYncaF5VU5FBaUfU47F4sugelmnJySxek0h9gOgo-uYUSZvt9ZzF8IFfKQMe8n45V7D~dEmfpqALGk4kXq6MRZraUwIwlEMztuHDX2dz05uvJG4vA4L8wr8-~WtnMd1YKEt1J41n9bS2Zgodj2iIs6~X95XaJjYcrK-QrN3vutSyQWh89m9FckS1WogU1l1HmDalTEjXNmpD0UhuStoehGbWdyPxy~IpdE5wlz2iuNKvajNDjYNwOwDjfLy1T9A__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ"
+                      alt="Joel Torres powerwashing experience"
+                      width={320}
+                      height={320}
+                      className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      style={{ objectPosition: 'center 20%' }}
+                    />
+                    
+                    {/* Overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </div>
+                  
+                  {/* Floating label */}
+                  <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-xs font-medium text-white/90 whitespace-nowrap">
+                    💪 Building Resilience
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Now Section */}
+            <div className="grid gap-8 lg:grid-cols-2 items-center">
+              <div className="flex justify-center order-2 lg:order-1">
+                <div className="relative group">
+                  {/* Glow effect background */}
+                  <div className="absolute -inset-4 bg-gradient-to-r from-green-500/20 via-teal-500/20 to-green-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  
+                  {/* Main image container */}
+                  <div className="relative w-80 h-80 rounded-2xl overflow-hidden bg-white/10 border border-white/20 shadow-2xl group-hover:shadow-green-500/25 transition-all duration-500 group-hover:scale-105">
+                    <Image
+                      src="https://d1cm8pklzi5us7.cloudfront.net/b5cs3g%2Fpreview%2F71295276%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=image%2Fpng&Expires=1758981367&Signature=JjEDibBze~4-2XfXQa9Dzb8nkXZTjcPqtjxBLmLZDqexBa-hb0QbjG9AutWTMBMpJ2ynFyYVCBL5MHs9UvbQI19N9~T-7qvIndb-bklfrhXopFUY3B3dxNsB4M~ucSkacoUNisvllvJZ4uqy2GaL0ZqO0U2hK7c111iqOXpgpfdc62xir-hXM8xS9uN4V7LC8b5bWf6lIo-sDu9u4nFS~1qpOp6smp3gszy~7dvIjNU17Er~uiNQu6l3JVDpLDn33qS8yrxYefUgm3Utfd9NwLVOs-mjQ4MHVQu-HvtAxiEfEnKNo1L5ffoRBRLbUn3aYOFofrtR5XTwPRtpKzqcMQ__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ"
+                      alt="Ventures and current projects"
+                      width={320}
+                      height={320}
+                      className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    
+                    {/* Overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </div>
+                  
+                  {/* Floating label */}
+                  <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-xs font-medium text-white/90 whitespace-nowrap">
+                    🦁 Penn State
+                  </div>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                  <h3 className="text-2xl font-bold">Ventures</h3>
+                </div>
+                <div className="space-y-4">
+                  <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                    <h4 className="font-semibold mb-2">Studying BA&IS at Penn State</h4>
+                    <p className="text-foreground/80 text-sm">
+                      Currently pursuing Business Analytics & Information Systems, focusing on how data and technology can drive business decisions and create efficient systems.
+                    </p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                    <h4 className="font-semibold mb-2">AI Co-op Experience</h4>
+                    <p className="text-foreground/80 text-sm">
+                      Working on AI-powered solutions and automation systems, applying classroom knowledge to real-world problems and building practical experience in the field.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* After Section */}
+            <div className="grid gap-8 lg:grid-cols-2 items-center">
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-3 h-3 bg-purple-400 rounded-full"></div>
+                  <h3 className="text-2xl font-bold">Goals</h3>
+                </div>
+                <div className="space-y-4">
+                  <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                    <h4 className="font-semibold mb-2">Short-term Goals</h4>
+                    <p className="text-foreground/80 text-sm">
+                      Complete my BA&IS degree, gain more hands-on experience with AI and automation tools, and build a portfolio of impactful projects that solve real business problems.
+                    </p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                    <h4 className="font-semibold mb-2">Long-term Vision</h4>
+                    <p className="text-foreground/80 text-sm">
+                      Become a leader in business technology solutions, helping organizations implement AI and automation systems that remove friction and drive measurable results.
+                    </p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                    <h4 className="font-semibold mb-2">Skills Application Plan</h4>
+                    <p className="text-foreground/80 text-sm">
+                      Combining my sales background with technical skills to bridge the gap between business needs and technology solutions, creating systems that actually work for real users.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex justify-center">
+                <div className="relative group">
+                  {/* Glow effect background */}
+                  <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-purple-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  
+                  {/* Main image container */}
+                  <div className="relative w-80 h-80 rounded-2xl overflow-hidden bg-white/10 border border-white/20 shadow-2xl group-hover:shadow-purple-500/25 transition-all duration-500 group-hover:scale-105">
+                    <Image
+                      src="https://d2kbz8dqbfngbz.cloudfront.net/r562wf%2Fpreview%2F71285262%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=image%2Fpng&Expires=1758929600&Signature=dekmASNwO8Ynxzks2xAv7rQAiV5yFNEFKIp-fd2zROOtbxkpEgvAGZ9DpyFjaRsNe3DDRo-GXBLQDams2Rt45Z5UYncaF5VU5FBaUfU47F4sugelmnJySxek0h9gOgo-uYUSZvt9ZzF8IFfKQMe8n45V7D~dEmfpqALGk4kXq6MRZraUwIwlEMztuHDX2dz05uvJG4vA4L8wr8-~WtnMd1YKEt1J41n9bS2Zgodj2iIs6~X95XaJjYcrK-QrN3vutSyQWh89m9FckS1WogU1l1HmDalTEjXNmpD0UhuStoehGbWdyPxy~IpdE5wlz2iuNKvajNDjYNwOwDjfLy1T9A__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ"
+                      alt="Future goals and vision"
+                      width={320}
+                      height={320}
+                      className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    
+                    {/* Overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </div>
+                  
+                  {/* Floating label */}
+                  <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-xs font-medium text-white/90 whitespace-nowrap">
+                    🚀 Future Impact
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Reveal>
+    </section>
+
+    <section id="projects" className="py-24">
+      <div className="mb-8">
+        <p className="text-sm text-foreground/60 mb-2">My Work</p>
+        <h2 className="text-4xl font-bold tracking-tight mb-4">Featured Projects</h2>
+        <p className="text-foreground/80 max-w-2xl">A collection of automation systems and backend solutions I&apos;ve built to streamline workflows and drive results.</p>
+      </div>
+      
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Project 1 - FFC AI Onboarding */}
+        <div className="group cursor-pointer">
+          <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 border border-white/10 aspect-video mb-4">
+            <Image
+              src="https://d27xfwajjnh0ta.cloudfront.net/l0a43g%2Fpreview%2F71294410%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=image%2Fpng&Expires=1758977463&Signature=TMcOu-9GN~yUJFK6~8NgjnS5er~Xow~M4xntSjB8rm-XDKU6hnglPAFHYq9tLGI~57LCGVfTYwH1zn3upFwC6Sbj0cxMVLjZymymkfcKSGcHCNm6MbTx3q-~PEVj3A-PKD-N1Haw-68Eh4LcorCdySeEcL3nGmGKzMphVcJYSBfu0RmpttwPf0PPV-r4~Dw0av4oEdWk1ALGDr2B2urUNhBlS2woVHKRweYQI2CxZ3LDo-9gl8OOaqOOD5ODrabib05ZZUOYBoGxBK1k9BqZdN1powssq0ArD3s31j5ckOQqz12ai-Kb1IwGdNkXlLYQlGRIE83nOzFmT2bvZzgNyA__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ"
+              alt="Dan and Robin Ives A.I. Innovation Day Competition Winner"
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+            <div className="absolute top-3 right-3">
+              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+            <div className="absolute bottom-3 left-3">
+              <span className="bg-yellow-500/90 text-black text-xs px-2 py-1 rounded-full font-semibold">🏆 Competition Winner</span>
+            </div>
+          </div>
+          <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">FFC AI Onboarding System</h3>
+          <p className="text-sm text-foreground/70 mb-2">Dan and Robin Ives A.I. Innovation Day - Competition Winner (March 2025)</p>
+          <p className="text-sm text-foreground/70">Developed a solo project addressing Free For Charity's 45+ client onboarding backlog using AI agents, APIs, and automation tools.</p>
+        </div>
+
+        {/* Project 2 - FFC Technical Volunteer */}
+        <div className="group cursor-pointer">
+          <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-green-500/20 via-teal-500/20 to-cyan-500/20 border border-white/10 aspect-video mb-4">
+            <Image
+              src="https://djfxe6plvdhbj.cloudfront.net/y40c3g%2Fpreview%2F71294688%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=image%2Fpng&Expires=1758978678&Signature=XU-cyzUVJr9RicFa7KZAedU4ScL6ZS6swFbLJO4JWOnyL4dDabFeQNEosiNjJPhLjcj5fQxyZU2fFEvHbYO8QGHCPXifALCZ-fNzz-g4Zd9goFFtnh5tE0NN-7yQHznXloTPV4jRqHeyEXgmPjkigKq457lxbXwomQNNZVuRdQgsZwFbYz12OE~YrxuNqpvGl8BdpiDhTYAGFY6Qx9pTm7XLsQo~xI-tJfBCkC9R1~l7P6TYlSlrecKfpBf-As43c~3KNo3H760zcH4FZvx8sGFEKe5yOQ4djB4SgezF~5JfRH6dVS1pbMwWgXqppvcWyjLk9XB3I8uC2OLXpRqy-g__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ"
+              alt="JAT Digital Automations"
+              fill
+              className="object-cover object-[center_top] group-hover:scale-105 transition-transform duration-300"
+            />
+            <div className="absolute top-3 right-3">
+              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+            <div className="absolute bottom-3 left-3">
+              <span className="bg-blue-500/90 text-white text-xs px-2 py-1 rounded-full font-semibold">🤖 AI Systems Consulting</span>
+            </div>
+          </div>
+          <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">FFC – Technical Volunteer (2025)</h3>
+          <p className="text-sm text-foreground/70 mb-2">Served as a technical volunteer for Free For Charity, focusing on learning the landscape of AI tools.</p>
+          <p className="text-sm text-foreground/70">Implemented prototypes using LLMs, vibe coding, n8n, and Microsoft 365 that supported the foundation for the FFC onboarding automation system.</p>
+        </div>
+
+        {/* Project 3 - Brand Monetization */}
+        <div className="group cursor-pointer">
+          <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-orange-500/20 via-red-500/20 to-pink-500/20 border border-white/10 aspect-video mb-4">
+            <Image
+              src="https://d2jedw6aeswgqp.cloudfront.net/n4n93g%2Fpreview%2F71294603%2Fmain_full.png?response-content-disposition=inline%3Bfilename%3D%22main_full.png%22%3B&response-content-type=image%2Fpng&Expires=1758978268&Signature=WcOUMggpPrJuf9EwlDhPtelHq7vr0QALozw2tV5xmmZ19pSBsw07QM6z0HWSyY79sKSLZV~MV632otcDFfkwYQYzoGNsR3pinqasKsnY-nPKPLTmvIle6kxYNlxDLY0szK0-rS0WothhwRIDltoOQWlMSlvqP-nu3vyi6zu6yZSAHbITg~5b-C1Uep7Yl~SgRxqpW4FD-nXQ30xt3daFEjtHaGTq2Kz-BR6pf~gk7iRLb0cA7AeILFxYxZHa~vf1h1Wnl4sXiaFv~6I~lrQKaxRt3NFNTPgkf0F2AqWn6I5XNqIR5fEEzIjmXMc7mMwGAitZZYQlDlKMedkflLr8dA__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ"
+              alt="Brand Monetization - Professional Website & Sales Funnel"
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+            <div className="absolute top-3 right-3">
+              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+            <div className="absolute bottom-3 left-3">
+              <span className="bg-purple-500/90 text-white text-xs px-2 py-1 rounded-full font-semibold">📈 Growth Operator</span>
+            </div>
+          </div>
+          <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">Brand Monetization</h3>
+          <p className="text-sm text-foreground/70 mb-2">Brand project launched in 2025 to turn a 400K+ follower gymnastics creator into a business.</p>
+          <p className="text-sm text-foreground/70">Built a custom website, Stripe-powered booking system, and automated funnel that enabled fans to book 1-on-1 coaching calls.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog" className="py-24">
+      <div className="mb-8">
+        <p className="text-sm text-foreground/60 mb-2">Latest Writing</p>
+        <h2 className="text-4xl font-bold tracking-tight mb-4">Blog & Notes</h2>
+        <p className="text-foreground/80 max-w-2xl">Documenting my journey, sharing learnings, and exploring ideas around AI, automation, and backend systems.</p>
+      </div>
+      
+      <div className="max-w-6xl mx-auto">
+        <div className="grid gap-8 lg:grid-cols-3">
+          {/* Featured Post */}
+          <div className="lg:col-span-2">
+            <div className="group cursor-pointer">
+              <div className="relative overflow-hidden rounded-xl bg-white/5 border border-white/10 aspect-[16/9] mb-6">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg className="w-10 h-10 text-white/60" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                      </svg>
+                    </div>
+                    <p className="text-sm text-white/60">Featured Post</p>
+                  </div>
+                </div>
+                <div className="absolute top-4 left-4">
+                  <span className="bg-white/20 text-white text-xs px-3 py-1 rounded-full">Build Log</span>
+                </div>
+                <div className="absolute top-4 right-4">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold mb-3 group-hover:text-white/90 transition">Building My First AI Automation System</h3>
+              <p className="text-foreground/70 mb-4 text-lg">A deep dive into the challenges and breakthroughs of creating an end-to-end automation workflow for nonprofit onboarding.</p>
+              <div className="flex items-center gap-4 text-sm text-foreground/60">
+                <span>Dec 15, 2024</span>
+                <span>•</span>
+                <span>8 min read</span>
+                <span>•</span>
+                <span>AI, Automation</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Sidebar */}
+          <div className="lg:col-span-1">
+            <div className="space-y-6">
+              {/* Recent Posts */}
+              <div>
+                <h3 className="text-lg font-semibold mb-4">Recent Posts</h3>
+                <div className="space-y-4">
+                  <div className="group cursor-pointer">
+                    <div className="flex gap-3">
+                      <div className="relative overflow-hidden rounded-lg bg-white/5 border border-white/10 w-16 h-12 flex-shrink-0">
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <svg className="w-4 h-4 text-white/40" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                          </svg>
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-medium mb-1 group-hover:text-white/90 transition text-sm">Microsoft 365 Automation Deep Dive</h4>
+                        <p className="text-xs text-foreground/70 mb-2">Exploring Power Automate and SharePoint integration patterns.</p>
+                        <div className="flex items-center gap-2 text-xs text-foreground/60">
+                          <span>Dec 10, 2024</span>
+                          <span>•</span>
+                          <span>5 min</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="group cursor-pointer">
+                    <div className="flex gap-3">
+                      <div className="relative overflow-hidden rounded-lg bg-white/5 border border-white/10 w-16 h-12 flex-shrink-0">
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <svg className="w-4 h-4 text-white/40" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                          </svg>
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-medium mb-1 group-hover:text-white/90 transition text-sm">From Sales to Systems Thinking</h4>
+                        <p className="text-xs text-foreground/70 mb-2">How door-to-door sales shaped my approach to building user-centered automation.</p>
+                        <div className="flex items-center gap-2 text-xs text-foreground/60">
+                          <span>Dec 5, 2024</span>
+                          <span>•</span>
+                          <span>6 min</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="group cursor-pointer">
+                    <div className="flex gap-3">
+                      <div className="relative overflow-hidden rounded-lg bg-white/5 border border-white/10 w-16 h-12 flex-shrink-0">
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <svg className="w-4 h-4 text-white/40" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H19V1h-2v1H7V1H5v1H4.5C3.67 2 3 2.67 3 3.5v15c0 .83.67 1.5 1.5 1.5h15c.83 0 1.5-.67 1.5-1.5v-15c0-.83-.67-1.5-1.5-1.5z"/>
+                          </svg>
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-medium mb-1 group-hover:text-white/90 transition text-sm">n8n Workflow Architecture</h4>
+                        <p className="text-xs text-foreground/70 mb-2">Designing scalable automation workflows with self-hosted n8n.</p>
+                        <div className="flex items-center gap-2 text-xs text-foreground/60">
+                          <span>Nov 28, 2024</span>
+                          <span>•</span>
+                          <span>7 min</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Categories */}
+              <div>
+                <h3 className="text-lg font-semibold mb-4">Categories</h3>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition">
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                      <span className="text-sm">Build Logs</span>
+                    </div>
+                    <span className="text-xs text-foreground/60">3</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition">
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                      <span className="text-sm">Learning Notes</span>
+                    </div>
+                    <span className="text-xs text-foreground/60">2</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition">
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                      <span className="text-sm">Ideas & Reflections</span>
+                    </div>
+                    <span className="text-xs text-foreground/60">1</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Tags */}
+              <div>
+                <h3 className="text-lg font-semibold mb-4">Popular Tags</h3>
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-xs bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20 transition">AI</span>
+                  <span className="text-xs bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20 transition">Automation</span>
+                  <span className="text-xs bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20 transition">Microsoft 365</span>
+                  <span className="text-xs bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20 transition">n8n</span>
+                  <span className="text-xs bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20 transition">Backend</span>
+                  <span className="text-xs bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20 transition">Systems</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume" className="py-24">
+      <div className="mb-8">
+        <p className="text-sm text-foreground/60 mb-2">Professional Profile</p>
+        <h2 className="text-4xl font-bold tracking-tight mb-4">Resume</h2>
+        <p className="text-foreground/80 max-w-2xl">Download my resume to learn more about my experience, skills, and certifications.</p>
+      </div>
+      
+      <div className="grid gap-8 lg:grid-cols-2 items-center">
+        {/* Resume Preview */}
+        <div className="order-2 lg:order-1">
+          <div className="relative overflow-hidden rounded-xl bg-white/5 border border-white/10 aspect-[3/4] shadow-2xl">
+            <Image
+              src="https://d1mrnwe9chdcuv.cloudfront.net/w5izld%2Fpreview%2F71178894%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=&Expires=1758667885&Signature=DUqbPj1QGqJOv1kJZTIJfvPw3no~Oox-QqSS4DkRFQyDRDPEYYTqaOApsGJQv0Qe~gJivFhm-GhISDy~5zpWqfVtlRDY50uVWW54ypbOxtPnCeQSL7nArhe5WsCAPYJRXuDc4gR4NsI7Ixh4iwYh9PYigfz2iMMOPuUQ73DC8zTj0n-RGm0~ul~PUHwnmXftpn9i92bdWcP0cv~YNIHT0c71QLmFJ-8zkxmWLPmvHgPaX1V9rUYzUgvpB7jYWxw0MMIbXXTZj3a9qeUQVfLLu4BJzuN136fmICOMRdFrEKF4KAmdCqVKtHchHsEhXu-HbRn3V69yGDb9BhRxZjIzIg__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ"
+              alt="Joel Torres Resume Preview"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute top-4 left-4">
+              <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+            </div>
+            <div className="absolute top-4 left-8">
+              <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+            </div>
+            <div className="absolute top-4 left-12">
+              <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Download Section */}
+        <div className="order-1 lg:order-2">
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-2xl font-semibold mb-3">Get My Resume</h3>
+              <p className="text-foreground/80 mb-6">
+                Download my latest resume to see my full experience, technical skills, and certifications including JT Powerwashing, Door-to-Door Sales, and Microsoft certifications.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <a 
+                href="/Joel-Torres-resume.pdf" 
+                download
+                className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
+              >
+                <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-white/20 transition">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-medium group-hover:text-white/90 transition">Download PDF</h4>
+                  <p className="text-sm text-foreground/70">Joel-Torres-resume.pdf</p>
+                </div>
+                <svg className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+
+              <div className="grid grid-cols-2 gap-4">
+                <a 
+                  href="https://learn.microsoft.com/api/credentials/share/en-us/JoelTorres-4643/1D05871E0F5FA109?sharingId=3B9A6A1523B61FA6" 
+            target="_blank"
+            rel="noopener noreferrer"
+                  className="group p-4 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:border-white/20"
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                    <span className="text-sm font-medium group-hover:text-white/90 transition">MS-900</span>
+                    <svg className="w-3 h-3 text-white/60 group-hover:text-white group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </div>
+                  <p className="text-xs text-foreground/70 group-hover:text-foreground/80 transition">Microsoft 365 Fundamentals</p>
+                </a>
+                <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
+                    <span className="text-sm font-medium">MS-700</span>
+                    <span className="text-xs text-yellow-400 font-medium">(In Progress)</span>
+                  </div>
+                  <p className="text-xs text-foreground/70">Managing Microsoft Teams</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" className="py-24">
+      <div className="mb-8">
+        <p className="text-sm text-foreground/60 mb-2">Let&apos;s Connect</p>
+        <h2 className="text-4xl font-bold tracking-tight mb-4">Get In Touch</h2>
+        <p className="text-foreground/80 max-w-2xl">If you&apos;d like to work with me or see a business audit of how I can implement my skillset, let&apos;s book a call.</p>
+      </div>
+      
+      <div className="grid gap-8 lg:grid-cols-2 items-center">
+        {/* Contact Options */}
+        <div className="space-y-6">
+          <div className="group cursor-pointer">
+            <a 
+              href="https://calendly.com/joelatorres1305/lets-chat" 
           target="_blank"
           rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+              className="block"
+            >
+              <div className="flex items-center gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 group-hover:border-white/20">
+                <div className="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-white/20 transition">
+                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold mb-1 group-hover:text-white/90 transition">Book a Call</h3>
+                  <p className="text-sm text-foreground/70">Schedule a consultation to discuss your automation needs</p>
+                </div>
+                <svg className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </a>
+          </div>
+
+          <div className="group cursor-pointer">
+            <a 
+              href="mailto:joelatorres1305@gmail.com"
+              className="block"
+            >
+              <div className="flex items-center gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 group-hover:border-white/20">
+                <div className="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-white/20 transition">
+                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold mb-1 group-hover:text-white/90 transition">Send Email</h3>
+                  <p className="text-sm text-foreground/70">joelatorres1305@gmail.com</p>
+                </div>
+                <svg className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </a>
+          </div>
+
+          <div className="group cursor-pointer">
+            <a 
+              href="https://www.linkedin.com/in/joel-torres-psu/" 
           target="_blank"
           rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+              className="block"
+            >
+              <div className="flex items-center gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 group-hover:border-white/20">
+                <div className="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-white/20 transition">
+                  <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.45 20.45h-3.56v-5.56c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.13 1.45-2.13 2.94v5.65H9.35V9h3.41v1.56h.05c.47-.9 1.62-1.85 3.33-1.85 3.56 0 4.22 2.35 4.22 5.41v6.33ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.56V9h3.56v11.45Z"/>
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold mb-1 group-hover:text-white/90 transition">Connect on LinkedIn</h3>
+                  <p className="text-sm text-foreground/70">Follow my professional journey and updates</p>
+                </div>
+                <svg className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        {/* What I Can Help With */}
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-2xl font-semibold mb-4">What I Can Help With</h3>
+            <p className="text-foreground/80 mb-6">
+              Whether you&apos;re looking to streamline operations, automate workflows, or implement AI solutions, I can provide a comprehensive audit and implementation plan.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <div className="flex items-start gap-3 p-4 rounded-lg bg-white/5 border border-white/10">
+              <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <h4 className="font-medium mb-1">Business Process Audit</h4>
+                <p className="text-sm text-foreground/70">Identify automation opportunities and workflow inefficiencies</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 p-4 rounded-lg bg-white/5 border border-white/10">
+              <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <h4 className="font-medium mb-1">Microsoft 365 Integration</h4>
+                <p className="text-sm text-foreground/70">Optimize your existing Microsoft ecosystem with automation</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 p-4 rounded-lg bg-white/5 border border-white/10">
+              <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <h4 className="font-medium mb-1">AI-Powered Solutions</h4>
+                <p className="text-sm text-foreground/70">Implement intelligent automation to reduce manual work</p>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
+    </section>
+    </>
   );
 }

@@ -1,0 +1,899 @@
+   ▲ Next.js 15.5.3 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://10.11.11.135:3000
+
+ ✓ Starting...
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+ ✓ Ready in 814ms
+ ○ Compiling / ...
+ ✓ Compiled / in 2s
+ GET / 200 in 2251ms
+ ✓ Compiled /favicon.ico in 127ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 408ms
+ GET / 200 in 120ms
+ ✓ Compiled / in 15ms
+ GET / 200 in 80ms
+ ✓ Compiled /_not-found/page in 224ms
+ GET /Joel-Torres-Resume.pdf 404 in 331ms
+ ✓ Compiled /about in 155ms
+ GET /about 200 in 183ms
+ ✓ Compiled /projects in 156ms
+ GET /projects 200 in 189ms
+ ✓ Compiled /blog in 273ms
+ GET /blog 200 in 368ms
+ ✓ Compiled /resume in 138ms
+ GET /resume 200 in 166ms
+ ✓ Compiled /contact in 142ms
+ GET /contact 200 in 170ms
+ GET / 200 in 66ms
+ GET / 200 in 56ms
+ GET / 200 in 775ms
+ ✓ Compiled in 344ms
+ ✓ Compiled / in 26ms
+ GET / 200 in 111ms
+ GET /profile.jpg 404 in 47ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET / 200 in 36ms
+ ✓ Compiled in 102ms
+ GET / 200 in 180ms
+ GET /profile.jpg 404 in 53ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET / 200 in 85ms
+ GET /profile.jpg 404 in 53ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ ✓ Compiled in 176ms
+ ✓ Compiled / in 46ms
+ GET / 200 in 156ms
+ GET / 200 in 34ms
+ GET / 200 in 20ms
+ GET / 200 in 137ms
+ ✓ Compiled /_not-found/page in 15ms
+ GET /profile.jpg 404 in 188ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET / 200 in 91ms
+ GET /profile.jpg 404 in 70ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET / 200 in 45ms
+ ✓ Compiled /blog in 51ms
+ GET /blog 200 in 168ms
+ ✓ Compiled /projects in 29ms
+ GET /projects 200 in 99ms
+ ✓ Compiled /about in 31ms
+ GET /about 200 in 101ms
+ GET /profile.jpg 404 in 43ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET / 200 in 55ms
+ GET /profile.jpg 404 in 49ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ ✓ Compiled / in 73ms
+ GET / 200 in 266ms
+ ✓ Compiled /_not-found/page in 13ms
+ GET /profile.jpg 404 in 163ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ ✓ Compiled in 83ms
+ ✓ Compiled in 71ms
+ ✓ Compiled / in 24ms
+ GET / 200 in 126ms
+ ✓ Compiled in 108ms
+ ✓ Compiled in 45ms
+ GET / 200 in 47ms
+ GET / 200 in 39ms
+ ✓ Compiled in 36ms
+ GET / 200 in 196ms
+ GET /profile.jpg 404 in 64ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET / 200 in 364ms
+ GET /profile.jpg 404 in 126ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET / 200 in 77ms
+ GET /profile.jpg 404 in 149ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET / 200 in 66ms
+ GET /profile.jpg 404 in 66ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET / 200 in 74ms
+ GET /profile.jpg 404 in 62ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET / 200 in 146ms
+ GET /profile.jpg 404 in 56ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET / 200 in 151ms
+ GET /profile.jpg 404 in 119ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 265ms
+ ✓ Compiled in 421ms
+ ✓ Compiled in 143ms
+ ✓ Compiled / in 42ms
+ GET / 200 in 214ms
+ GET /profile.jpg 404 in 49ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET / 200 in 87ms
+ GET /profile.jpg 404 in 38ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET / 200 in 257ms
+ GET /profile.jpg 404 in 51ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 239ms
+ ✓ Compiled /projects in 49ms
+ GET /projects 200 in 144ms
+ ✓ Compiled /about in 37ms
+ GET /about 200 in 146ms
+ GET /profile.jpg 404 in 40ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ ✓ Compiled /contact in 30ms
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" onClick={function onClick} className=... children=...>
+                                ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '2433920982'
+}
+ GET /contact 200 in 299ms
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" onClick={function onClick} className=... children=...>
+                                ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '2433920982'
+}
+ GET /contact 500 in 317ms
+ GET /favicon.ico 200 in 264ms
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" onClick={function onClick} className=... children=...>
+                                ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '2433920982'
+}
+ GET /contact 500 in 225ms
+ GET /favicon.ico 200 in 240ms
+ GET /favicon.ico 200 in 246ms
+ GET /favicon.ico 200 in 255ms
+ GET /favicon.ico 200 in 255ms
+ GET / 200 in 93ms
+ GET /profile.jpg 404 in 51ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 243ms
+ GET / 200 in 572ms
+ GET /profile.jpg 404 in 110ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 251ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 274ms
+ ✓ Compiled in 301ms
+ ✓ Compiled / in 19ms
+ GET / 200 in 192ms
+ GET / 200 in 30ms
+ GET / 200 in 94ms
+ GET / 200 in 59ms
+ GET / 200 in 28ms
+ GET / 200 in 27ms
+ GET / 200 in 26ms
+ GET / 200 in 324ms
+ ✓ Compiled /_not-found/page in 29ms
+ GET /profile.jpg 404 in 65ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 258ms
+ GET / 200 in 92ms
+ GET /profile.jpg 404 in 51ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 239ms
+ GET / 200 in 93ms
+ GET /profile.jpg 404 in 45ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 268ms
+ ✓ Compiled / in 11ms
+ GET / 200 in 129ms
+ GET / 200 in 143ms
+ GET /profile.jpg 404 in 53ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 236ms
+ ✓ Compiled /projects in 20ms
+ GET /projects 200 in 124ms
+ ○ Compiling /projects/[slug] ...
+ ✓ Compiled /projects/[slug] in 1021ms
+Error: Route "/projects/[slug]" used `params.slug`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at ProjectPage (src/app/(site)/projects/[slug]/page.tsx:23:35)
+  21 |
+  22 | export default function ProjectPage({ params }: { params: { slug: keyof typeof projects } }) {
+> 23 |   const project = projects[params.slug];
+     |                                   ^
+  24 |   if (!project) return notFound();
+  25 |   return (
+  26 |     <section className="py-10">
+Error: Route "/projects/[slug]" used `params.slug`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at ProjectPage (src/app/(site)/projects/[slug]/page.tsx:23:35)
+  21 |
+  22 | export default function ProjectPage({ params }: { params: { slug: keyof typeof projects } }) {
+> 23 |   const project = projects[params.slug];
+     |                                   ^
+  24 |   if (!project) return notFound();
+  25 |   return (
+  26 |     <section className="py-10">
+ GET /projects/ffc-ai-onboarding 200 in 301ms
+ GET /projects/bobby-monetization-funnel 200 in 1581ms
+ GET / 200 in 59ms
+ GET /profile.jpg 404 in 69ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET / 200 in 112ms
+ GET / 200 in 180ms
+ GET /profile.jpg 404 in 82ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 246ms
+ GET /projects 200 in 90ms
+ ✓ Compiled /about in 27ms
+ GET /about 200 in 71ms
+ GET /profile.jpg 404 in 55ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ ✓ Compiled /contact in 22ms
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" onClick={function onClick} className=... children=...>
+                                ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '2433920982'
+}
+ GET /contact 200 in 212ms
+ GET /favicon.ico 200 in 252ms
+ GET / 200 in 111ms
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" onClick={function onClick} className=... children=...>
+                                ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '2433920982'
+}
+ GET /contact 200 in 190ms
+ GET / 200 in 108ms
+ GET / 200 in 287ms
+ GET /profile.jpg 404 in 76ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 250ms
+ GET / 200 in 84ms
+ GET /profile.jpg 404 in 77ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 251ms
+ GET / 200 in 119ms
+ GET /profile.jpg 404 in 133ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 314ms
+ GET / 200 in 63ms
+ GET /profile.jpg 404 in 57ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 235ms
+ GET / 200 in 75ms
+ GET /profile.jpg 404 in 52ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 241ms
+ GET / 200 in 85ms
+ GET /profile.jpg 404 in 54ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 235ms
+ GET / 200 in 86ms
+ GET /profile.jpg 404 in 57ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 233ms
+ ✓ Compiled in 158ms
+ GET / 200 in 120ms
+ GET /profile.jpg 404 in 52ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 235ms
+ GET / 200 in 85ms
+ GET /profile.jpg 404 in 49ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 230ms
+ GET / 200 in 76ms
+ GET /profile.jpg 404 in 44ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 232ms
+ GET /projects 200 in 76ms
+ GET /about 200 in 87ms
+ GET /profile.jpg 404 in 50ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" onClick={function onClick} className=... children=...>
+                                ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '2433920982'
+}
+ GET /contact 200 in 340ms
+ GET / 200 in 104ms
+ ✓ Compiled /blog in 77ms
+ GET /blog 200 in 700ms
+ ○ Compiling /blog/[slug] ...
+ ✓ Compiled /blog/[slug] in 564ms
+Error: Route "/blog/[slug]" used `params.slug`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at PostPage (src/app/(site)/blog/[slug]/page.tsx:13:37)
+  11 |
+  12 | export default function PostPage({ params }: { params: { slug: string } }) {
+> 13 |   const post = getPostBySlug(params.slug);
+     |                                     ^
+  14 |   if (!post) return notFound();
+  15 |
+  16 |   return (
+ ⨯ [Error: [next-mdx-remote] error compiling MDX:
+Unexpected character `!` (U+0021) before name, expected a character that can start a name, such as a letter, `$`, or `_` (note: to create a comment in MDX, use `{/* text */}`)
+
+More information: https://mdxjs.com/docs/troubleshooting-mdx] {
+  digest: '2687567694'
+}
+ GET /blog/single-product 200 in 1390ms
+Error: Route "/blog/[slug]" used `params.slug`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at PostPage (src/app/(site)/blog/[slug]/page.tsx:13:37)
+  11 |
+  12 | export default function PostPage({ params }: { params: { slug: string } }) {
+> 13 |   const post = getPostBySlug(params.slug);
+     |                                     ^
+  14 |   if (!post) return notFound();
+  15 |
+  16 |   return (
+ ⨯ [Error: [next-mdx-remote] error compiling MDX:
+Unexpected character `!` (U+0021) before name, expected a character that can start a name, such as a letter, `$`, or `_` (note: to create a comment in MDX, use `{/* text */}`)
+
+More information: https://mdxjs.com/docs/troubleshooting-mdx] {
+  digest: '2687567694'
+}
+ GET /blog/single-product 200 in 35ms
+ GET /blog 200 in 192ms
+Error: Route "/blog/[slug]" used `params.slug`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at PostPage (src/app/(site)/blog/[slug]/page.tsx:13:37)
+  11 |
+  12 | export default function PostPage({ params }: { params: { slug: string } }) {
+> 13 |   const post = getPostBySlug(params.slug);
+     |                                     ^
+  14 |   if (!post) return notFound();
+  15 |
+  16 |   return (
+ ⨯ [Error: [next-mdx-remote] error compiling MDX:
+Unexpected character `!` (U+0021) before name, expected a character that can start a name, such as a letter, `$`, or `_` (note: to create a comment in MDX, use `{/* text */}`)
+
+More information: https://mdxjs.com/docs/troubleshooting-mdx] {
+  digest: '2687567694'
+}
+ GET /blog/search 200 in 63ms
+ GET /blog 200 in 180ms
+ GET / 200 in 67ms
+ GET /profile.jpg 404 in 81ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET / 200 in 745ms
+ GET /profile.jpg 404 in 184ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET / 200 in 319ms
+ GET /profile.jpg 404 in 94ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 287ms
+ GET / 200 in 103ms
+ GET /profile.jpg 404 in 68ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /blog 200 in 292ms
+ GET / 200 in 64ms
+ GET /profile.jpg 404 in 58ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ ✓ Compiled in 168ms
+ GET / 200 in 834ms
+ GET /profile.jpg 404 in 58ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 246ms
+ GET / 200 in 130ms
+ GET /profile.jpg 404 in 54ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 242ms
+ GET / 200 in 77ms
+ GET /profile.jpg 404 in 58ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 239ms
+ ✓ Compiled in 101ms
+ GET /projects 200 in 350ms
+ GET / 200 in 50ms
+ GET /profile.jpg 404 in 43ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ ✓ Compiled / in 16ms
+ GET / 200 in 180ms
+ ✓ Compiled in 113ms
+ ✓ Compiled in 101ms
+ ✓ Compiled in 195ms
+ ✓ Compiled / in 18ms
+ GET / 200 in 193ms
+ GET /profile.jpg 404 in 68ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET / 200 in 64ms
+ GET / 200 in 58ms
+ GET / 200 in 49ms
+ GET / 200 in 53ms
+ GET / 200 in 68ms
+ GET / 200 in 54ms
+ ✓ Compiled in 397ms
+ ✓ Compiled / in 10ms
+ GET / 200 in 257ms
+ GET / 200 in 30ms
+ GET / 200 in 31ms
+ GET / 200 in 27ms
+ GET / 200 in 28ms
+ GET / 200 in 25ms
+ GET / 200 in 40ms
+ GET / 200 in 28ms
+ GET / 200 in 27ms
+ ✓ Compiled /_not-found/page in 141ms
+ GET /profile.jpg 404 in 551ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ ✓ Compiled in 383ms
+ ✓ Compiled / in 106ms
+ GET / 200 in 423ms
+ GET / 200 in 394ms
+ GET /profile.jpg 404 in 190ms
+ ⨯ The requested resource isn't a valid image for /profile.jpg received null
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 233ms
+ ✓ Compiled in 162ms
+ ✓ Compiled / in 43ms
+ GET / 200 in 186ms
+ ✓ Compiled in 216ms
+ ✓ Compiled / in 92ms
+ GET / 200 in 418ms
+ GET / 200 in 402ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 242ms
+ ✓ Compiled / in 22ms
+ GET / 200 in 151ms
+ GET / 200 in 241ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 242ms
+ ✓ Compiled in 156ms
+ ✓ Compiled in 112ms
+ ✓ Compiled / in 54ms
+ GET / 200 in 220ms
+ GET / 200 in 250ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 250ms
+ GET / 200 in 80ms
+ GET / 200 in 155ms
+ ✓ Compiled in 116ms
+ ✓ Compiled in 119ms
+ ✓ Compiled / in 55ms
+ GET / 200 in 206ms
+ ✓ Compiled in 50ms
+ ⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+   ▲ Next.js 15.5.3 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://104.39.177.136:3000
+
+ ✓ Starting...
+ ✓ Ready in 1033ms
+ ⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+   ▲ Next.js 15.5.3 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://104.39.177.136:3000
+
+ ✓ Starting...
+ ✓ Ready in 1777ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1599ms
+ GET / 200 in 1850ms
+ ✓ Compiled /favicon.ico in 160ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 436ms
+ ✓ Compiled / in 18ms
+ GET / 200 in 75ms
+ ✓ Compiled in 138ms
+ ✓ Compiled / in 17ms
+ GET / 200 in 91ms
+ ⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+   ▲ Next.js 15.5.3 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://104.39.177.136:3000
+
+ ✓ Starting...
+ ✓ Ready in 1089ms
+ ⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+   ▲ Next.js 15.5.3 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://104.39.177.136:3000
+
+ ✓ Starting...
+ ✓ Ready in 1531ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1739ms
+ GET / 200 in 1997ms
+ ✓ Compiled /favicon.ico in 135ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 413ms
+ GET / 200 in 79ms
+ GET / 200 in 169ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 265ms
+ GET / 200 in 88ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 233ms
+ GET / 200 in 63ms
+ ✓ Compiled in 179ms
+ ✓ Compiled in 157ms
+ GET / 200 in 469ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 231ms
+ GET / 200 in 99ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 266ms
+ ✓ Compiled in 135ms
+ GET / 200 in 428ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 316ms
+ ✓ Compiled in 110ms
+ ✓ Compiled in 81ms
+ GET / 200 in 168ms
+ GET / 200 in 58ms
+ GET / 200 in 56ms
+ GET / 200 in 54ms
+ GET / 200 in 53ms
+ GET / 200 in 58ms
+ ✓ Compiled /_not-found/page in 490ms
+ GET /Joel-Torres-Resume.pdf 404 in 650ms
+ GET / 200 in 54ms
+ ✓ Compiled in 106ms
+ ✓ Compiled / in 17ms
+ GET / 200 in 109ms
+ ✓ Compiled in 171ms
+ ✓ Compiled in 56ms
+ ✓ Compiled in 57ms
+ ✓ Compiled / in 50ms
+ GET / 200 in 263ms
+ GET / 200 in 366ms
+ ✓ Compiled in 116ms
+ GET / 200 in 228ms
+ ⨯ upstream image response failed for https://d36vu4awtdgnqw.cloudfront.net/1y4cd%2Fpreview%2F71166130%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=&Expires=1758648399&Signature=RhoaiTGj6bpjXm7-Q44E30MGUhpWQb5~whR1Xxl1A7hfO21OlYB5sloRyKdKVfSO0B~Jnx6uMq7EndHSliE1nLLg-oIanAj8~nn-H0WI3QznqD~s66NXB4-~TxeJri9Lvs0RyafGXCSKQlp26ixaSyVNGXK5uF2e2pX6l0n4IO4Wekhwg-3-hZwvAz8zJO2twql0hBGkpEcgjslaqEMVPLTYh62gIOWmw8cshWKOPAM1Hq-E0qPRAa9gNGkKtSDuIDI2XCNl2FvMESWrSyNLMocNq~YJSFxRyrFJ8Ho4EWtyUBAgJkoAnybcXY36vanTgYCXPCo76dJ8m2btM15y4Q__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ 403
+[Error: "url" parameter is valid but upstream response is invalid] {
+  statusCode: 403
+}
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 278ms
+ ✓ Compiled in 106ms
+ ✓ Compiled in 142ms
+ GET / 200 in 230ms
+ GET / 200 in 64ms
+ GET / 200 in 44ms
+ GET / 200 in 53ms
+ GET / 200 in 55ms
+ GET / 200 in 57ms
+ ✓ Compiled in 535ms
+ ✓ Compiled in 83ms
+ ✓ Compiled in 193ms
+ ✓ Compiled / in 101ms
+ GET / 200 in 369ms
+ GET / 200 in 113ms
+ GET / 200 in 383ms
+ ⨯ upstream image response failed for https://d36vu4awtdgnqw.cloudfront.net/1y4cd%2Fpreview%2F71166130%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=&Expires=1758648399&Signature=RhoaiTGj6bpjXm7-Q44E30MGUhpWQb5~whR1Xxl1A7hfO21OlYB5sloRyKdKVfSO0B~Jnx6uMq7EndHSliE1nLLg-oIanAj8~nn-H0WI3QznqD~s66NXB4-~TxeJri9Lvs0RyafGXCSKQlp26ixaSyVNGXK5uF2e2pX6l0n4IO4Wekhwg-3-hZwvAz8zJO2twql0hBGkpEcgjslaqEMVPLTYh62gIOWmw8cshWKOPAM1Hq-E0qPRAa9gNGkKtSDuIDI2XCNl2FvMESWrSyNLMocNq~YJSFxRyrFJ8Ho4EWtyUBAgJkoAnybcXY36vanTgYCXPCo76dJ8m2btM15y4Q__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ 403
+[Error: "url" parameter is valid but upstream response is invalid] {
+  statusCode: 403
+}
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 252ms
+ ✓ Compiled in 246ms
+ ✓ Compiled / in 18ms
+ GET / 200 in 176ms
+ ✓ Compiled / in 28ms
+ GET / 200 in 332ms
+ ✓ Compiled / in 27ms
+ GET / 200 in 221ms
+ ✓ Compiled / in 14ms
+ GET / 200 in 125ms
+ ✓ Compiled / in 21ms
+ GET / 200 in 176ms
+ GET / 200 in 87ms
+ GET / 200 in 170ms
+ GET / 200 in 173ms
+ GET / 200 in 84ms
+ ✓ Compiled in 181ms
+ ✓ Compiled / in 32ms
+ GET / 200 in 209ms
+ ✓ Compiled in 396ms
+ ✓ Compiled / in 58ms
+ GET / 200 in 570ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 260ms
+ ✓ Compiled / in 25ms
+ ⨯ [Error: Invalid src prop (https://d1mrnwe9chdcuv.cloudfront.net/w5izld%2Fpreview%2F71178894%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=&Expires=1758667885&Signature=DUqbPj1QGqJOv1kJZTIJfvPw3no~Oox-QqSS4DkRFQyDRDPEYYTqaOApsGJQv0Qe~gJivFhm-GhISDy~5zpWqfVtlRDY50uVWW54ypbOxtPnCeQSL7nArhe5WsCAPYJRXuDc4gR4NsI7Ixh4iwYh9PYigfz2iMMOPuUQ73DC8zTj0n-RGm0~ul~PUHwnmXftpn9i92bdWcP0cv~YNIHT0c71QLmFJ-8zkxmWLPmvHgPaX1V9rUYzUgvpB7jYWxw0MMIbXXTZj3a9qeUQVfLLu4BJzuN136fmICOMRdFrEKF4KAmdCqVKtHchHsEhXu-HbRn3V69yGDb9BhRxZjIzIg__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ) on `next/image`, hostname "d1mrnwe9chdcuv.cloudfront.net" is not configured under images in your `next.config.js`
+See more info: https://nextjs.org/docs/messages/next-image-unconfigured-host] {
+  digest: '3230841711'
+}
+ GET / 500 in 571ms
+ ⨯ upstream image response failed for https://d36vu4awtdgnqw.cloudfront.net/1y4cd%2Fpreview%2F71166130%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=&Expires=1758648399&Signature=RhoaiTGj6bpjXm7-Q44E30MGUhpWQb5~whR1Xxl1A7hfO21OlYB5sloRyKdKVfSO0B~Jnx6uMq7EndHSliE1nLLg-oIanAj8~nn-H0WI3QznqD~s66NXB4-~TxeJri9Lvs0RyafGXCSKQlp26ixaSyVNGXK5uF2e2pX6l0n4IO4Wekhwg-3-hZwvAz8zJO2twql0hBGkpEcgjslaqEMVPLTYh62gIOWmw8cshWKOPAM1Hq-E0qPRAa9gNGkKtSDuIDI2XCNl2FvMESWrSyNLMocNq~YJSFxRyrFJ8Ho4EWtyUBAgJkoAnybcXY36vanTgYCXPCo76dJ8m2btM15y4Q__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ 403
+[Error: "url" parameter is valid but upstream response is invalid] {
+  statusCode: 403
+}
+ GET /favicon.ico 200 in 260ms
+ ○ Compiling /blog ...
+ ✓ Compiled /blog in 585ms
+ GET /blog 200 in 687ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 268ms
+ GET /blog 200 in 53ms
+ GET /blog 200 in 58ms
+ GET /blog 200 in 53ms
+ GET /blog 200 in 43ms
+ GET / 200 in 70ms
+[32728:0923/184340.157855:ERROR:node_bindings.cc(381)] Most NODE_OPTIONs are not supported in packaged apps. See documentation for more details.
+[32728:0923/184340.157908:ERROR:node_bindings.cc(381)] Most NODE_OPTIONs are not supported in packaged apps. See documentation for more details.
+[32740:0923/184340.900506:ERROR:node_bindings.cc(381)] Most NODE_OPTIONs are not supported in packaged apps. See documentation for more details.
+[32740:0923/184340.900530:ERROR:node_bindings.cc(381)] Most NODE_OPTIONs are not supported in packaged apps. See documentation for more details.
+[33224:0923/184453.831518:ERROR:node_bindings.cc(381)] Most NODE_OPTIONs are not supported in packaged apps. See documentation for more details.
+[33224:0923/184453.831745:ERROR:node_bindings.cc(381)] Most NODE_OPTIONs are not supported in packaged apps. See documentation for more details.
+[33226:0923/184453.938499:ERROR:node_bindings.cc(381)] Most NODE_OPTIONs are not supported in packaged apps. See documentation for more details.
+[33226:0923/184453.938523:ERROR:node_bindings.cc(381)] Most NODE_OPTIONs are not supported in packaged apps. See documentation for more details.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 477ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled / in 75ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.2duct11rdxk'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.2duct11rdxk'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.0u7w3iasi5'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.0u7w3iasi5'
+}
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 1237ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.8rtqtxytjsu'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.8rtqtxytjsu'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.96qg4qostt'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.96qg4qostt'
+}
+[Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.0u7w3iasi5'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.0u7w3iasi5'
+}
+[Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.2duct11rdxk'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.2duct11rdxk'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.71jgpruax3b'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.71jgpruax3b'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.nsrhi260xmk'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.nsrhi260xmk'
+}
+[Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.s1i9yy0px8a'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.s1i9yy0px8a'
+}
+[Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.bmmu1pa06c6'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.bmmu1pa06c6'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.xyphlr89q4c'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.xyphlr89q4c'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.vivow9macoj'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.vivow9macoj'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.6qqkqmi7mm3'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.6qqkqmi7mm3'
+}
+[Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.vivow9macoj'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.vivow9macoj'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.iyijkduszhl'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.iyijkduszhl'
+}
+[Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.35es4uph7mm'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.35es4uph7mm'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.q2y963ijkug'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.q2y963ijkug'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.fn4a8kesrsk'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.fn4a8kesrsk'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.xoezmkdhoni'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.xoezmkdhoni'
+}
+[Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.fn4a8kesrsk'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.fn4a8kesrsk'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.ouskq7uuixj'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.ouskq7uuixj'
+}
+[Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.hszjxizq3v'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.hszjxizq3v'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.a57v6szukck'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.a57v6szukck'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.ja9lad4giql'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.ja9lad4giql'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.951d44qzk9a'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.951d44qzk9a'
+}
+[Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.ja9lad4giql'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.ja9lad4giql'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.jlyi7dj451b'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.jlyi7dj451b'
+}
+[Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.8jr85rcj9yj'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.8jr85rcj9yj'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.5114sz0h0j9'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.5114sz0h0j9'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.urgbowqu0x'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.urgbowqu0x'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.nmnactctcts'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.nmnactctcts'
+}
+[Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.urgbowqu0x'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.urgbowqu0x'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.hebw7nmv6lm'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.hebw7nmv6lm'
+}
+[Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.qjsktbw8xa'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.qjsktbw8xa'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.xd8qmy78az'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.xd8qmy78az'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.19tme2aajhc'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.19tme2aajhc'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.o46lmqty2i'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.o46lmqty2i'
+}
+[Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.19tme2aajhc'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.19tme2aajhc'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.spyb23flpme'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.spyb23flpme'
+}
+[Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.exuc9yn8pzu'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.exuc9yn8pzu'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.88po9hnhp1t'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.88po9hnhp1t'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.zw172tp1fb9'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.zw172tp1fb9'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.ii8cwyuw2rc'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.ii8cwyuw2rc'
+}
+[Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.zw172tp1fb9'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.zw172tp1fb9'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.51hees0wvx6'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.51hees0wvx6'
+}
+[Error: ENOENT: no such file or directory, open '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.tf02y7h7is'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/joel.torres/portfolio/.next/static/development/_buildManifest.js.tmp.tf02y7h7is'
+}
+[?25h

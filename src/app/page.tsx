@@ -51,24 +51,24 @@ export default function Home() {
       <ScrollCue />
     </section>
 
-    <section id="about" className="py-28">
-      <Reveal>
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-12">
-            <h2 className="text-6xl font-extrabold tracking-tight leading-[0.95] mb-6">About me</h2>
-            <p className="text-foreground/80 text-lg max-w-2xl">
-              Hi, I&apos;m Joel Torres — an entrepreneurial Business Analytics & Information Systems student at Penn State with a growing interest in AI, automation, and backend systems.
-            </p>
-          </div>
-          
-          <div className="space-y-16">
-            {/* Before Section */}
-            <div className="grid gap-8 lg:grid-cols-2 items-center">
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
-                  <h3 className="text-2xl font-bold">Experience</h3>
-                </div>
+      <section id="about" className="py-28">
+        <Reveal>
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="mb-16 text-center">
+              <h2 className="text-6xl font-extrabold tracking-tight leading-[0.95] mb-6">About me</h2>
+              <p className="text-foreground/80 text-lg max-w-3xl mx-auto">
+                Hi, I&apos;m Joel Torres — an entrepreneurial Business Analytics & Information Systems student at Penn State with a growing interest in AI, automation, and backend systems.
+              </p>
+            </div>
+            
+            <div className="space-y-20">
+              {/* Experience Section */}
+              <div className="grid gap-12 lg:grid-cols-2 items-center">
+                <div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
+                    <h3 className="text-2xl font-bold">Experience</h3>
+                  </div>
                 <div className="space-y-4">
                   <div className="p-4 rounded-lg bg-white/5 border border-white/10">
                     <h4 className="font-semibold mb-2">Powerwashing & Door-to-Door Sales</h4>
@@ -84,7 +84,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="flex justify-center">
+              <div className="flex justify-center order-2 lg:order-2">
                 <div className="relative group">
                   {/* Glow effect background */}
                   <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-blue-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
@@ -112,12 +112,12 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Now Section */}
-            <div className="grid gap-8 lg:grid-cols-2 items-center">
+            {/* Ventures Section */}
+            <div className="grid gap-12 lg:grid-cols-2 items-center">
               <div className="flex justify-center order-2 lg:order-1">
                 <div className="relative group">
                   {/* Glow effect background */}
-                  <div className="absolute -inset-4 bg-gradient-to-r from-green-500/20 via-teal-500/20 to-green-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="absolute -inset-4 bg-gradient-to-r from-green-500/20 via-emerald-500/20 to-green-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
                   
                   {/* Main image container */}
                   <div className="relative w-80 h-80 rounded-2xl overflow-hidden bg-white/10 border border-white/20 shadow-2xl group-hover:shadow-green-500/25 transition-all duration-500 group-hover:scale-105">
@@ -140,7 +140,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="order-1 lg:order-2">
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center gap-3 mb-6">
                   <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                   <h3 className="text-2xl font-bold">Ventures</h3>
                 </div>
@@ -148,7 +148,7 @@ export default function Home() {
                   <div className="p-4 rounded-lg bg-white/5 border border-white/10">
                     <h4 className="font-semibold mb-2">Studying BA&IS at Penn State</h4>
                     <p className="text-foreground/80 text-sm">
-                      Currently pursuing Business Analytics & Information Systems, focusing on how data and technology can drive business decisions and create efficient systems.
+                      Currently pursuing Business Analytics & Information Systems at the Smeal College of Business, focusing on how data and technology can drive business decisions and create efficient systems.
                     </p>
                   </div>
                   <div className="p-4 rounded-lg bg-white/5 border border-white/10">
@@ -161,35 +161,29 @@ export default function Home() {
               </div>
             </div>
 
-            {/* After Section */}
-            <div className="grid gap-8 lg:grid-cols-2 items-center">
-              <div>
-                <div className="flex items-center gap-3 mb-4">
+            {/* Goals Section */}
+            <div className="grid gap-12 lg:grid-cols-2 items-center">
+              <div className="order-2 lg:order-1">
+                <div className="flex items-center gap-3 mb-6">
                   <div className="w-3 h-3 bg-purple-400 rounded-full"></div>
                   <h3 className="text-2xl font-bold">Goals</h3>
                 </div>
                 <div className="space-y-4">
                   <div className="p-4 rounded-lg bg-white/5 border border-white/10">
-                    <h4 className="font-semibold mb-2">Short-term Goals</h4>
+                    <h4 className="font-semibold mb-2">Future Goals</h4>
                     <p className="text-foreground/80 text-sm">
-                      Complete my BA&IS degree, gain more hands-on experience with AI and automation tools, and build a portfolio of impactful projects that solve real business problems.
+                      I plan to complete my BA&IS degree and continue building hands-on experience with AI and automation tools. My long-term vision is to help organizations implement systems that remove friction and deliver measurable results.
                     </p>
                   </div>
                   <div className="p-4 rounded-lg bg-white/5 border border-white/10">
-                    <h4 className="font-semibold mb-2">Long-term Vision</h4>
+                    <h4 className="font-semibold mb-2">Personal Goals</h4>
                     <p className="text-foreground/80 text-sm">
-                      Become a leader in business technology solutions, helping organizations implement AI and automation systems that remove friction and drive measurable results.
-                    </p>
-                  </div>
-                  <div className="p-4 rounded-lg bg-white/5 border border-white/10">
-                    <h4 className="font-semibold mb-2">Skills Application Plan</h4>
-                    <p className="text-foreground/80 text-sm">
-                      Combining my sales background with technical skills to bridge the gap between business needs and technology solutions, creating systems that actually work for real users.
+                      Staying physically fit and disciplined is an important goal for me. With 17 years of gymnastics experience, I've built consistency, hard work, and balance into my daily life.
                     </p>
                   </div>
                 </div>
               </div>
-              <div className="flex justify-center">
+              <div className="flex justify-center order-1 lg:order-2">
                 <div className="relative group">
                   {/* Glow effect background */}
                   <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-purple-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
@@ -197,7 +191,7 @@ export default function Home() {
                   {/* Main image container */}
                   <div className="relative w-80 h-80 rounded-2xl overflow-hidden bg-white/10 border border-white/20 shadow-2xl group-hover:shadow-purple-500/25 transition-all duration-500 group-hover:scale-105">
                     <Image
-                      src="https://d2kbz8dqbfngbz.cloudfront.net/r562wf%2Fpreview%2F71285262%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=image%2Fpng&Expires=1758929600&Signature=dekmASNwO8Ynxzks2xAv7rQAiV5yFNEFKIp-fd2zROOtbxkpEgvAGZ9DpyFjaRsNe3DDRo-GXBLQDams2Rt45Z5UYncaF5VU5FBaUfU47F4sugelmnJySxek0h9gOgo-uYUSZvt9ZzF8IFfKQMe8n45V7D~dEmfpqALGk4kXq6MRZraUwIwlEMztuHDX2dz05uvJG4vA4L8wr8-~WtnMd1YKEt1J41n9bS2Zgodj2iIs6~X95XaJjYcrK-QrN3vutSyQWh89m9FckS1WogU1l1HmDalTEjXNmpD0UhuStoehGbWdyPxy~IpdE5wlz2iuNKvajNDjYNwOwDjfLy1T9A__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ"
+                      src="https://d2c5tif9s6pex6.cloudfront.net/o54rmg%2Fpreview%2F71319856%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=image%2Fpng&Expires=1759089470&Signature=MN55GQS-bPWLMwA73Om8LZFwqWrDfpHAMUTFKr16-M~B~rcRKOGdi5nTsjUEHz3-QfHH2vbZPK~bI2wsaGM~bNa~H5wrMtwdBTZK6Up2n6ccx-Y0t0HjZzuypS9i0k02APoLVcWpgiw4bgNgjWS~FJ3KduG075qkp-cI~qBiFjny9GrnxGciKsrvHnIStQCgpVscLZWB0vL0G4bjnukwodeNhRCaZ9YfXveklk7TQHH~Upikfs7gsCth8jepn-OR9EZRxn3YrGJCY0whXmJCRbD8zcYjg9QiuOgdzF8onI-I~z21kcRpg17lNlMTj51C81xF4~h44U2EQaOvjs3imA__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ"
                       alt="Future goals and vision"
                       width={320}
                       height={320}

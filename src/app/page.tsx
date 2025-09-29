@@ -60,10 +60,10 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <p className="text-foreground/70">Hi, I'm Joel Torres,</p>
+          <p className="text-foreground/70">Hi, I&apos;m Joel Torres,</p>
           <h1 className="text-6xl font-extrabold tracking-tight">BA&IS Student</h1>
           <p className="mt-6 text-foreground/80 text-base lg:text-lg max-w-prose">
-            Joel Torres is exploring how AI, automation, and backend systems can streamline the way organizations work. As a BA&IS student at Penn State University, I'm focused on learning, building projects, and documenting the journey.
+            Joel Torres is exploring how AI, automation, and backend systems can streamline the way organizations work. As a BA&IS student at Penn State University, I&apos;m focused on learning, building projects, and documenting the journey.
           </p>
           <div className="mt-10 flex gap-3">
             <a
@@ -77,7 +77,7 @@ export default function Home() {
         </a>
         <a
               href="https://www.linkedin.com/in/joel-torres-psu/"
-              className="inline-flex items-center gap-2 rounded-2xl border px-5 py-3 text-sm font-medium hover:bg-white/5 dark:hover:bg.white/10 transition"
+              className="inline-flex items-center gap-2 rounded-2xl border px-5 py-3 text-sm font-medium hover:bg-white/5 dark:hover:bg-white/10 transition"
               aria-label="Connect on LinkedIn"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">

@@ -1013,3 +1013,44 @@ See more info: https://nextjs.org/docs/messages/next-image-unconfigured-host] {
 }
  ⨯ upstream image response failed for https://id-preview--fe1a8458-0fa4-49b8-8556-e879eaf54aad.lovable.app/assets/profile-headshot-Bv4Z_5Dq.jpg 404
  GET /favicon.ico?favicon.0b3bf435.ico 200 in 333ms
+ ⨯ upstream image response failed for https://d2c5tif9s6pex6.cloudfront.net/o54rmg%2Fpreview%2F71319856%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=image%2Fpng&Expires=1759089470&Signature=MN55GQS-bPWLMwA73Om8LZFwqWrDfpHAMUTFKr16-M~B~rcRKOGdi5nTsjUEHz3-QfHH2vbZPK~bI2wsaGM~bNa~H5wrMtwdBTZK6Up2n6ccx-Y0t0HjZzuypS9i0k02APoLVcWpgiw4bgNgjWS~FJ3KduG075qkp-cI~qBiFjny9GrnxGciKsrvHnIStQCgpVscLZWB0vL0G4bjnukwodeNhRCaZ9YfXveklk7TQHH~Upikfs7gsCth8jepn-OR9EZRxn3YrGJCY0whXmJCRbD8zcYjg9QiuOgdzF8onI-I~z21kcRpg17lNlMTj51C81xF4~h44U2EQaOvjs3imA__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ 403
+ ⨯ upstream image response failed for https://djfxe6plvdhbj.cloudfront.net/y40c3g%2Fpreview%2F71294688%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=image%2Fpng&Expires=1758978678&Signature=XU-cyzUVJr9RicFa7KZAedU4ScL6ZS6swFbLJO4JWOnyL4dDabFeQNEosiNjJPhLjcj5fQxyZU2fFEvHbYO8QGHCPXifALCZ-fNzz-g4Zd9goFFtnh5tE0NN-7yQHznXloTPV4jRqHeyEXgmPjkigKq457lxbXwomQNNZVuRdQgsZwFbYz12OE~YrxuNqpvGl8BdpiDhTYAGFY6Qx9pTm7XLsQo~xI-tJfBCkC9R1~l7P6TYlSlrecKfpBf-As43c~3KNo3H760zcH4FZvx8sGFEKe5yOQ4djB4SgezF~5JfRH6dVS1pbMwWgXqppvcWyjLk9XB3I8uC2OLXpRqy-g__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ 403
+ ⨯ upstream image response failed for https://d1cm8pklzi5us7.cloudfront.net/b5cs3g%2Fpreview%2F71295276%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=image%2Fpng&Expires=1758981367&Signature=JjEDibBze~4-2XfXQa9Dzb8nkXZTjcPqtjxBLmLZDqexBa-hb0QbjG9AutWTMBMpJ2ynFyYVCBL5MHs9UvbQI19N9~T-7qvIndb-bklfrhXopFUY3B3dxNsB4M~ucSkacoUNisvllvJZ4uqy2GaL0ZqO0U2hK7c111iqOXpgpfdc62xir-hXM8xS9uN4V7LC8b5bWf6lIo-sDu9u4nFS~1qpOp6smp3gszy~7dvIjNU17Er~uiNQu6l3JVDpLDn33qS8yrxYefUgm3Utfd9NwLVOs-mjQ4MHVQu-HvtAxiEfEnKNo1L5ffoRBRLbUn3aYOFofrtR5XTwPRtpKzqcMQ__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ 403
+ ⨯ upstream image response failed for https://d2kbz8dqbfngbz.cloudfront.net/r562wf%2Fpreview%2F71285262%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=image%2Fpng&Expires=1758929600&Signature=dekmASNwO8Ynxzks2xAv7rQAiV5yFNEFKIp-fd2zROOtbxkpEgvAGZ9DpyFjaRsNe3DDRo-GXBLQDams2Rt45Z5UYncaF5VU5FBaUfU47F4sugelmnJySxek0h9gOgo-uYUSZvt9ZzF8IFfKQMe8n45V7D~dEmfpqALGk4kXq6MRZraUwIwlEMztuHDX2dz05uvJG4vA4L8wr8-~WtnMd1YKEt1J41n9bS2Zgodj2iIs6~X95XaJjYcrK-QrN3vutSyQWh89m9FckS1WogU1l1HmDalTEjXNmpD0UhuStoehGbWdyPxy~IpdE5wlz2iuNKvajNDjYNwOwDjfLy1T9A__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ 403
+ ⨯ upstream image response failed for https://d27xfwajjnh0ta.cloudfront.net/l0a43g%2Fpreview%2F71294410%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=image%2Fpng&Expires=1758977463&Signature=TMcOu-9GN~yUJFK6~8NgjnS5er~Xow~M4xntSjB8rm-XDKU6hnglPAFHYq9tLGI~57LCGVfTYwH1zn3upFwC6Sbj0cxMVLjZymymkfcKSGcHCNm6MbTx3q-~PEVj3A-PKD-N1Haw-68Eh4LcorCdySeEcL3nGmGKzMphVcJYSBfu0RmpttwPf0PPV-r4~Dw0av4oEdWk1ALGDr2B2urUNhBlS2woVHKRweYQI2CxZ3LDo-9gl8OOaqOOD5ODrabib05ZZUOYBoGxBK1k9BqZdN1powssq0ArD3s31j5ckOQqz12ai-Kb1IwGdNkXlLYQlGRIE83nOzFmT2bvZzgNyA__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ 403
+ ⨯ upstream image response failed for https://d2jedw6aeswgqp.cloudfront.net/n4n93g%2Fpreview%2F71294603%2Fmain_full.png?response-content-disposition=inline%3Bfilename%3D%22main_full.png%22%3B&response-content-type=image%2Fpng&Expires=1758978268&Signature=WcOUMggpPrJuf9EwlDhPtelHq7vr0QALozw2tV5xmmZ19pSBsw07QM6z0HWSyY79sKSLZV~MV632otcDFfkwYQYzoGNsR3pinqasKsnY-nPKPLTmvIle6kxYNlxDLY0szK0-rS0WothhwRIDltoOQWlMSlvqP-nu3vyi6zu6yZSAHbITg~5b-C1Uep7Yl~SgRxqpW4FD-nXQ30xt3daFEjtHaGTq2Kz-BR6pf~gk7iRLb0cA7AeILFxYxZHa~vf1h1Wnl4sXiaFv~6I~lrQKaxRt3NFNTPgkf0F2AqWn6I5XNqIR5fEEzIjmXMc7mMwGAitZZYQlDlKMedkflLr8dA__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ 403
+[Error: "url" parameter is valid but upstream response is invalid] {
+  statusCode: 403
+}
+[Error: "url" parameter is valid but upstream response is invalid] {
+  statusCode: 403
+}
+[Error: "url" parameter is valid but upstream response is invalid] {
+  statusCode: 403
+}
+ GET / 200 in 832ms
+ ⨯ upstream image response failed for https://d2kbz8dqbfngbz.cloudfront.net/r562wf%2Fpreview%2F71285262%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=image%2Fpng&Expires=1758929600&Signature=dekmASNwO8Ynxzks2xAv7rQAiV5yFNEFKIp-fd2zROOtbxkpEgvAGZ9DpyFjaRsNe3DDRo-GXBLQDams2Rt45Z5UYncaF5VU5FBaUfU47F4sugelmnJySxek0h9gOgo-uYUSZvt9ZzF8IFfKQMe8n45V7D~dEmfpqALGk4kXq6MRZraUwIwlEMztuHDX2dz05uvJG4vA4L8wr8-~WtnMd1YKEt1J41n9bS2Zgodj2iIs6~X95XaJjYcrK-QrN3vutSyQWh89m9FckS1WogU1l1HmDalTEjXNmpD0UhuStoehGbWdyPxy~IpdE5wlz2iuNKvajNDjYNwOwDjfLy1T9A__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ 403
+[Error: "url" parameter is valid but upstream response is invalid] {
+  statusCode: 403
+}
+ ⨯ upstream image response failed for https://d2c5tif9s6pex6.cloudfront.net/o54rmg%2Fpreview%2F71319856%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=image%2Fpng&Expires=1759089470&Signature=MN55GQS-bPWLMwA73Om8LZFwqWrDfpHAMUTFKr16-M~B~rcRKOGdi5nTsjUEHz3-QfHH2vbZPK~bI2wsaGM~bNa~H5wrMtwdBTZK6Up2n6ccx-Y0t0HjZzuypS9i0k02APoLVcWpgiw4bgNgjWS~FJ3KduG075qkp-cI~qBiFjny9GrnxGciKsrvHnIStQCgpVscLZWB0vL0G4bjnukwodeNhRCaZ9YfXveklk7TQHH~Upikfs7gsCth8jepn-OR9EZRxn3YrGJCY0whXmJCRbD8zcYjg9QiuOgdzF8onI-I~z21kcRpg17lNlMTj51C81xF4~h44U2EQaOvjs3imA__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ 403
+[Error: "url" parameter is valid but upstream response is invalid] {
+  statusCode: 403
+}
+ ⨯ upstream image response failed for https://d1cm8pklzi5us7.cloudfront.net/b5cs3g%2Fpreview%2F71295276%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=image%2Fpng&Expires=1758981367&Signature=JjEDibBze~4-2XfXQa9Dzb8nkXZTjcPqtjxBLmLZDqexBa-hb0QbjG9AutWTMBMpJ2ynFyYVCBL5MHs9UvbQI19N9~T-7qvIndb-bklfrhXopFUY3B3dxNsB4M~ucSkacoUNisvllvJZ4uqy2GaL0ZqO0U2hK7c111iqOXpgpfdc62xir-hXM8xS9uN4V7LC8b5bWf6lIo-sDu9u4nFS~1qpOp6smp3gszy~7dvIjNU17Er~uiNQu6l3JVDpLDn33qS8yrxYefUgm3Utfd9NwLVOs-mjQ4MHVQu-HvtAxiEfEnKNo1L5ffoRBRLbUn3aYOFofrtR5XTwPRtpKzqcMQ__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ 403
+[Error: "url" parameter is valid but upstream response is invalid] {
+  statusCode: 403
+}
+ ⨯ upstream image response failed for https://d36vu4awtdgnqw.cloudfront.net/1y4cd%2Fpreview%2F71166130%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=&Expires=1758648399&Signature=RhoaiTGj6bpjXm7-Q44E30MGUhpWQb5~whR1Xxl1A7hfO21OlYB5sloRyKdKVfSO0B~Jnx6uMq7EndHSliE1nLLg-oIanAj8~nn-H0WI3QznqD~s66NXB4-~TxeJri9Lvs0RyafGXCSKQlp26ixaSyVNGXK5uF2e2pX6l0n4IO4Wekhwg-3-hZwvAz8zJO2twql0hBGkpEcgjslaqEMVPLTYh62gIOWmw8cshWKOPAM1Hq-E0qPRAa9gNGkKtSDuIDI2XCNl2FvMESWrSyNLMocNq~YJSFxRyrFJ8Ho4EWtyUBAgJkoAnybcXY36vanTgYCXPCo76dJ8m2btM15y4Q__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ 403
+[Error: "url" parameter is valid but upstream response is invalid] {
+  statusCode: 403
+}
+ ⨯ upstream image response failed for https://id-preview--fe1a8458-0fa4-49b8-8556-e879eaf54aad.lovable.app/assets/profile-headshot-Bv4Z_5Dq.jpg 404
+[Error: "url" parameter is valid but upstream response is invalid] {
+  statusCode: 404
+}
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 454ms
+ ⨯ upstream image response failed for https://d1mrnwe9chdcuv.cloudfront.net/w5izld%2Fpreview%2F71178894%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=&Expires=1758667885&Signature=DUqbPj1QGqJOv1kJZTIJfvPw3no~Oox-QqSS4DkRFQyDRDPEYYTqaOApsGJQv0Qe~gJivFhm-GhISDy~5zpWqfVtlRDY50uVWW54ypbOxtPnCeQSL7nArhe5WsCAPYJRXuDc4gR4NsI7Ixh4iwYh9PYigfz2iMMOPuUQ73DC8zTj0n-RGm0~ul~PUHwnmXftpn9i92bdWcP0cv~YNIHT0c71QLmFJ-8zkxmWLPmvHgPaX1V9rUYzUgvpB7jYWxw0MMIbXXTZj3a9qeUQVfLLu4BJzuN136fmICOMRdFrEKF4KAmdCqVKtHchHsEhXu-HbRn3V69yGDb9BhRxZjIzIg__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ 403
+[Error: "url" parameter is valid but upstream response is invalid] {
+  statusCode: 403
+}

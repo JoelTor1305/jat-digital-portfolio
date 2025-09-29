@@ -8,8 +8,9 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Joel Torres",
+    "alternateName": "Joel Torres AI",
     "jobTitle": "BA&IS Student",
-    "description": "Exploring AI, automation, and backend systems. Building projects and documenting the journey.",
+    "description": "Joel Torres - BA&IS Student at Penn State University exploring AI, automation, and backend systems. Building projects and documenting the journey.",
     "url": "https://jat-digital.netlify.app",
     "image": "https://jat-digital.netlify.app/images/profile-headshot.webp",
     "sameAs": [
@@ -21,10 +22,21 @@ export default function Home() {
       "Backend Systems", 
       "Web Development",
       "Business Automation",
-      "AI Agents"
+      "AI Agents",
+      "MIS",
+      "Penn State University"
     ],
     "alumniOf": "Pennsylvania State University",
-    "email": "joelatorres1305@gmail.com"
+    "email": "joelatorres1305@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pennsylvania",
+      "addressCountry": "US"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "JAT Digital"
+    }
   };
 
   return (
@@ -48,10 +60,10 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <p className="text-foreground/70">Hi, I’m Joel,</p>
+          <p className="text-foreground/70">Hi, I'm Joel Torres,</p>
           <h1 className="text-6xl font-extrabold tracking-tight">BA&IS Student</h1>
           <p className="mt-6 text-foreground/80 text-base lg:text-lg max-w-prose">
-            I’m exploring how AI, automation, and backend systems can streamline the way organizations work. Right now, I’m focused on learning, building projects, and documenting the journey.
+            Joel Torres is exploring how AI, automation, and backend systems can streamline the way organizations work. As a BA&IS student at Penn State University, I'm focused on learning, building projects, and documenting the journey.
           </p>
           <div className="mt-10 flex gap-3">
             <a

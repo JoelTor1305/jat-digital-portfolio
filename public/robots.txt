@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Joel Torres Portfolio - JAT Digital
+# Optimized for search engines
+
 Sitemap: https://jat-digital.netlify.app/sitemap.xml

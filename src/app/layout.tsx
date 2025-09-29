@@ -22,6 +22,12 @@ export const metadata: Metadata = {
   description: "Joel Torres - BA&IS Student exploring AI, automation, and backend systems. Building projects and documenting the journey.",
   keywords: [
     "Joel Torres",
+    "Joel Torres portfolio",
+    "Joel Torres AI",
+    "Joel Torres automation",
+    "Joel Torres developer",
+    "Joel Torres MIS",
+    "Joel Torres Penn State",
     "JAT Digital", 
     "AI automation",
     "backend systems",
@@ -30,7 +36,9 @@ export const metadata: Metadata = {
     "web development",
     "automation",
     "AI agents",
-    "business automation"
+    "business automation",
+    "Penn State University",
+    "BA&IS student"
   ],
   authors: [{ name: "Joel Torres" }],
   creator: "Joel Torres",
@@ -74,6 +82,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://jat-digital.netlify.app",
+  },
+  category: "Portfolio",
+  classification: "Joel Torres Portfolio - AI Automation Developer",
+  other: {
+    "google-site-verification": "your-google-verification-code", // Add your Google Search Console verification code
   },
 };
 

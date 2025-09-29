@@ -2,18 +2,28 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 // removed theme toggle
 
-const links: Array<{ href: string; label: string }> = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#blog", label: "Blog" },
-  { href: "#resume", label: "Resume" },
-  { href: "#contact", label: "Contacts" },
-];
-
 export function Navbar() {
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+  
+  const links = isHomePage ? [
+    { href: "#home", label: "Home" },
+    { href: "#about", label: "About" },
+    { href: "#projects", label: "Projects" },
+    { href: "/blog", label: "Blog" },
+    { href: "#resume", label: "Resume" },
+    { href: "#contact", label: "Contacts" },
+  ] : [
+    { href: "/", label: "Home" },
+    { href: "/#about", label: "About" },
+    { href: "/#projects", label: "Projects" },
+    { href: "/blog", label: "Blog" },
+    { href: "/#resume", label: "Resume" },
+    { href: "/#contact", label: "Contacts" },
+  ];
 
   return (
     <header className="w-full sticky top-0 z-30 bg-transparent">
@@ -30,16 +40,24 @@ export function Navbar() {
           />
           </Link>
           <div className="flex-1 flex items-center justify-center gap-6">
-            {links.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                className={"text-sm transition-colors hover:underline underline-offset-4 text-foreground/80"}
-                scroll
-              >
-                {label}
-              </Link>
-            ))}
+            {links.map(({ href, label }) => {
+              const isActive = (isHomePage && href.startsWith("#")) || 
+                              (!isHomePage && href === "/" && pathname === "/") ||
+                              (!isHomePage && href === "/blog" && pathname.startsWith("/blog"));
+              
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  className={`text-sm transition-colors hover:underline underline-offset-4 ${
+                    isActive ? "text-white font-semibold" : "text-foreground/80"
+                  }`}
+                  scroll
+                >
+                  {label}
+                </Link>
+              );
+            })}
           </div>
           <Link href="https://calendly.com/joelatorres1305/lets-chat" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium hover:bg-white/15 transition whitespace-nowrap">
             Book a Call

@@ -10,7 +10,7 @@ export default function Home() {
         <div className="flex justify-center lg:justify-start">
           <div className="rounded-full overflow-hidden" style={{ width: 440, height: 440 }}>
         <Image
-              src="https://id-preview--fe1a8458-0fa4-49b8-8556-e879eaf54aad.lovable.app/assets/profile-headshot-Bv4Z_5Dq.jpg"
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=880&h=880&fit=crop&crop=face"
               alt="Joel Torres headshot"
               width={880}
               height={880}
@@ -92,7 +92,7 @@ export default function Home() {
                   {/* Main image container */}
                   <div className="relative w-80 h-80 rounded-2xl overflow-hidden bg-white/10 border border-white/20 shadow-2xl group-hover:shadow-blue-500/25 transition-all duration-500 group-hover:scale-105">
                     <Image
-                      src="https://d2kbz8dqbfngbz.cloudfront.net/r562wf%2Fpreview%2F71285262%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=image%2Fpng&Expires=1758929600&Signature=dekmASNwO8Ynxzks2xAv7rQAiV5yFNEFKIp-fd2zROOtbxkpEgvAGZ9DpyFjaRsNe3DDRo-GXBLQDams2Rt45Z5UYncaF5VU5FBaUfU47F4sugelmnJySxek0h9gOgo-uYUSZvt9ZzF8IFfKQMe8n45V7D~dEmfpqALGk4kXq6MRZraUwIwlEMztuHDX2dz05uvJG4vA4L8wr8-~WtnMd1YKEt1J41n9bS2Zgodj2iIs6~X95XaJjYcrK-QrN3vutSyQWh89m9FckS1WogU1l1HmDalTEjXNmpD0UhuStoehGbWdyPxy~IpdE5wlz2iuNKvajNDjYNwOwDjfLy1T9A__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ"
+                      src="https://images.unsplash.com/photo-1581578731548-c6a0c3f2fcc0?w=320&h=320&fit=crop"
                       alt="Joel Torres powerwashing experience"
                       width={320}
                       height={320}
@@ -122,7 +122,7 @@ export default function Home() {
                   {/* Main image container */}
                   <div className="relative w-80 h-80 rounded-2xl overflow-hidden bg-white/10 border border-white/20 shadow-2xl group-hover:shadow-green-500/25 transition-all duration-500 group-hover:scale-105">
                     <Image
-                      src="https://d1cm8pklzi5us7.cloudfront.net/b5cs3g%2Fpreview%2F71295276%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=image%2Fpng&Expires=1758981367&Signature=JjEDibBze~4-2XfXQa9Dzb8nkXZTjcPqtjxBLmLZDqexBa-hb0QbjG9AutWTMBMpJ2ynFyYVCBL5MHs9UvbQI19N9~T-7qvIndb-bklfrhXopFUY3B3dxNsB4M~ucSkacoUNisvllvJZ4uqy2GaL0ZqO0U2hK7c111iqOXpgpfdc62xir-hXM8xS9uN4V7LC8b5bWf6lIo-sDu9u4nFS~1qpOp6smp3gszy~7dvIjNU17Er~uiNQu6l3JVDpLDn33qS8yrxYefUgm3Utfd9NwLVOs-mjQ4MHVQu-HvtAxiEfEnKNo1L5ffoRBRLbUn3aYOFofrtR5XTwPRtpKzqcMQ__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ"
+                      src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=320&h=320&fit=crop"
                       alt="Ventures and current projects"
                       width={320}
                       height={320}
@@ -191,7 +191,7 @@ export default function Home() {
                   {/* Main image container */}
                   <div className="relative w-80 h-80 rounded-2xl overflow-hidden bg-white/10 border border-white/20 shadow-2xl group-hover:shadow-purple-500/25 transition-all duration-500 group-hover:scale-105">
                     <Image
-                      src="https://d2c5tif9s6pex6.cloudfront.net/o54rmg%2Fpreview%2F71319856%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=image%2Fpng&Expires=1759089470&Signature=MN55GQS-bPWLMwA73Om8LZFwqWrDfpHAMUTFKr16-M~B~rcRKOGdi5nTsjUEHz3-QfHH2vbZPK~bI2wsaGM~bNa~H5wrMtwdBTZK6Up2n6ccx-Y0t0HjZzuypS9i0k02APoLVcWpgiw4bgNgjWS~FJ3KduG075qkp-cI~qBiFjny9GrnxGciKsrvHnIStQCgpVscLZWB0vL0G4bjnukwodeNhRCaZ9YfXveklk7TQHH~Upikfs7gsCth8jepn-OR9EZRxn3YrGJCY0whXmJCRbD8zcYjg9QiuOgdzF8onI-I~z21kcRpg17lNlMTj51C81xF4~h44U2EQaOvjs3imA__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ"
+                      src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=320&h=320&fit=crop"
                       alt="Future goals and vision"
                       width={320}
                       height={320}
@@ -226,7 +226,7 @@ export default function Home() {
         <div className="group cursor-pointer">
           <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 border border-white/10 aspect-video mb-4">
             <Image
-              src="https://d27xfwajjnh0ta.cloudfront.net/l0a43g%2Fpreview%2F71294410%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=image%2Fpng&Expires=1758977463&Signature=TMcOu-9GN~yUJFK6~8NgjnS5er~Xow~M4xntSjB8rm-XDKU6hnglPAFHYq9tLGI~57LCGVfTYwH1zn3upFwC6Sbj0cxMVLjZymymkfcKSGcHCNm6MbTx3q-~PEVj3A-PKD-N1Haw-68Eh4LcorCdySeEcL3nGmGKzMphVcJYSBfu0RmpttwPf0PPV-r4~Dw0av4oEdWk1ALGDr2B2urUNhBlS2woVHKRweYQI2CxZ3LDo-9gl8OOaqOOD5ODrabib05ZZUOYBoGxBK1k9BqZdN1powssq0ArD3s31j5ckOQqz12ai-Kb1IwGdNkXlLYQlGRIE83nOzFmT2bvZzgNyA__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ"
+              src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop"
               alt="Dan and Robin Ives A.I. Innovation Day Competition Winner"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -251,7 +251,7 @@ export default function Home() {
         <div className="group cursor-pointer">
           <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-green-500/20 via-teal-500/20 to-cyan-500/20 border border-white/10 aspect-video mb-4">
             <Image
-              src="https://djfxe6plvdhbj.cloudfront.net/y40c3g%2Fpreview%2F71294688%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=image%2Fpng&Expires=1758978678&Signature=XU-cyzUVJr9RicFa7KZAedU4ScL6ZS6swFbLJO4JWOnyL4dDabFeQNEosiNjJPhLjcj5fQxyZU2fFEvHbYO8QGHCPXifALCZ-fNzz-g4Zd9goFFtnh5tE0NN-7yQHznXloTPV4jRqHeyEXgmPjkigKq457lxbXwomQNNZVuRdQgsZwFbYz12OE~YrxuNqpvGl8BdpiDhTYAGFY6Qx9pTm7XLsQo~xI-tJfBCkC9R1~l7P6TYlSlrecKfpBf-As43c~3KNo3H760zcH4FZvx8sGFEKe5yOQ4djB4SgezF~5JfRH6dVS1pbMwWgXqppvcWyjLk9XB3I8uC2OLXpRqy-g__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ"
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
               alt="JAT Digital Automations"
               fill
               className="object-cover object-[center_top] group-hover:scale-105 transition-transform duration-300"
@@ -276,7 +276,7 @@ export default function Home() {
         <div className="group cursor-pointer">
           <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-orange-500/20 via-red-500/20 to-pink-500/20 border border-white/10 aspect-video mb-4">
             <Image
-              src="https://d2jedw6aeswgqp.cloudfront.net/n4n93g%2Fpreview%2F71294603%2Fmain_full.png?response-content-disposition=inline%3Bfilename%3D%22main_full.png%22%3B&response-content-type=image%2Fpng&Expires=1758978268&Signature=WcOUMggpPrJuf9EwlDhPtelHq7vr0QALozw2tV5xmmZ19pSBsw07QM6z0HWSyY79sKSLZV~MV632otcDFfkwYQYzoGNsR3pinqasKsnY-nPKPLTmvIle6kxYNlxDLY0szK0-rS0WothhwRIDltoOQWlMSlvqP-nu3vyi6zu6yZSAHbITg~5b-C1Uep7Yl~SgRxqpW4FD-nXQ30xt3daFEjtHaGTq2Kz-BR6pf~gk7iRLb0cA7AeILFxYxZHa~vf1h1Wnl4sXiaFv~6I~lrQKaxRt3NFNTPgkf0F2AqWn6I5XNqIR5fEEzIjmXMc7mMwGAitZZYQlDlKMedkflLr8dA__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ"
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
               alt="Brand Monetization - Professional Website & Sales Funnel"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -476,7 +476,7 @@ export default function Home() {
         <div className="order-2 lg:order-1">
           <div className="relative overflow-hidden rounded-xl bg-white/5 border border-white/10 aspect-[3/4] shadow-2xl">
             <Image
-              src="https://d1mrnwe9chdcuv.cloudfront.net/w5izld%2Fpreview%2F71178894%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D%22main_large.png%22%3B&response-content-type=&Expires=1758667885&Signature=DUqbPj1QGqJOv1kJZTIJfvPw3no~Oox-QqSS4DkRFQyDRDPEYYTqaOApsGJQv0Qe~gJivFhm-GhISDy~5zpWqfVtlRDY50uVWW54ypbOxtPnCeQSL7nArhe5WsCAPYJRXuDc4gR4NsI7Ixh4iwYh9PYigfz2iMMOPuUQ73DC8zTj0n-RGm0~ul~PUHwnmXftpn9i92bdWcP0cv~YNIHT0c71QLmFJ-8zkxmWLPmvHgPaX1V9rUYzUgvpB7jYWxw0MMIbXXTZj3a9qeUQVfLLu4BJzuN136fmICOMRdFrEKF4KAmdCqVKtHchHsEhXu-HbRn3V69yGDb9BhRxZjIzIg__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ"
+              src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=600&fit=crop"
               alt="Joel Torres Resume Preview"
               fill
               className="object-cover"

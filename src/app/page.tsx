@@ -310,7 +310,7 @@ export default function Home() {
         <div className="grid gap-8 lg:grid-cols-3">
           {/* Featured Post */}
           <div className="lg:col-span-2">
-            <div className="group cursor-pointer">
+            <Link href="/blog/building-with-ai-agents" className="group cursor-pointer block">
               <div className="relative overflow-hidden rounded-xl bg-white/5 border border-white/10 aspect-[16/9] mb-6">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -343,7 +343,7 @@ export default function Home() {
                 <span>•</span>
                 <span>AI, Development, Cursor</span>
               </div>
-            </div>
+            </Link>
           </div>
 
           {/* Sidebar */}
@@ -352,6 +352,12 @@ export default function Home() {
               {/* Recent Posts */}
               <div>
                 <h3 className="text-lg font-semibold mb-4">Recent Posts</h3>
+                <Link 
+                  href="/blog" 
+                  className="block text-sm text-foreground/60 hover:text-foreground/80 transition mb-4"
+                >
+                  View All Posts →
+                </Link>
                 <div className="space-y-4">
                   <div className="group cursor-pointer">
                     <div className="flex gap-3">

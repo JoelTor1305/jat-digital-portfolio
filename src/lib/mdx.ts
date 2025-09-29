@@ -5,6 +5,7 @@ import readingTime from "reading-time";
 
 export type PostFrontmatter = {
   title: string;
+  description?: string;
   date: string; // ISO
   excerpt?: string;
   tags?: string[];

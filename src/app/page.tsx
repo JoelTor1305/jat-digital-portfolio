@@ -324,7 +324,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="absolute top-4 left-4">
-                  <span className="bg-white/20 text-white text-xs px-3 py-1 rounded-full">Build Log</span>
+                  <span className="bg-white/20 text-white text-xs px-3 py-1 rounded-full">AI Development</span>
                 </div>
                 <div className="absolute top-4 right-4">
                   <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
@@ -334,14 +334,14 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-3 group-hover:text-white/90 transition">Building My First AI Automation System</h3>
-              <p className="text-foreground/70 mb-4 text-lg">A deep dive into the challenges and breakthroughs of creating an end-to-end automation workflow for nonprofit onboarding.</p>
+              <h3 className="text-2xl font-bold mb-3 group-hover:text-white/90 transition">Building My Portfolio with AI Agents: A Journey of Discovery</h3>
+              <p className="text-foreground/70 mb-4 text-lg">How I used Cursor and AI agents to build and deploy this website, and what I learned about the future of development.</p>
               <div className="flex items-center gap-4 text-sm text-foreground/60">
-                <span>Dec 15, 2024</span>
+                <span>Jan 25, 2024</span>
                 <span>•</span>
-                <span>8 min read</span>
+                <span>5 min read</span>
                 <span>•</span>
-                <span>AI, Automation</span>
+                <span>AI, Development, Cursor</span>
               </div>
             </div>
           </div>

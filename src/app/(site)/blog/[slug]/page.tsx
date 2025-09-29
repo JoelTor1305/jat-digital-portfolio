@@ -158,7 +158,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               if (paragraph.startsWith('*') && paragraph.endsWith('*')) {
                 return (
                   <p key={index} className="italic text-foreground/70">
-                    {paragraph.slice(1, -1)}
+                    {paragraph.slice(1, -1).replace(/&apos;/g, "'")}
                   </p>
                 );
               }
@@ -166,7 +166,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               // Regular paragraphs
               return (
                 <p key={index} className="text-foreground/90 leading-relaxed">
-                  {paragraph}
+                  {paragraph.replace(/&apos;/g, "'")}
                 </p>
               );
             })}

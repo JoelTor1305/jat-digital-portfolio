@@ -10,7 +10,7 @@ export default function Home() {
         <div className="flex justify-center lg:justify-start">
           <div className="rounded-full overflow-hidden" style={{ width: 440, height: 440 }}>
         <Image
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=880&h=880&fit=crop&crop=face"
+              src="/images/profile-headshot.webp"
               alt="Joel Torres headshot"
               width={880}
               height={880}
@@ -92,7 +92,7 @@ export default function Home() {
                   {/* Main image container */}
                   <div className="relative w-80 h-80 rounded-2xl overflow-hidden bg-white/10 border border-white/20 shadow-2xl group-hover:shadow-blue-500/25 transition-all duration-500 group-hover:scale-105">
                     <Image
-                      src="https://images.unsplash.com/photo-1581578731548-c6a0c3f2fcc0?w=320&h=320&fit=crop"
+                      src="/images/experience.webp"
                       alt="Joel Torres powerwashing experience"
                       width={320}
                       height={320}
@@ -122,7 +122,7 @@ export default function Home() {
                   {/* Main image container */}
                   <div className="relative w-80 h-80 rounded-2xl overflow-hidden bg-white/10 border border-white/20 shadow-2xl group-hover:shadow-green-500/25 transition-all duration-500 group-hover:scale-105">
                     <Image
-                      src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=320&h=320&fit=crop"
+                      src="/images/ventures.webp"
                       alt="Ventures and current projects"
                       width={320}
                       height={320}
@@ -191,7 +191,7 @@ export default function Home() {
                   {/* Main image container */}
                   <div className="relative w-80 h-80 rounded-2xl overflow-hidden bg-white/10 border border-white/20 shadow-2xl group-hover:shadow-purple-500/25 transition-all duration-500 group-hover:scale-105">
                     <Image
-                      src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=320&h=320&fit=crop"
+                      src="/images/goals.webp"
                       alt="Future goals and vision"
                       width={320}
                       height={320}
@@ -226,7 +226,7 @@ export default function Home() {
         <div className="group cursor-pointer">
           <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 border border-white/10 aspect-video mb-4">
             <Image
-              src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop"
+              src="/images/project-1.webp"
               alt="Dan and Robin Ives A.I. Innovation Day Competition Winner"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -251,7 +251,7 @@ export default function Home() {
         <div className="group cursor-pointer">
           <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-green-500/20 via-teal-500/20 to-cyan-500/20 border border-white/10 aspect-video mb-4">
             <Image
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+              src="/images/project-2.webp"
               alt="JAT Digital Automations"
               fill
               className="object-cover object-[center_top] group-hover:scale-105 transition-transform duration-300"
@@ -276,7 +276,7 @@ export default function Home() {
         <div className="group cursor-pointer">
           <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-orange-500/20 via-red-500/20 to-pink-500/20 border border-white/10 aspect-video mb-4">
             <Image
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+              src="/images/project-3.webp"
               alt="Brand Monetization - Professional Website & Sales Funnel"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -476,7 +476,7 @@ export default function Home() {
         <div className="order-2 lg:order-1">
           <div className="relative overflow-hidden rounded-xl bg-white/5 border border-white/10 aspect-[3/4] shadow-2xl">
             <Image
-              src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=600&fit=crop"
+              src="/images/resume-preview.webp"
               alt="Joel Torres Resume Preview"
               fill
               className="object-cover"

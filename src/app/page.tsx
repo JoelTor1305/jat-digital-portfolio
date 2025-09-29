@@ -178,7 +178,7 @@ export default function Home() {
                   <div className="p-4 rounded-lg bg-white/5 border border-white/10">
                     <h4 className="font-semibold mb-2">Personal Goals</h4>
                     <p className="text-foreground/80 text-sm">
-                      Staying physically fit and disciplined is an important goal for me. With 17 years of gymnastics experience, I've built consistency, hard work, and balance into my daily life.
+                      Staying physically fit and disciplined is an important goal for me. With 17 years of gymnastics experience, I&apos;ve built consistency, hard work, and balance into my daily life.
                     </p>
                   </div>
                 </div>
@@ -244,7 +244,7 @@ export default function Home() {
           </div>
           <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">FFC AI Onboarding System</h3>
           <p className="text-sm text-foreground/70 mb-2">Dan and Robin Ives A.I. Innovation Day - Competition Winner (March 2025)</p>
-          <p className="text-sm text-foreground/70">Developed a solo project addressing Free For Charity's 45+ client onboarding backlog using AI agents, APIs, and automation tools.</p>
+          <p className="text-sm text-foreground/70">Developed a solo project addressing Free For Charity&apos;s 45+ client onboarding backlog using AI agents, APIs, and automation tools.</p>
         </div>
 
         {/* Project 2 - FFC Technical Volunteer */}

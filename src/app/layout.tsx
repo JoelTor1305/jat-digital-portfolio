@@ -97,7 +97,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className="dark">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white min-h-screen`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased text-white min-h-screen`}>
         <Navbar />
         <div className="mx-auto max-w-6xl px-4 lg:px-8">
           <main>{children}</main>

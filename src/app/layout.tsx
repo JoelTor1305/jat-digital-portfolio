@@ -15,8 +15,66 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "JAT Digital",
+  title: {
+    default: "JAT Digital - Joel Torres Portfolio",
+    template: "%s | JAT Digital"
+  },
   description: "Joel Torres - BA&IS Student exploring AI, automation, and backend systems. Building projects and documenting the journey.",
+  keywords: [
+    "Joel Torres",
+    "JAT Digital", 
+    "AI automation",
+    "backend systems",
+    "MIS student",
+    "portfolio",
+    "web development",
+    "automation",
+    "AI agents",
+    "business automation"
+  ],
+  authors: [{ name: "Joel Torres" }],
+  creator: "Joel Torres",
+  publisher: "JAT Digital",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://jat-digital.netlify.app",
+    title: "JAT Digital - Joel Torres Portfolio",
+    description: "Joel Torres - BA&IS Student exploring AI, automation, and backend systems. Building projects and documenting the journey.",
+    siteName: "JAT Digital",
+    images: [
+      {
+        url: "/images/profile-headshot.webp",
+        width: 1200,
+        height: 630,
+        alt: "Joel Torres - JAT Digital Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JAT Digital - Joel Torres Portfolio",
+    description: "Joel Torres - BA&IS Student exploring AI, automation, and backend systems. Building projects and documenting the journey.",
+    images: ["/images/profile-headshot.webp"],
+    creator: "@joeltorres",
+  },
+  verification: {
+    google: "your-google-verification-code", // You can add this later
+  },
+  alternates: {
+    canonical: "https://jat-digital.netlify.app",
+  },
 };
 
 export default function RootLayout({

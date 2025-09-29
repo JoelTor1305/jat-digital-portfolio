@@ -1,12 +1,52 @@
 import { getPostBySlug, getAllPostSlugs } from "@/lib/mdx";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import type { Metadata } from "next";
 
 export async function generateStaticParams() {
   const slugs = getAllPostSlugs();
   return slugs.map((slug) => ({
     slug,
   }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+  
+  if (!post) {
+    return {
+      title: "Post Not Found",
+    };
+  }
+
+  return {
+    title: post.frontmatter.title,
+    description: post.frontmatter.description || post.frontmatter.excerpt,
+    keywords: post.frontmatter.tags,
+    authors: [{ name: "Joel Torres" }],
+    openGraph: {
+      title: post.frontmatter.title,
+      description: post.frontmatter.description || post.frontmatter.excerpt,
+      type: "article",
+      publishedTime: post.frontmatter.date,
+      authors: ["Joel Torres"],
+      images: [
+        {
+          url: "/images/profile-headshot.webp",
+          width: 1200,
+          height: 630,
+          alt: post.frontmatter.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.frontmatter.title,
+      description: post.frontmatter.description || post.frontmatter.excerpt,
+      images: ["/images/profile-headshot.webp"],
+    },
+  };
 }
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {

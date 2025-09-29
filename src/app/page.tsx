@@ -4,8 +4,35 @@ import { Reveal } from "@/components/Reveal";
 import { ScrollCue } from "@/components/ScrollCue";
 
 export default function Home() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Joel Torres",
+    "jobTitle": "BA&IS Student",
+    "description": "Exploring AI, automation, and backend systems. Building projects and documenting the journey.",
+    "url": "https://jat-digital.netlify.app",
+    "image": "https://jat-digital.netlify.app/images/profile-headshot.webp",
+    "sameAs": [
+      "https://www.linkedin.com/in/joel-torres-psu/",
+      "https://calendly.com/joelatorres1305/lets-chat"
+    ],
+    "knowsAbout": [
+      "AI Automation",
+      "Backend Systems", 
+      "Web Development",
+      "Business Automation",
+      "AI Agents"
+    ],
+    "alumniOf": "Pennsylvania State University",
+    "email": "joelatorres1305@gmail.com"
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
     <section id="home" className="relative min-h-[calc(100vh-80px)] flex items-center justify-center py-8">
       <div className="grid gap-10 lg:grid-cols-2 items-center w-full">
         <div className="flex justify-center lg:justify-start">

@@ -1,5 +1,30 @@
 import { getAllPosts } from "@/lib/mdx";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog & Notes",
+  description: "Documenting my journey, sharing learnings, and exploring ideas around AI, automation, and backend systems.",
+  openGraph: {
+    title: "Blog & Notes | JAT Digital",
+    description: "Documenting my journey, sharing learnings, and exploring ideas around AI, automation, and backend systems.",
+    type: "website",
+    images: [
+      {
+        url: "/images/profile-headshot.webp",
+        width: 1200,
+        height: 630,
+        alt: "JAT Digital Blog",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog & Notes | JAT Digital",
+    description: "Documenting my journey, sharing learnings, and exploring ideas around AI, automation, and backend systems.",
+    images: ["/images/profile-headshot.webp"],
+  },
+};
 
 export default function BlogPage() {
   const posts = getAllPosts();

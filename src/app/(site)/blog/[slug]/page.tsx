@@ -1,6 +1,7 @@
 import { getPostBySlug, getAllPostSlugs } from "@/lib/mdx";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export async function generateStaticParams() {
@@ -106,17 +107,12 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         {/* Featured image */}
         <div className="mb-12">
           <div className="relative overflow-hidden rounded-xl bg-white/5 border border-white/10 aspect-[16/9]">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20"></div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-10 h-10 text-white/60" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                  </svg>
-                </div>
-                <p className="text-sm text-white/60">Featured Image</p>
-              </div>
-            </div>
+            <Image
+              src="/images/blog-hero.png"
+              alt={post.frontmatter.title}
+              fill
+              className="object-cover"
+            />
           </div>
         </div>
 

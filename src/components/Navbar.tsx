@@ -13,14 +13,14 @@ export function Navbar() {
     { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
     { href: "#projects", label: "Projects" },
-    { href: "/blog", label: "Blog" },
+    { href: "#blog", label: "Blog" },
     { href: "#resume", label: "Resume" },
     { href: "#contact", label: "Contacts" },
   ] : [
     { href: "/", label: "Home" },
     { href: "/#about", label: "About" },
     { href: "/#projects", label: "Projects" },
-    { href: "/blog", label: "Blog" },
+    { href: "/#blog", label: "Blog" },
     { href: "/#resume", label: "Resume" },
     { href: "/#contact", label: "Contacts" },
   ];
@@ -42,8 +42,7 @@ export function Navbar() {
           <div className="flex-1 flex items-center justify-center gap-6">
             {links.map(({ href, label }) => {
               const isActive = (isHomePage && href.startsWith("#")) || 
-                              (!isHomePage && href === "/" && pathname === "/") ||
-                              (!isHomePage && href === "/blog" && pathname.startsWith("/blog"));
+                              (!isHomePage && href === "/" && pathname === "/");
               
               return (
                 <Link

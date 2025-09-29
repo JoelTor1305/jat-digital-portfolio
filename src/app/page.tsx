@@ -330,7 +330,18 @@ export default function Home() {
     <section id="blog" className="py-24">
       <div className="mb-8">
         <p className="text-sm text-foreground/60 mb-2">Latest Writing</p>
-        <h2 className="text-4xl font-bold tracking-tight mb-4">Blog & Notes</h2>
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-4xl font-bold tracking-tight">Blog & Notes</h2>
+          <Link 
+            href="/blog" 
+            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium hover:bg-white/15 transition whitespace-nowrap"
+          >
+            View All Posts
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
         <p className="text-foreground/80 max-w-2xl">Documenting my journey, sharing learnings, and exploring ideas around AI, automation, and backend systems.</p>
       </div>
       
@@ -340,17 +351,12 @@ export default function Home() {
           <div className="lg:col-span-2">
             <Link href="/blog/building-with-ai-agents" className="group cursor-pointer block">
               <div className="relative overflow-hidden rounded-xl bg-white/5 border border-white/10 aspect-[16/9] mb-6">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <svg className="w-10 h-10 text-white/60" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                      </svg>
-                    </div>
-                    <p className="text-sm text-white/60">Featured Post</p>
-                  </div>
-                </div>
+                <Image
+                  src="/images/blog-hero.png"
+                  alt="AI Agents Blog Post"
+                  fill
+                  className="object-cover"
+                />
                 <div className="absolute top-4 left-4">
                   <span className="bg-white/20 text-white text-xs px-3 py-1 rounded-full">AI Development</span>
                 </div>
@@ -380,12 +386,6 @@ export default function Home() {
               {/* Recent Posts */}
               <div>
                 <h3 className="text-lg font-semibold mb-4">Recent Posts</h3>
-                <Link 
-                  href="/blog" 
-                  className="block text-sm text-foreground/60 hover:text-foreground/80 transition mb-4"
-                >
-                  View All Posts →
-                </Link>
                 <div className="space-y-4">
                   <div className="group cursor-pointer">
                     <div className="flex gap-3">

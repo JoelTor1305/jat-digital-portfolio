@@ -147,7 +147,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium hover:bg-white/15 transition"
             >
-              Let's Connect
+              Let&apos;s Connect
             </Link>
           </div>
         </footer>

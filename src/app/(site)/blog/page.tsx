@@ -1,6 +1,5 @@
 import { getAllPosts } from "@/lib/mdx";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function BlogPage() {
   const posts = getAllPosts();

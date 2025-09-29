@@ -1,7 +1,6 @@
 import { getPostBySlug, getAllPostSlugs } from "@/lib/mdx";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 
 export async function generateStaticParams() {
   const slugs = getAllPostSlugs();

@@ -1,5 +1,6 @@
 import { getAllPosts } from "@/lib/mdx";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -46,12 +47,14 @@ export default function BlogPage() {
                 <div className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
                   <div className="flex gap-6">
                     <div className="flex-shrink-0">
-                      <div className="w-32 h-32 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-lg flex items-center justify-center">
-                        <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
-                          <svg className="w-6 h-6 text-white/60" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                          </svg>
-                        </div>
+                      <div className="w-32 h-32 rounded-lg overflow-hidden">
+                        <Image
+                          src="/images/blog-hero.png"
+                          alt={post.frontmatter.title}
+                          width={128}
+                          height={128}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                     </div>
                     <div className="flex-1">

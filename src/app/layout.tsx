@@ -19,6 +19,14 @@ export const metadata: Metadata = {
     default: "JAT Digital - Joel Torres Portfolio",
     template: "%s | JAT Digital"
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.ico", type: "image/x-icon" }
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico"
+  },
   description: "Joel Torres - BA&IS Student exploring AI, automation, and backend systems. Building projects and documenting the journey.",
   keywords: [
     "Joel Torres",
@@ -97,6 +105,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className="dark">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased text-white min-h-screen`}>
         <Navbar />
         <div className="mx-auto max-w-6xl px-4 lg:px-8">

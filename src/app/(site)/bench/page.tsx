@@ -25,11 +25,47 @@ export default function BenchPage() {
   const [date, setDate] = useState<string>("");
   const [weight, setWeight] = useState<string>("");
   const [reps, setReps] = useState<string>("");
+  const [notes, setNotes] = useState<string>("");
+  const [saving, setSaving] = useState(false);
+  const [saved, setSaved] = useState(false);
+  const [entries, setEntries] = useState<any[]>([]);
   const oneRm = useMemo(() => {
     const w = Number(weight || 0);
     const r = Number(reps || 0);
     return w > 0 && r > 0 ? Math.round(w * (1 + r / 30)) : 0;
   }, [weight, reps]);
+
+  useEffect(() => {
+    if (!authed) return;
+    fetch("/api/bench")
+      .then((r) => r.json())
+      .then((d) => setEntries(Array.isArray(d) ? d : []))
+      .catch(() => {});
+  }, [authed]);
+
+  async function submitEntry(e: React.FormEvent) {
+    e.preventDefault();
+    if (!date || !weight || !reps) return;
+    setSaving(true);
+    try {
+      const res = await fetch("/api/bench", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ date, weight: Number(weight), reps: Number(reps), notes }),
+      });
+      if (res.ok) {
+        const savedEntry = await res.json();
+        setSaved(true);
+        setTimeout(() => setSaved(false), 1500);
+        setEntries((prev) => [savedEntry, ...prev]);
+        setWeight("");
+        setReps("");
+        setNotes("");
+      }
+    } finally {
+      setSaving(false);
+    }
+  }
 
   return (
     <>
@@ -83,6 +119,37 @@ export default function BenchPage() {
               <div className="p-4 rounded-lg bg-white/5 border border-white/10">
                 <div className="text-sm text-foreground/60">Estimated 1RM</div>
                 <div className="text-3xl font-bold">{oneRm} lb</div>
+              </div>
+              <div>
+                <label className="block text-sm mb-1">Notes</label>
+                <textarea
+                  className="w-full rounded-md bg-white/5 border border-white/10 px-3 py-2"
+                  rows={3}
+                  value={notes}
+                  onChange={(e) => setNotes(e.target.value)}
+                  placeholder="Optional notes"
+                />
+              </div>
+              <div className="flex items-center gap-3">
+                <button onClick={submitEntry} disabled={saving} className="rounded-md bg-white/10 border border-white/20 px-4 py-2 text-sm">
+                  {saving ? "Saving..." : "Save Entry"}
+                </button>
+                {saved && <span className="text-green-400 text-sm">Saved</span>}
+              </div>
+              <div>
+                <h2 className="text-xl font-semibold mb-3">Recent Entries</h2>
+                <div className="space-y-2">
+                  {entries.map((e) => (
+                    <div key={e.id} className="p-3 rounded-md bg-white/5 border border-white/10 text-sm flex justify-between">
+                      <span>{e.date}</span>
+                      <span>{e.weight} x {e.reps}</span>
+                      <span>{e.oneRm} 1RM</span>
+                    </div>
+                  ))}
+                  {entries.length === 0 && (
+                    <p className="text-foreground/60 text-sm">No entries yet.</p>
+                  )}
+                </div>
               </div>
               <p className="text-foreground/70 text-sm">This page is hidden (noindex) and requires a passcode. Add NEXT_PUBLIC_BENCH_PASS to your .env.local.</p>
             </div>

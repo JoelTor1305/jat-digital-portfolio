@@ -2,14 +2,28 @@ import { NextResponse } from "next/server";
 import { promises as fsp } from "fs";
 import path from "path";
 
-type BenchEntry = {
-  id: string;
-  date: string; // ISO yyyy-mm-dd
+type SetData = {
+  setNumber: number;
+  repTarget: number;
   weight: number;
-  reps: number;
-  notes?: string;
-  oneRm: number;
-  createdAt: string; // ISO
+  repsCompleted: number;
+  rir: number;
+  barSpeed: "Fast" | "Moderate" | "Slow";
+  struggle: "Easy" | "Medium" | "Hard" | "Failure";
+  form: "Clean" | "Minor Breakdown" | "Major Breakdown";
+};
+
+type WorkoutSession = {
+  id: string;
+  date: string;
+  sets: SetData[];
+  totalVolume: number;
+  estimated1RM: number;
+  burnoutResults?: {
+    weight: number;
+    reps: number;
+    rir: number;
+  };
 };
 
 const DATA_DIR = path.join(process.cwd(), ".data");
@@ -24,67 +38,102 @@ async function ensureDataFile() {
   } catch {}
 }
 
-async function readAll(): Promise<BenchEntry[]> {
+async function readAll(): Promise<WorkoutSession[]> {
   await ensureDataFile();
   const raw = await fsp.readFile(DATA_FILE, "utf8");
   try {
-    return JSON.parse(raw) as BenchEntry[];
+    return JSON.parse(raw) as WorkoutSession[];
   } catch {
     return [];
   }
 }
 
-async function writeAll(entries: BenchEntry[]) {
+async function writeAll(sessions: WorkoutSession[]) {
   await ensureDataFile();
-  await fsp.writeFile(DATA_FILE, JSON.stringify(entries, null, 2), "utf8");
+  await fsp.writeFile(DATA_FILE, JSON.stringify(sessions, null, 2), "utf8");
 }
 
 export async function GET() {
-  const entries = await readAll();
-  // latest first
-  entries.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
-  return NextResponse.json(entries);
+  const sessions = await readAll();
+  // Latest first
+  sessions.sort((a, b) => b.date.localeCompare(a.date));
+  return NextResponse.json(sessions);
 }
 
 export async function POST(req: Request) {
   const body = await req.json().catch(() => ({}));
-  const { date, weight, reps, notes } = body ?? {};
+  
+  // Handle both old simple format and new workout session format
+  if (body.date && body.weight && body.reps) {
+    // Old simple format - convert to new format
+    const w = Number(body.weight);
+    const r = Number(body.reps);
+    if (!Number.isFinite(w) || !Number.isFinite(r) || w <= 0 || r <= 0) {
+      return NextResponse.json({ error: "weight and reps must be positive numbers" }, { status: 400 });
+    }
 
-  if (!date || typeof date !== "string") {
-    return NextResponse.json({ error: "date required (yyyy-mm-dd)" }, { status: 400 });
-  }
-  const w = Number(weight);
-  const r = Number(reps);
-  if (!Number.isFinite(w) || !Number.isFinite(r) || w <= 0 || r <= 0) {
-    return NextResponse.json({ error: "weight and reps must be positive numbers" }, { status: 400 });
+    const oneRm = Math.round(w * (1 + r / 30));
+    const session: WorkoutSession = {
+      id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+      date: body.date,
+      sets: [{
+        setNumber: 1,
+        repTarget: 0,
+        weight: w,
+        repsCompleted: r,
+        rir: 0,
+        barSpeed: "Moderate",
+        struggle: "Medium",
+        form: "Clean",
+      }],
+      totalVolume: w * r,
+      estimated1RM: oneRm,
+    };
+
+    const all = await readAll();
+    all.push(session);
+    await writeAll(all);
+
+    // Optional: forward to n8n webhook
+    const webhook = process.env.N8N_WEBHOOK_URL || process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL;
+    if (webhook) {
+      fetch(webhook, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(session),
+      }).catch(() => {});
+    }
+
+    return NextResponse.json(session, { status: 201 });
   }
 
-  const oneRm = Math.round(w * (1 + r / 30));
-  const entry: BenchEntry = {
-    id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
-    date,
-    weight: w,
-    reps: r,
-    notes: typeof notes === "string" && notes.trim() ? notes.trim() : undefined,
-    oneRm,
-    createdAt: new Date().toISOString(),
+  // New workout session format
+  if (!body.id || !body.date || !Array.isArray(body.sets)) {
+    return NextResponse.json({ error: "Invalid workout session format" }, { status: 400 });
+  }
+
+  const session: WorkoutSession = {
+    id: body.id,
+    date: body.date,
+    sets: body.sets,
+    totalVolume: body.totalVolume || 0,
+    estimated1RM: body.estimated1RM || 0,
+    burnoutResults: body.burnoutResults,
   };
 
   const all = await readAll();
-  all.push(entry);
+  all.push(session);
   await writeAll(all);
 
-  // Optional: forward to n8n webhook if provided
+  // Optional: forward to n8n webhook
   const webhook = process.env.N8N_WEBHOOK_URL || process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL;
   if (webhook) {
     fetch(webhook, {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(entry),
+      body: JSON.stringify(session),
     }).catch(() => {});
   }
 
-  return NextResponse.json(entry, { status: 201 });
+  return NextResponse.json(session, { status: 201 });
 }
-
-

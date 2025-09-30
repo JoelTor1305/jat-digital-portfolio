@@ -79,32 +79,69 @@ export default function BenchPage() {
     setMode("workout");
     setCurrentSet(0);
     setWorkoutData([]);
+    
+    // Auto-fill first set
+    setTimeout(() => {
+      autoFillAll();
+    }, 100);
   }
 
   function submitSet() {
-    if (!weight || !reps || !rir) return;
+    if (!weight || !reps) return;
+    if (!isBurnoutSet && !rir) return; // RIR required for non-burnout sets
 
     const setData: SetData = {
       setNumber: currentSet + 1,
       repTarget: currentSet < REP_TARGETS.length ? REP_TARGETS[currentSet] : 0, // 0 for burnout
       weight: Number(weight),
       repsCompleted: Number(reps),
-      rir: Number(rir),
+      rir: isBurnoutSet ? 0 : Number(rir), // Always 0 for burnout sets
       barSpeed,
       struggle,
       form,
     };
 
+    // Check if user hit the target reps
+    const targetReps = currentSet < REP_TARGETS.length ? REP_TARGETS[currentSet] : 8; // 8 for burnout
+    const hitTarget = Number(reps) >= targetReps;
+    
+    // Show feedback based on performance
+    if (!hitTarget) {
+      const recommended = getRecommendedWeights();
+      const currentRepTarget = isBurnoutSet ? "burnout" : REP_TARGETS[currentSet];
+      const suggestedWeight = recommended[currentRepTarget];
+      
+      if (Number(weight) > suggestedWeight) {
+        alert(`💡 Coach Note: You used ${weight} lbs but only hit ${reps} reps (target: ${targetReps}). Consider reducing to ${suggestedWeight} lbs next time for better form and target completion.`);
+      } else {
+        alert(`💪 Good effort! You hit ${reps} reps with ${weight} lbs. The coach will adjust your next workout based on this performance.`);
+      }
+    } else {
+      alert(`🎯 Excellent! You hit ${reps} reps with ${weight} lbs. The coach will increase your weight for next workout!`);
+    }
+
     setWorkoutData(prev => [...prev, setData]);
     setCurrentSet(prev => prev + 1);
     
-    // Clear form
+    // Check if this was the final set (burnout)
+    if (currentSet >= REP_TARGETS.length) {
+      // This was the burnout set - finish the workout
+      finishWorkout();
+      return;
+    }
+    
+    // Clear form and auto-fill next set
     setWeight("");
     setReps("");
     setRir("");
     setBarSpeed("Moderate");
     setStruggle("Medium");
     setForm("Clean");
+    
+    // Auto-fill next set
+    setTimeout(() => {
+      autoFillAll();
+    }, 100);
   }
 
   async function finishWorkout() {
@@ -153,6 +190,107 @@ export default function BenchPage() {
     const nextWeight = topSet.weight + (topSet.struggle === "Easy" ? 5 : topSet.struggle === "Medium" ? 2.5 : 0);
     
     return `Next workout: Start with ${nextWeight}lbs for your top set. Focus on ${topSet.form === "Major Breakdown" ? "form improvement" : "progressive overload"}.`;
+  }
+
+  function getRecommendedWeights() {
+    if (sessions.length === 0) {
+      // Default starting weights for first workout
+      return {
+        10: 135,
+        8: 145,
+        6: 155,
+        4: 165,
+        2: 175,
+        burnout: 135
+      };
+    }
+
+    const lastSession = sessions[0];
+    const lastSets = lastSession.sets;
+    
+    // Calculate progression based on last performance
+    const progression = {
+      10: 0,
+      8: 0,
+      6: 0,
+      4: 0,
+      2: 0,
+      burnout: 0
+    };
+
+    // Find last set for each rep target
+    const lastWeights = {
+      10: 135,
+      8: 145,
+      6: 155,
+      4: 165,
+      2: 175,
+      burnout: 135
+    };
+
+    lastSets.forEach(set => {
+      if (set.repTarget > 0) {
+        lastWeights[set.repTarget] = set.weight;
+        
+        // Calculate progression based on struggle and RIR
+        let increase = 0;
+        if (set.struggle === "Easy" && set.rir >= 2) {
+          increase = 5; // Big jump for easy sets
+        } else if (set.struggle === "Easy" && set.rir === 1) {
+          increase = 2.5; // Moderate jump
+        } else if (set.struggle === "Medium" && set.rir >= 2) {
+          increase = 2.5; // Small jump
+        } else if (set.struggle === "Medium" && set.rir === 1) {
+          increase = 0; // Stay same
+        } else if (set.struggle === "Hard" || set.rir === 0) {
+          increase = -2.5; // Reduce weight
+        }
+        
+        progression[set.repTarget] = increase;
+      } else {
+        // Burnout set
+        lastWeights.burnout = set.weight;
+        if (set.struggle === "Easy" && set.rir >= 2) {
+          progression.burnout = 5;
+        } else if (set.struggle === "Medium" && set.rir >= 1) {
+          progression.burnout = 2.5;
+        } else if (set.struggle === "Hard" || set.rir === 0) {
+          progression.burnout = -2.5;
+        }
+      }
+    });
+
+    // Calculate recommended weights
+    return {
+      10: Math.max(95, lastWeights[10] + progression[10]),
+      8: Math.max(105, lastWeights[8] + progression[8]),
+      6: Math.max(115, lastWeights[6] + progression[6]),
+      4: Math.max(125, lastWeights[4] + progression[4]),
+      2: Math.max(135, lastWeights[2] + progression[2]),
+      burnout: Math.max(95, lastWeights.burnout + progression.burnout)
+    };
+  }
+
+  function autoFillWeight() {
+    const recommended = getRecommendedWeights();
+    const currentRepTarget = isBurnoutSet ? "burnout" : REP_TARGETS[currentSet];
+    const suggestedWeight = recommended[currentRepTarget];
+    
+    setWeight(suggestedWeight.toString());
+  }
+
+  function autoFillReps() {
+    const targetReps = isBurnoutSet ? 8 : REP_TARGETS[currentSet]; // 8 for burnout as default
+    setReps(targetReps.toString());
+  }
+
+  function autoFillAll() {
+    autoFillWeight();
+    autoFillReps();
+    // Set RIR to 0 for burnout sets
+    if (isBurnoutSet) {
+      setRir("0");
+    }
   }
 
   if (!authed) {
@@ -224,7 +362,21 @@ export default function BenchPage() {
             {/* Coach Recommendation */}
             <div className="p-6 rounded-lg bg-green-500/10 border border-green-500/20 mb-8">
               <h3 className="text-lg font-semibold mb-2">💡 Coach Recommendation</h3>
-              <p className="text-foreground/80">{getCoachRecommendation()}</p>
+              <p className="text-foreground/80 mb-4">{getCoachRecommendation()}</p>
+              
+              {sessions.length > 0 && (
+                <div className="mt-4">
+                  <h4 className="text-sm font-medium mb-2">Next Workout Weights:</h4>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm">
+                    {Object.entries(getRecommendedWeights()).map(([reps, weight]) => (
+                      <div key={reps} className="flex justify-between p-2 rounded bg-white/5">
+                        <span>{reps === "burnout" ? "Burnout" : `${reps} reps`}:</span>
+                        <span className="font-medium">{weight} lbs</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Recent Sessions */}
@@ -289,12 +441,24 @@ export default function BenchPage() {
             <h2 className="text-lg font-semibold mb-2">
               {isBurnoutSet ? "🔥 Burnout Set" : `Target: ${currentRepTarget} reps`}
             </h2>
-            <p className="text-sm text-foreground/70">
+            <p className="text-sm text-foreground/70 mb-3">
               {isBurnoutSet 
                 ? "Go to failure or near failure. Use a weight you can do 8-12 reps with good form."
                 : `Aim for ${currentRepTarget} reps with 1-2 reps in reserve.`
               }
             </p>
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={autoFillAll}
+                className="px-3 py-1 rounded-md bg-blue-500/20 border border-blue-500/30 text-sm hover:bg-blue-500/30 transition"
+              >
+                💡 Auto-fill All
+              </button>
+              <span className="text-sm text-foreground/60">
+                Suggested: {getRecommendedWeights()[isBurnoutSet ? "burnout" : REP_TARGETS[currentSet]]} lbs × {isBurnoutSet ? "8" : REP_TARGETS[currentSet]} reps
+              </span>
+            </div>
           </div>
 
           <form onSubmit={(e) => { e.preventDefault(); submitSet(); }} className="space-y-6">
@@ -317,26 +481,41 @@ export default function BenchPage() {
                   className="w-full rounded-md bg-white/5 border border-white/10 px-3 py-2"
                   value={reps}
                   onChange={(e) => setReps(e.target.value)}
-                  placeholder="8"
+                  placeholder={isBurnoutSet ? "8" : REP_TARGETS[currentSet].toString()}
                   required
                 />
+                <p className="text-xs text-foreground/60 mt-1">
+                  Target: {isBurnoutSet ? "8-12 reps" : `${REP_TARGETS[currentSet]} reps`}
+                </p>
               </div>
             </div>
 
-            <div>
-              <label className="block text-sm mb-2">Reps in Reserve (RIR)</label>
-              <input
-                type="number"
-                className="w-full rounded-md bg-white/5 border border-white/10 px-3 py-2"
-                value={rir}
-                onChange={(e) => setRir(e.target.value)}
-                placeholder="2"
-                min="0"
-                max="5"
-                required
-              />
-              <p className="text-xs text-foreground/60 mt-1">How many more reps could you have done?</p>
-            </div>
+            {!isBurnoutSet && (
+              <div>
+                <label className="block text-sm mb-2">Reps in Reserve (RIR)</label>
+                <input
+                  type="number"
+                  className="w-full rounded-md bg-white/5 border border-white/10 px-3 py-2"
+                  value={rir}
+                  onChange={(e) => setRir(e.target.value)}
+                  placeholder="2"
+                  min="0"
+                  max="5"
+                  required
+                />
+                <p className="text-xs text-foreground/60 mt-1">How many more reps could you have done?</p>
+              </div>
+            )}
+            
+            {isBurnoutSet && (
+              <div>
+                <label className="block text-sm mb-2">Reps in Reserve (RIR)</label>
+                <div className="w-full rounded-md bg-white/5 border border-white/10 px-3 py-2 text-foreground/60">
+                  0 (Failure Set)
+                </div>
+                <p className="text-xs text-foreground/60 mt-1">Burnout sets go to failure - no reps left in reserve</p>
+              </div>
+            )}
 
             <div>
               <label className="block text-sm mb-2">Bar Speed</label>
@@ -405,7 +584,7 @@ export default function BenchPage() {
               >
                 {currentSet < REP_TARGETS.length ? "Next Set" : "Complete Workout"}
               </button>
-              {currentSet > 0 && (
+              {currentSet > 0 && currentSet < REP_TARGETS.length && (
                 <button
                   type="button"
                   onClick={finishWorkout}

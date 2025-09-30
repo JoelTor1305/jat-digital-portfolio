@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog`, lastModified: now },
     { url: `${base}/resume`, lastModified: now },
     { url: `${base}/contact`, lastModified: now },
+    // bench is intentionally excluded (private)
     ...posts,
   ];
 }

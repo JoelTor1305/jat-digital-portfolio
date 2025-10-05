@@ -34,7 +34,7 @@ export function Navbar() {
           {/* Mobile: Centered Logo with hamburger space accounted for */}
           <div className="flex-1 flex justify-center md:hidden relative">
             {/* Invisible spacer to balance the hamburger menu */}
-            <div className="absolute right-0 w-10 h-10"></div>
+            <div className="absolute right-0 w-12 h-10"></div>
             <Link href="/" className="flex items-center gap-2 -my-1" aria-label="Home">
             <Image
               src="/images/logo.webp"

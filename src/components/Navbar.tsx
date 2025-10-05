@@ -31,13 +31,28 @@ export function Navbar() {
     <header className="w-full sticky top-0 z-30 bg-transparent">
       <nav className="mx-auto max-w-7xl px-4 lg:px-8 py-3">
         <div className="flex items-center gap-4 rounded-full border border-white/15 bg-white/8 backdrop-blur-xl shadow-[0_2px_20px_rgba(0,0,0,0.15)] px-4 sm:px-8 py-2">
-          <Link href="/" className="flex items-center gap-2 -my-1" aria-label="Home">
+          {/* Mobile: Centered Logo */}
+          <div className="flex-1 flex justify-center md:hidden">
+            <Link href="/" className="flex items-center gap-2 -my-1" aria-label="Home">
+            <Image
+              src="/images/logo.webp"
+              alt="JAT Digital logo"
+              width={200}
+              height={200}
+              className="h-[34px] w-auto object-contain"
+              priority
+            />
+            </Link>
+          </div>
+          
+          {/* Desktop: Left Logo */}
+          <Link href="/" className="hidden md:flex items-center gap-2 -my-1" aria-label="Home">
           <Image
             src="/images/logo.webp"
             alt="JAT Digital logo"
             width={200}
             height={200}
-            className="h-[34px] md:h-[40px] w-auto object-contain"
+            className="h-[40px] w-auto object-contain"
             priority
           />
           </Link>
@@ -68,7 +83,7 @@ export function Navbar() {
             Book a Call
           </Link>
           
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Right Side */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2 rounded-lg hover:bg-white/10 transition"

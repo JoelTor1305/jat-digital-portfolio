@@ -202,8 +202,9 @@ export default function Home() {
             </div>
 
             {/* Goals Section */}
-            <div className="grid gap-8 sm:gap-10 lg:gap-12 lg:grid-cols-2 items-center">
-              <div className="order-2 lg:order-1">
+            <div className="space-y-12">
+              {/* Goals Content */}
+              <div>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-3 h-3 bg-purple-400 rounded-full"></div>
                   <h3 className="text-2xl font-bold">Goals</h3>
@@ -223,7 +224,9 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="flex justify-center order-1 lg:order-2">
+              
+              {/* Goals Picture - After all content */}
+              <div className="flex justify-center">
                 <div className="relative group">
                   {/* Glow effect background */}
                   <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-purple-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>

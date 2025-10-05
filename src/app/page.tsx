@@ -10,7 +10,7 @@ export default function Home() {
     "name": "Joel Torres",
     "alternateName": "Joel Torres AI",
     "jobTitle": "BA&IS Student",
-    "description": "Joel Torres - BA&IS Student at Penn State University exploring AI, automation, and backend systems. Building projects and documenting the journey.",
+    "description": "Joel Torres - Business Analytics & Information Systems (BA&IS) Student at Penn State University exploring AI, automation, and backend systems. Building projects and documenting the journey.",
     "url": "https://jat-digital.netlify.app",
     "image": "https://jat-digital.netlify.app/images/profile-headshot.webp",
     "sameAs": [
@@ -63,7 +63,7 @@ export default function Home() {
           <p className="text-foreground/70">Hi, I&apos;m Joel Torres,</p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">BA&IS Student</h1>
           <p className="mt-6 text-foreground/80 text-base lg:text-lg max-w-prose mx-auto lg:mx-0">
-            Joel Torres is exploring how AI, automation, and backend systems can streamline the way organizations work. As a BA&IS student at Penn State University, I&apos;m focused on learning, building projects, and documenting the journey.
+            Joel Torres is exploring how AI, automation, and backend systems can streamline the way organizations work. As a Business Analytics & Information Systems (BA&IS) student at Penn State University, I&apos;m focused on learning, building projects, and documenting the journey.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
             <a

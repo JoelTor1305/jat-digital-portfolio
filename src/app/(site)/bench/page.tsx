@@ -75,7 +75,10 @@ function AICoach({ sessions }: { sessions: WorkoutSession[] }) {
     // Simple AI responses based on common questions
     let aiResponse = "";
     
-    if (userQuestion.toLowerCase().includes("progress") || userQuestion.toLowerCase().includes("improvement")) {
+    // Check if we have workout data
+    if (typeof data === "string") {
+      aiResponse = data;
+    } else if (userQuestion.toLowerCase().includes("progress") || userQuestion.toLowerCase().includes("improvement")) {
       aiResponse = `📈 Progress Analysis:\n\n` +
         `• Total workouts: ${data.totalSessions}\n` +
         `• Latest volume: ${data.latestVolume} lbs\n` +
@@ -280,13 +283,13 @@ function VolumeChart({ sessions }: { sessions: WorkoutSession[] }) {
       const dateB = new Date(b.date);
       return dateA.getTime() - dateB.getTime();
     });
-    return <VolumeChartDisplay sessions={allSortedSessions} showAllData={true} />;
+        return <VolumeChartDisplay sessions={allSortedSessions} />;
   }
 
-  return <VolumeChartDisplay sessions={sortedSessions} showAllData={false} />;
+  return <VolumeChartDisplay sessions={sortedSessions} />;
 }
 
-function VolumeChartDisplay({ sessions, showAllData }: { sessions: WorkoutSession[], showAllData: boolean }) {
+function VolumeChartDisplay({ sessions }: { sessions: WorkoutSession[] }) {
   const maxVolume = Math.max(...sessions.map(s => s.totalVolume));
   const minVolume = Math.min(...sessions.map(s => s.totalVolume));
   const volumeRange = maxVolume - minVolume;
@@ -611,18 +614,6 @@ export default function BenchPage() {
     }
   }
 
-  function getCoachRecommendation() {
-    if (sessions.length === 0) return "Start your first workout to get recommendations!";
-    
-    const lastSession = sessions[0];
-    const topSet = lastSession.sets.reduce((max, set) => 
-      set.weight * (1 + set.repsCompleted / 30) > max.weight * (1 + max.repsCompleted / 30) ? set : max
-    );
-    
-    const nextWeight = topSet.weight + (topSet.struggle === "Easy" ? 5 : topSet.struggle === "Medium" ? 2.5 : 0);
-    
-    return `Next workout: Start with ${nextWeight}lbs for your top set. Focus on ${topSet.form === "Major Breakdown" ? "form improvement" : "progressive overload"}.`;
-  }
 
   function getRecommendedWeights() {
     if (sessions.length === 0) {

@@ -31,8 +31,10 @@ export function Navbar() {
     <header className="w-full sticky top-0 z-30 bg-transparent">
       <nav className="mx-auto max-w-7xl px-4 lg:px-8 py-3">
         <div className="flex items-center gap-4 rounded-full border border-white/15 bg-white/8 backdrop-blur-xl shadow-[0_2px_20px_rgba(0,0,0,0.15)] px-4 sm:px-8 py-2">
-          {/* Mobile: Centered Logo */}
-          <div className="flex-1 flex justify-center md:hidden">
+          {/* Mobile: Centered Logo with hamburger space accounted for */}
+          <div className="flex-1 flex justify-center md:hidden relative">
+            {/* Invisible spacer to balance the hamburger menu */}
+            <div className="absolute right-0 w-10 h-10"></div>
             <Link href="/" className="flex items-center gap-2 -my-1" aria-label="Home">
             <Image
               src="/images/logo.webp"

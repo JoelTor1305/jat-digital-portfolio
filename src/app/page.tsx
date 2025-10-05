@@ -48,7 +48,7 @@ export default function Home() {
     <section id="home" className="relative min-h-[calc(100vh-80px)] flex items-center justify-center py-8">
       <div className="grid gap-10 lg:grid-cols-2 items-center w-full">
         <div className="flex justify-center lg:justify-start">
-          <div className="rounded-full overflow-hidden" style={{ width: 440, height: 440 }}>
+          <div className="rounded-full overflow-hidden w-64 h-64 sm:w-80 sm:h-80 lg:w-[440px] lg:h-[440px]">
         <Image
               src="/images/profile-headshot.webp"
               alt="Joel Torres headshot"
@@ -59,16 +59,16 @@ export default function Home() {
         />
           </div>
         </div>
-        <div>
+        <div className="text-center lg:text-left">
           <p className="text-foreground/70">Hi, I&apos;m Joel Torres,</p>
-          <h1 className="text-6xl font-extrabold tracking-tight">BA&IS Student</h1>
-          <p className="mt-6 text-foreground/80 text-base lg:text-lg max-w-prose">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">BA&IS Student</h1>
+          <p className="mt-6 text-foreground/80 text-base lg:text-lg max-w-prose mx-auto lg:mx-0">
             Joel Torres is exploring how AI, automation, and backend systems can streamline the way organizations work. As a BA&IS student at Penn State University, I&apos;m focused on learning, building projects, and documenting the journey.
           </p>
-          <div className="mt-10 flex gap-3">
+          <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
             <a
               href="mailto:joelatorres1305@gmail.com"
-              className="inline-flex items-center gap-2 rounded-2xl border px-5 py-3 text-sm font-medium hover:bg-white/5 dark:hover:bg-white/10 transition"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl border px-5 py-3 text-sm font-medium hover:bg-white/5 dark:hover:bg-white/10 transition min-h-[48px]"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
                 <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2v.01L12 12 4 6.01V6h16ZM4 18V8.14l8 5.85 8-5.85V18H4Z"/>
@@ -77,7 +77,7 @@ export default function Home() {
         </a>
         <a
               href="https://www.linkedin.com/in/joel-torres-psu/"
-              className="inline-flex items-center gap-2 rounded-2xl border px-5 py-3 text-sm font-medium hover:bg-white/5 dark:hover:bg-white/10 transition"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl border px-5 py-3 text-sm font-medium hover:bg-white/5 dark:hover:bg-white/10 transition min-h-[48px]"
               aria-label="Connect on LinkedIn"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
@@ -91,19 +91,19 @@ export default function Home() {
       <ScrollCue />
     </section>
 
-      <section id="about" className="py-28">
+      <section id="about" className="py-16 sm:py-20 lg:py-28">
         <Reveal>
           <div className="max-w-6xl mx-auto px-4">
-            <div className="mb-16 text-center">
-              <h2 className="text-6xl font-extrabold tracking-tight leading-[0.95] mb-6">About me</h2>
-              <p className="text-foreground/80 text-lg max-w-3xl mx-auto">
+            <div className="mb-12 sm:mb-16 text-center">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[0.95] mb-4 sm:mb-6">About me</h2>
+              <p className="text-foreground/80 text-base sm:text-lg max-w-3xl mx-auto">
                 Hi, I&apos;m Joel Torres — an entrepreneurial Business Analytics & Information Systems student at Penn State with a growing interest in AI, automation, and backend systems.
               </p>
             </div>
             
-            <div className="space-y-20">
+            <div className="space-y-12 sm:space-y-16 lg:space-y-20">
               {/* Experience Section */}
-              <div className="grid gap-12 lg:grid-cols-2 items-center">
+              <div className="grid gap-8 sm:gap-10 lg:gap-12 lg:grid-cols-2 items-center">
                 <div>
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
@@ -153,7 +153,7 @@ export default function Home() {
             </div>
 
             {/* Ventures Section */}
-            <div className="grid gap-12 lg:grid-cols-2 items-center">
+            <div className="grid gap-8 sm:gap-10 lg:gap-12 lg:grid-cols-2 items-center">
               <div className="flex justify-center order-2 lg:order-1">
                 <div className="relative group">
                   {/* Glow effect background */}
@@ -202,7 +202,7 @@ export default function Home() {
             </div>
 
             {/* Goals Section */}
-            <div className="grid gap-12 lg:grid-cols-2 items-center">
+            <div className="grid gap-8 sm:gap-10 lg:gap-12 lg:grid-cols-2 items-center">
               <div className="order-2 lg:order-1">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-3 h-3 bg-purple-400 rounded-full"></div>

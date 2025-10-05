@@ -53,10 +53,23 @@ async function writeAll(sessions: WorkoutSession[]) {
   await fsp.writeFile(DATA_FILE, JSON.stringify(sessions, null, 2), "utf8");
 }
 
+function parseDate(dateStr: string): Date {
+  // Handle both formats: "September 9, 2025" and "2025-09-09"
+  try {
+    const parsed = new Date(dateStr);
+    if (!isNaN(parsed.getTime())) {
+      return parsed;
+    }
+  } catch {}
+  
+  // Fallback to current date if parsing fails
+  return new Date();
+}
+
 export async function GET() {
   const sessions = await readAll();
-  // Latest first
-  sessions.sort((a, b) => b.date.localeCompare(a.date));
+  // Latest first - sort by actual date objects
+  sessions.sort((a, b) => parseDate(b.date).getTime() - parseDate(a.date).getTime());
   return NextResponse.json(sessions);
 }
 
@@ -136,4 +149,15 @@ export async function POST(req: Request) {
   }
 
   return NextResponse.json(session, { status: 201 });
+}
+
+export async function DELETE() {
+  try {
+    // Clear all data by writing an empty array
+    await writeAll([]);
+    return NextResponse.json({ message: "All data cleared" }, { status: 200 });
+  } catch (error) {
+    console.error("Error in DELETE /api/bench:", error);
+    return NextResponse.json({ message: "Error clearing data" }, { status: 500 });
+  }
 }

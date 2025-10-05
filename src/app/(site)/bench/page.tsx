@@ -538,8 +538,8 @@ export default function BenchPage() {
     // Show feedback based on performance
     if (!hitTarget) {
       const recommended = getRecommendedWeights();
-      const currentRepTarget = isBurnoutSet ? "burnout" : REP_TARGETS[currentSet];
-      const suggestedWeight = recommended[currentRepTarget];
+      const currentRepTarget = isBurnoutSet ? "burnout" : REP_TARGETS[currentSet].toString();
+      const suggestedWeight = recommended[currentRepTarget as keyof typeof recommended];
       
       if (Number(weight) > suggestedWeight) {
         alert(`💡 Coach Note: You used ${weight} lbs but only hit ${reps} reps (target: ${targetReps}). Consider reducing to ${suggestedWeight} lbs next time for better form and target completion.`);
@@ -653,7 +653,8 @@ export default function BenchPage() {
 
     lastSets.forEach(set => {
       if (set.repTarget > 0) {
-        lastWeights[set.repTarget] = set.weight;
+        const repKey = set.repTarget.toString() as keyof typeof lastWeights;
+        lastWeights[repKey] = set.weight;
         
         // Calculate progression based on struggle and RIR
         let increase = 0;
@@ -669,7 +670,7 @@ export default function BenchPage() {
           increase = -2.5; // Reduce weight
         }
         
-        progression[set.repTarget] = increase;
+        progression[repKey] = increase;
       } else {
         // Burnout set
         lastWeights.burnout = set.weight;
@@ -696,8 +697,8 @@ export default function BenchPage() {
 
   function autoFillWeight() {
     const recommended = getRecommendedWeights();
-    const currentRepTarget = isBurnoutSet ? "burnout" : REP_TARGETS[currentSet];
-    const suggestedWeight = recommended[currentRepTarget];
+    const currentRepTarget = isBurnoutSet ? "burnout" : REP_TARGETS[currentSet].toString();
+    const suggestedWeight = recommended[currentRepTarget as keyof typeof recommended];
     
     setWeight(suggestedWeight.toString());
   }
@@ -1044,7 +1045,7 @@ export default function BenchPage() {
                 💡 Auto-fill All
               </button>
               <span className="text-sm text-foreground/60">
-                Suggested: {getRecommendedWeights()[isBurnoutSet ? "burnout" : REP_TARGETS[currentSet]]} lbs × {isBurnoutSet ? "8" : REP_TARGETS[currentSet]} reps
+                Suggested: {getRecommendedWeights()[isBurnoutSet ? "burnout" : REP_TARGETS[currentSet].toString() as keyof ReturnType<typeof getRecommendedWeights>]} lbs × {isBurnoutSet ? "8" : REP_TARGETS[currentSet]} reps
               </span>
             </div>
           </div>

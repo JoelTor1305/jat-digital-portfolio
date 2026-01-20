@@ -1,0 +1,102 @@
+---
+title: "Building PropFlow: The Journey from Idea to MVP"
+description: "The challenges, breakthroughs, and lessons learned while building an AI-powered property management platform"
+date: "2026-01-20"
+tags: ["AI", "Startup", "PropFlow", "Development", "Firebase", "Google Cloud"]
+category: "Build Logs"
+---
+
+# Building PropFlow: The Journey from Idea to MVP
+
+Watch our MVP demo to see PropFlow in action, then read about the journey of building it:
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
+  <iframe 
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+    src="https://www.youtube.com/embed/er0cNmZW19Q" 
+    title="PropFlow MVP Demo" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+</div>
+
+---
+
+Bringing PropFlow to life has been a challenge—a challenge that I put hours of work into as my co-founder Alex Taylor and I failed constantly and tried again. Creating software seems easy at first, until it's time to get into the little details.
+
+## What is PropFlow?
+
+**PropFlow** is an AI-powered market intelligence platform for property management. Our MVP focuses on **Financial and Communication Optimization & Tenant Churn Prevention**.
+
+The problem we're solving is critical for independent landlords and small property management companies:
+
+- **Manual market research** takes 15-20 hours per month, and pricing based on "gut feeling" leaves $100-300/month on the table per property
+- **Tenant turnover** costs $4,000-6,000 per incident (vacancy, cleaning, advertising, screening) with no early warning system
+- **Lack of actionable intelligence** - existing platforms focus only on operational tasks without predictive analytics or AI-driven insights
+
+For a landlord managing 10 properties, PropFlow can save **150+ hours per year**, capture **$18,000+ in optimized rent pricing**, and avoid **$40,000+ through churn prevention**. That's a 30-40x ROI.
+
+## The Technical Challenges
+
+Building PropFlow taught me that software development is far more complex than it appears on the surface. Here are some of the hardest challenges we faced:
+
+### Database Integration
+Connecting databases to software sounds straightforward until you're actually doing it. Real API calls to other software platforms, showing that data in your application, handling edge cases—it's a completely different beast.
+
+### User Authentication & Security
+Creating real accounts that not only store data but keep that data secure is incredibly challenging. We had to learn about passkeys, OAuth flows, session management, and data encryption—all while ensuring a smooth user experience.
+
+### Scaling Our Infrastructure
+We started small with GitHub and Netlify deployments. But at one point, we knew we had to step up. We wanted more control. That's when we made the change to **Google Cloud and Firebase**.
+
+The challenge of having to tear everything down and build it back up was the most challenging part. It was a big pivot—the system before worked, but not well enough to scale to where we wanted. Through that process, we no longer had automatic pushes to our main site, and it became much more hands-on.
+
+## The Breakthrough: Building AI Workflows
+
+To fix these deployment issues, I had to create **workflows and AI agents** to sync our entire tech stack together to work efficiently. The amount of times our deployments failed was unfathomable. But when you get to the point where you've solved all these issues after days of debugging, it's the most rewarding feeling.
+
+Building with AI seems easy until you hit roadblocks. That's why I felt it was so important to build those workflows and sub-agents.
+
+### The Turning Point
+
+One breakthrough I had while in the building stage was **taking a step back and thinking about the real problem** I was running into. My IDE did not have enough context nor enough knowledge. With me being new to all this software, I unfortunately did not have the knowledge to even understand the issues I was running into.
+
+So as a result, I used **NotebookLM**, Google's research tool. I looked into:
+- Best prompting practices
+- The Google Cloud and Firebase ecosystems and details of how those tools work
+- Best practices for creating software
+
+NotebookLM was able to give me precise instructions and clear insights like an expert.
+
+### Training My Own AI Agent
+
+Now the only thing left to do was **train my own AI model on all of this knowledge**. I was able to make my own custom prompting agent that was an expert developer tailored to my tech stack.
+
+Now things became easier. Instead of vague descriptions like "login authentication isn't working," I could say "Firebase Authentication passkey flow is not syncing with the Cloud Run backend session management."
+
+The whole point was: I now had control of something that taught me so much about how these systems actually work. Instead of doing guesswork, I was learning best practices from an expert. This streamlined my approach, and I will continue to learn more and build more systems for myself in the process of building PropFlow.
+
+## What I Learned
+
+Through this process, I've learned so much about our tech stack:
+
+- **Firebase Authentication** for secure user management
+- **Google Cloud Run** for scalable backend services
+- **Cloud Firestore** for real-time data synchronization
+- **Deployment workflows** that integrate GitHub, Cloud Build, and Firebase Hosting
+- **AI-assisted development** and how to effectively collaborate with AI agents
+
+The key lesson: **Understanding the problem deeply is more important than knowing every line of code.** With the right tools, research, and AI assistance, you can build complex systems even as you're learning.
+
+## The Road Ahead
+
+We're currently preparing to showcase our MVP. The journey has been challenging, but every obstacle taught us something valuable. We've built a foundation that can scale, and we're excited to continue iterating and improving PropFlow.
+
+Building a startup is hard. Building software is hard. But with persistence, the right tools, and a willingness to learn, it's absolutely possible.
+
+---
+
+*Thanks for watching the demo and reading about our journey! If you're interested in PropFlow or want to discuss AI-assisted development, let's connect!*
+
+**Team:** Joel Torres & Alexander Taylor

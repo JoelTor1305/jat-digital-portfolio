@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     "Joel Torres developer",
     "Joel Torres MIS",
     "Joel Torres Penn State",
-    "JAT Digital", 
+    "JAT Digital",
     "AI automation",
     "backend systems",
     "MIS student",
@@ -111,7 +111,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.png" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased text-white min-h-screen`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased text-white min-h-screen`} suppressHydrationWarning>
         <Navbar />
         <div className="mx-auto max-w-6xl px-4 lg:px-8">
           <main>{children}</main>

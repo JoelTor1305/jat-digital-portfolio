@@ -123,13 +123,13 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           <div className="text-foreground/90 leading-relaxed space-y-6">
             {(() => {
               const lines = post.content.split('\n');
-              const elements: JSX.Element[] = [];
+              const elements: React.ReactElement[] = [];
               let listItems: string[] = [];
               let listStartIndex = -1;
               let htmlBlock: string[] = [];
               let htmlBlockStartIndex = -1;
 
-              const flushList = (currentIndex: number) => {
+              const flushList = () => {
                 if (listItems.length > 0) {
                   elements.push(
                     <ul key={`list-${listStartIndex}`} className="list-disc list-inside space-y-2 my-4">
@@ -143,7 +143,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                 }
               };
 
-              const flushHtmlBlock = (currentIndex: number) => {
+              const flushHtmlBlock = () => {
                 if (htmlBlock.length > 0) {
                   elements.push(
                     <div key={`html-${htmlBlockStartIndex}`} dangerouslySetInnerHTML={{ __html: htmlBlock.join('\n') }} />
@@ -175,27 +175,27 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                   htmlBlock.push(paragraph);
                   // Check if this line closes the HTML block
                   if (paragraph.trim().startsWith('</div>') || paragraph.trim().startsWith('</iframe>')) {
-                    flushHtmlBlock(index);
+                    flushHtmlBlock();
                   }
                   return;
                 }
 
                 // Check if this line starts an HTML block
                 if (paragraph.trim().startsWith('<div') || paragraph.trim().startsWith('<iframe')) {
-                  flushList(index);
+                  flushList();
                   htmlBlockStartIndex = index;
                   htmlBlock.push(paragraph);
                   return;
                 }
 
                 if (paragraph.trim() === '') {
-                  flushList(index);
+                  flushList();
                   return;
                 }
 
                 // Handle headings
                 if (paragraph.startsWith('# ')) {
-                  flushList(index);
+                  flushList();
                   elements.push(
                     <h1 key={index} className="text-3xl font-bold mt-8 mb-4">
                       {paragraph.replace('# ', '')}
@@ -204,7 +204,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                   return;
                 }
                 if (paragraph.startsWith('## ')) {
-                  flushList(index);
+                  flushList();
                   elements.push(
                     <h2 key={index} className="text-2xl font-bold mt-6 mb-3">
                       {paragraph.replace('## ', '')}
@@ -213,7 +213,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                   return;
                 }
                 if (paragraph.startsWith('### ')) {
-                  flushList(index);
+                  flushList();
                   elements.push(
                     <h3 key={index} className="text-xl font-bold mt-4 mb-2">
                       {paragraph.replace('### ', '')}
@@ -224,7 +224,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
                 // Handle horizontal rules
                 if (paragraph.trim() === '---') {
-                  flushList(index);
+                  flushList();
                   elements.push(<hr key={index} className="border-white/20 my-8" />);
                   return;
                 }
@@ -237,7 +237,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                 }
 
                 // Flush any pending list before adding other elements
-                flushList(index);
+                flushList();
 
                 // Handle italic text (lines starting with * and ending with *)
                 if (paragraph.startsWith('*') && paragraph.endsWith('*') && !paragraph.startsWith('**')) {
@@ -256,8 +256,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               });
 
               // Flush any remaining list items or HTML blocks
-              flushList(lines.length);
-              flushHtmlBlock(lines.length);
+              flushList();
+              flushHtmlBlock();
 
               return elements;
             })()}

@@ -273,105 +273,214 @@ export default function Home() {
         <h2 className="text-3xl font-bold tracking-tight">Featured Projects</h2>
       </div>
 
-      <div className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
-        {/* Project 1 - FFC AI Onboarding */}
-        <div className="group cursor-pointer min-w-[300px] sm:min-w-[400px] snap-center">
-          <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 border border-white/10 aspect-video mb-4">
-            <Image
-              src="/images/project-1.webp"
-              alt="Dan and Robin Ives A.I. Innovation Day Competition Winner"
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-300"
-            />
-            <div className="absolute top-3 right-3">
-              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+      {/* Auto-scrolling projects banner */}
+      <div className="relative overflow-hidden mb-16">
+        <div className="flex gap-6 animate-scroll">
+          {/* First set of projects */}
+          <div className="flex gap-6 flex-shrink-0">
+            {/* Project 1 - FFC AI Onboarding */}
+            <div className="group cursor-pointer w-[400px] flex-shrink-0">
+              <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 border border-white/10 aspect-video mb-4">
+                <Image
+                  src="/images/project-1.webp"
+                  alt="Dan and Robin Ives A.I. Innovation Day Competition Winner"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-3 right-3">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="absolute bottom-3 left-3">
+                  <span className="bg-yellow-500/90 text-black text-xs px-2 py-1 rounded-full font-semibold">🏆 Competition Winner</span>
+                </div>
               </div>
+              <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">FFC AI Onboarding System</h3>
+              <p className="text-sm text-foreground/70 mb-2">Dan and Robin Ives A.I. Innovation Day - Competition Winner (March 2025)</p>
+              <p className="text-sm text-foreground/70">Developed a solo project addressing Free For Charity&apos;s 45+ client onboarding backlog using AI agents, APIs, and automation tools.</p>
             </div>
-            <div className="absolute bottom-3 left-3">
-              <span className="bg-yellow-500/90 text-black text-xs px-2 py-1 rounded-full font-semibold">🏆 Competition Winner</span>
-            </div>
-          </div>
-          <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">FFC AI Onboarding System</h3>
-          <p className="text-sm text-foreground/70 mb-2">Dan and Robin Ives A.I. Innovation Day - Competition Winner (March 2025)</p>
-          <p className="text-sm text-foreground/70">Developed a solo project addressing Free For Charity&apos;s 45+ client onboarding backlog using AI agents, APIs, and automation tools.</p>
-        </div>
 
-        {/* Project 2 - FFC Technical Volunteer */}
-        <div className="group cursor-pointer min-w-[300px] sm:min-w-[400px] snap-center">
-          <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-green-500/20 via-teal-500/20 to-cyan-500/20 border border-white/10 aspect-video mb-4">
-            <Image
-              src="/images/project-2.webp"
-              alt="JAT Digital Automations"
-              fill
-              className="object-cover object-[center_top] group-hover:scale-105 transition-transform duration-300"
-            />
-            <div className="absolute top-3 right-3">
-              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+            {/* Project 2 - FFC Technical Volunteer */}
+            <div className="group cursor-pointer w-[400px] flex-shrink-0">
+              <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-green-500/20 via-teal-500/20 to-cyan-500/20 border border-white/10 aspect-video mb-4">
+                <Image
+                  src="/images/project-2.webp"
+                  alt="JAT Digital Automations"
+                  fill
+                  className="object-cover object-[center_top] group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-3 right-3">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="absolute bottom-3 left-3">
+                  <span className="bg-blue-500/90 text-white text-xs px-2 py-1 rounded-full font-semibold">🤖 AI Systems Consulting</span>
+                </div>
               </div>
+              <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">FFC – Technical Volunteer (2025)</h3>
+              <p className="text-sm text-foreground/70 mb-2">Served as a technical volunteer for Free For Charity, focusing on learning the landscape of AI tools.</p>
+              <p className="text-sm text-foreground/70">Implemented prototypes using LLMs, vibe coding, n8n, and Microsoft 365 that supported the foundation for the FFC onboarding automation system.</p>
             </div>
-            <div className="absolute bottom-3 left-3">
-              <span className="bg-blue-500/90 text-white text-xs px-2 py-1 rounded-full font-semibold">🤖 AI Systems Consulting</span>
-            </div>
-          </div>
-          <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">FFC – Technical Volunteer (2025)</h3>
-          <p className="text-sm text-foreground/70 mb-2">Served as a technical volunteer for Free For Charity, focusing on learning the landscape of AI tools.</p>
-          <p className="text-sm text-foreground/70">Implemented prototypes using LLMs, vibe coding, n8n, and Microsoft 365 that supported the foundation for the FFC onboarding automation system.</p>
-        </div>
 
-        {/* Project 3 - Nittany AI Competition */}
-        <div className="group cursor-pointer min-w-[300px] sm:min-w-[400px] snap-center">
-          <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-600/20 via-indigo-500/20 to-purple-500/20 border border-white/10 aspect-video mb-4">
-            <Image
-              src="/images/propflow-win.jpg"
-              alt="Propflow AI - Shark Tank NAiSS Winner"
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-300"
-            />
-            <div className="absolute top-3 right-3">
-              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+            {/* Project 3 - Nittany AI Competition */}
+            <div className="group cursor-pointer w-[400px] flex-shrink-0">
+              <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-600/20 via-indigo-500/20 to-purple-500/20 border border-white/10 aspect-video mb-4">
+                <Image
+                  src="/images/propflow-win.jpg"
+                  alt="Propflow AI - Shark Tank NAiSS Winner"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-3 right-3">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="absolute bottom-3 left-3">
+                  <span className="bg-blue-600/90 text-white text-xs px-2 py-1 rounded-full font-semibold">🏆 $900K Raised (Competition Funds)</span>
+                </div>
               </div>
+              <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">Nittany AI Competition</h3>
+              <p className="text-sm text-foreground/70 mb-2">Shark Tank NAiSS Competition - 3rd Place & Most Money Raised (Nov 2025)</p>
+              <p className="text-sm text-foreground/70">Co-founded a real estate app bridging tenant-owner communication gaps. Validated market needs, built AI-driven solutions, and secured simulated funding from industry judges.</p>
             </div>
-            <div className="absolute bottom-3 left-3">
-              <span className="bg-blue-600/90 text-white text-xs px-2 py-1 rounded-full font-semibold">🏆 $900K Raised (Competition Funds)</span>
-            </div>
-          </div>
-          <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">Nittany AI Competition</h3>
-          <p className="text-sm text-foreground/70 mb-2">Shark Tank NAiSS Competition - 3rd Place & Most Money Raised (Nov 2025)</p>
-          <p className="text-sm text-foreground/70">Co-founded a real estate app bridging tenant-owner communication gaps. Validated market needs, built AI-driven solutions, and secured simulated funding from industry judges.</p>
-        </div>
 
-        {/* Project 4 - Brand Monetization */}
-        <div className="group cursor-pointer min-w-[300px] sm:min-w-[400px] snap-center">
-          <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-orange-500/20 via-red-500/20 to-pink-500/20 border border-white/10 aspect-video mb-4">
-            <Image
-              src="/images/project-3.webp"
-              alt="Brand Monetization - Professional Website & Sales Funnel"
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-300"
-            />
-            <div className="absolute top-3 right-3">
-              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+            {/* Project 4 - Brand Monetization */}
+            <div className="group cursor-pointer w-[400px] flex-shrink-0">
+              <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-orange-500/20 via-red-500/20 to-pink-500/20 border border-white/10 aspect-video mb-4">
+                <Image
+                  src="/images/project-3.webp"
+                  alt="Brand Monetization - Professional Website & Sales Funnel"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-3 right-3">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="absolute bottom-3 left-3">
+                  <span className="bg-purple-500/90 text-white text-xs px-2 py-1 rounded-full font-semibold">📈 Growth Operator</span>
+                </div>
               </div>
-            </div>
-            <div className="absolute bottom-3 left-3">
-              <span className="bg-purple-500/90 text-white text-xs px-2 py-1 rounded-full font-semibold">📈 Growth Operator</span>
+              <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">Brand Monetization</h3>
+              <p className="text-sm text-foreground/70 mb-2">Brand project launched in 2025 to turn a 400K+ follower gymnastics creator into a business.</p>
+              <p className="text-sm text-foreground/70">Built a custom website, Stripe-powered booking system, and automated funnel that enabled fans to book 1-on-1 coaching calls.</p>
             </div>
           </div>
-          <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">Brand Monetization</h3>
-          <p className="text-sm text-foreground/70 mb-2">Brand project launched in 2025 to turn a 400K+ follower gymnastics creator into a business.</p>
-          <p className="text-sm text-foreground/70">Built a custom website, Stripe-powered booking system, and automated funnel that enabled fans to book 1-on-1 coaching calls.</p>
+
+          {/* Duplicate set for seamless loop */}
+          <div className="flex gap-6 flex-shrink-0">
+            {/* Project 1 - FFC AI Onboarding */}
+            <div className="group cursor-pointer w-[400px] flex-shrink-0">
+              <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 border border-white/10 aspect-video mb-4">
+                <Image
+                  src="/images/project-1.webp"
+                  alt="Dan and Robin Ives A.I. Innovation Day Competition Winner"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-3 right-3">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="absolute bottom-3 left-3">
+                  <span className="bg-yellow-500/90 text-black text-xs px-2 py-1 rounded-full font-semibold">🏆 Competition Winner</span>
+                </div>
+              </div>
+              <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">FFC AI Onboarding System</h3>
+              <p className="text-sm text-foreground/70 mb-2">Dan and Robin Ives A.I. Innovation Day - Competition Winner (March 2025)</p>
+              <p className="text-sm text-foreground/70">Developed a solo project addressing Free For Charity&apos;s 45+ client onboarding backlog using AI agents, APIs, and automation tools.</p>
+            </div>
+
+            {/* Project 2 - FFC Technical Volunteer */}
+            <div className="group cursor-pointer w-[400px] flex-shrink-0">
+              <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-green-500/20 via-teal-500/20 to-cyan-500/20 border border-white/10 aspect-video mb-4">
+                <Image
+                  src="/images/project-2.webp"
+                  alt="JAT Digital Automations"
+                  fill
+                  className="object-cover object-[center_top] group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-3 right-3">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="absolute bottom-3 left-3">
+                  <span className="bg-blue-500/90 text-white text-xs px-2 py-1 rounded-full font-semibold">🤖 AI Systems Consulting</span>
+                </div>
+              </div>
+              <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">FFC – Technical Volunteer (2025)</h3>
+              <p className="text-sm text-foreground/70 mb-2">Served as a technical volunteer for Free For Charity, focusing on learning the landscape of AI tools.</p>
+              <p className="text-sm text-foreground/70">Implemented prototypes using LLMs, vibe coding, n8n, and Microsoft 365 that supported the foundation for the FFC onboarding automation system.</p>
+            </div>
+
+            {/* Project 3 - Nittany AI Competition */}
+            <div className="group cursor-pointer w-[400px] flex-shrink-0">
+              <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-600/20 via-indigo-500/20 to-purple-500/20 border border-white/10 aspect-video mb-4">
+                <Image
+                  src="/images/propflow-win.jpg"
+                  alt="Propflow AI - Shark Tank NAiSS Winner"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-3 right-3">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="absolute bottom-3 left-3">
+                  <span className="bg-blue-600/90 text-white text-xs px-2 py-1 rounded-full font-semibold">🏆 $900K Raised (Competition Funds)</span>
+                </div>
+              </div>
+              <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">Nittany AI Competition</h3>
+              <p className="text-sm text-foreground/70 mb-2">Shark Tank NAiSS Competition - 3rd Place & Most Money Raised (Nov 2025)</p>
+              <p className="text-sm text-foreground/70">Co-founded a real estate app bridging tenant-owner communication gaps. Validated market needs, built AI-driven solutions, and secured simulated funding from industry judges.</p>
+            </div>
+
+            {/* Project 4 - Brand Monetization */}
+            <div className="group cursor-pointer w-[400px] flex-shrink-0">
+              <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-orange-500/20 via-red-500/20 to-pink-500/20 border border-white/10 aspect-video mb-4">
+                <Image
+                  src="/images/project-3.webp"
+                  alt="Brand Monetization - Professional Website & Sales Funnel"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-3 right-3">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="absolute bottom-3 left-3">
+                  <span className="bg-purple-500/90 text-white text-xs px-2 py-1 rounded-full font-semibold">📈 Growth Operator</span>
+                </div>
+              </div>
+              <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">Brand Monetization</h3>
+              <p className="text-sm text-foreground/70 mb-2">Brand project launched in 2025 to turn a 400K+ follower gymnastics creator into a business.</p>
+              <p className="text-sm text-foreground/70">Built a custom website, Stripe-powered booking system, and automated funnel that enabled fans to book 1-on-1 coaching calls.</p>
+            </div>
+          </div>
         </div>
       </div>
 

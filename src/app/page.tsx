@@ -379,524 +379,520 @@ export default function Home() {
         </div>
 
         {/* Duplicate set for seamless loop */}
-        <div className="flex gap-6 flex-shrink-0">
-          {/* Project 1 - FFC AI Onboarding */}
-          <div className="group cursor-pointer w-[400px] flex-shrink-0">
-            <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 border border-white/10 aspect-video mb-4">
-              <Image
-                src="/images/project-1.webp"
-                alt="Dan and Robin Ives A.I. Innovation Day Competition Winner"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute top-3 right-3">
-                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-              <div className="absolute bottom-3 left-3">
-                <span className="bg-yellow-500/90 text-black text-xs px-2 py-1 rounded-full font-semibold">🏆 Competition Winner</span>
+        {/* Project 1 - FFC AI Onboarding */}
+        <div className="group cursor-pointer w-[400px] flex-shrink-0">
+          <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 border border-white/10 aspect-video mb-4">
+            <Image
+              src="/images/project-1.webp"
+              alt="Dan and Robin Ives A.I. Innovation Day Competition Winner"
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+            <div className="absolute top-3 right-3">
+              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </div>
             </div>
-            <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">FFC AI Onboarding System</h3>
-            <p className="text-sm text-foreground/70 mb-2">Dan and Robin Ives A.I. Innovation Day - Competition Winner (March 2025)</p>
-            <p className="text-sm text-foreground/70">Developed a solo project addressing Free For Charity&apos;s 45+ client onboarding backlog using AI agents, APIs, and automation tools.</p>
+            <div className="absolute bottom-3 left-3">
+              <span className="bg-yellow-500/90 text-black text-xs px-2 py-1 rounded-full font-semibold">🏆 Competition Winner</span>
+            </div>
           </div>
+          <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">FFC AI Onboarding System</h3>
+          <p className="text-sm text-foreground/70 mb-2">Dan and Robin Ives A.I. Innovation Day - Competition Winner (March 2025)</p>
+          <p className="text-sm text-foreground/70">Developed a solo project addressing Free For Charity&apos;s 45+ client onboarding backlog using AI agents, APIs, and automation tools.</p>
+        </div>
 
-          {/* Project 2 - FFC Technical Volunteer */}
-          <div className="group cursor-pointer w-[400px] flex-shrink-0">
-            <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-green-500/20 via-teal-500/20 to-cyan-500/20 border border-white/10 aspect-video mb-4">
-              <Image
-                src="/images/project-2.webp"
-                alt="JAT Digital Automations"
-                fill
-                className="object-cover object-[center_top] group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute top-3 right-3">
-                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-              <div className="absolute bottom-3 left-3">
-                <span className="bg-blue-500/90 text-white text-xs px-2 py-1 rounded-full font-semibold">🤖 AI Systems Consulting</span>
+        {/* Project 2 - FFC Technical Volunteer */}
+        <div className="group cursor-pointer w-[400px] flex-shrink-0">
+          <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-green-500/20 via-teal-500/20 to-cyan-500/20 border border-white/10 aspect-video mb-4">
+            <Image
+              src="/images/project-2.webp"
+              alt="JAT Digital Automations"
+              fill
+              className="object-cover object-[center_top] group-hover:scale-105 transition-transform duration-300"
+            />
+            <div className="absolute top-3 right-3">
+              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </div>
             </div>
-            <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">FFC – Technical Volunteer (2025)</h3>
-            <p className="text-sm text-foreground/70 mb-2">Served as a technical volunteer for Free For Charity, focusing on learning the landscape of AI tools.</p>
-            <p className="text-sm text-foreground/70">Implemented prototypes using LLMs, vibe coding, n8n, and Microsoft 365 that supported the foundation for the FFC onboarding automation system.</p>
+            <div className="absolute bottom-3 left-3">
+              <span className="bg-blue-500/90 text-white text-xs px-2 py-1 rounded-full font-semibold">🤖 AI Systems Consulting</span>
+            </div>
           </div>
+          <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">FFC – Technical Volunteer (2025)</h3>
+          <p className="text-sm text-foreground/70 mb-2">Served as a technical volunteer for Free For Charity, focusing on learning the landscape of AI tools.</p>
+          <p className="text-sm text-foreground/70">Implemented prototypes using LLMs, vibe coding, n8n, and Microsoft 365 that supported the foundation for the FFC onboarding automation system.</p>
+        </div>
 
-          {/* Project 3 - Nittany AI Competition */}
-          <div className="group cursor-pointer w-[400px] flex-shrink-0">
-            <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-600/20 via-indigo-500/20 to-purple-500/20 border border-white/10 aspect-video mb-4">
-              <Image
-                src="/images/propflow-win.jpg"
-                alt="Propflow AI - Shark Tank NAiSS Winner"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute top-3 right-3">
-                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-              <div className="absolute bottom-3 left-3">
-                <span className="bg-blue-600/90 text-white text-xs px-2 py-1 rounded-full font-semibold">🏆 $900K Raised (Competition Funds)</span>
+        {/* Project 3 - Nittany AI Competition */}
+        <div className="group cursor-pointer w-[400px] flex-shrink-0">
+          <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-600/20 via-indigo-500/20 to-purple-500/20 border border-white/10 aspect-video mb-4">
+            <Image
+              src="/images/propflow-win.jpg"
+              alt="Propflow AI - Shark Tank NAiSS Winner"
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+            <div className="absolute top-3 right-3">
+              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </div>
             </div>
-            <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">Nittany AI Competition</h3>
-            <p className="text-sm text-foreground/70 mb-2">Shark Tank NAiSS Competition - 3rd Place & Most Money Raised (Nov 2025)</p>
-            <p className="text-sm text-foreground/70">Co-founded a real estate app bridging tenant-owner communication gaps. Validated market needs, built AI-driven solutions, and secured simulated funding from industry judges.</p>
+            <div className="absolute bottom-3 left-3">
+              <span className="bg-blue-600/90 text-white text-xs px-2 py-1 rounded-full font-semibold">🏆 $900K Raised (Competition Funds)</span>
+            </div>
           </div>
+          <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">Nittany AI Competition</h3>
+          <p className="text-sm text-foreground/70 mb-2">Shark Tank NAiSS Competition - 3rd Place & Most Money Raised (Nov 2025)</p>
+          <p className="text-sm text-foreground/70">Co-founded a real estate app bridging tenant-owner communication gaps. Validated market needs, built AI-driven solutions, and secured simulated funding from industry judges.</p>
+        </div>
 
-          {/* Project 4 - Brand Monetization */}
-          <div className="group cursor-pointer w-[400px] flex-shrink-0">
-            <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-orange-500/20 via-red-500/20 to-pink-500/20 border border-white/10 aspect-video mb-4">
-              <Image
-                src="/images/project-3.webp"
-                alt="Brand Monetization - Professional Website & Sales Funnel"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute top-3 right-3">
-                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-              <div className="absolute bottom-3 left-3">
-                <span className="bg-purple-500/90 text-white text-xs px-2 py-1 rounded-full font-semibold">📈 Growth Operator</span>
+        {/* Project 4 - Brand Monetization */}
+        <div className="group cursor-pointer w-[400px] flex-shrink-0">
+          <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-orange-500/20 via-red-500/20 to-pink-500/20 border border-white/10 aspect-video mb-4">
+            <Image
+              src="/images/project-3.webp"
+              alt="Brand Monetization - Professional Website & Sales Funnel"
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+            <div className="absolute top-3 right-3">
+              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </div>
             </div>
-            <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">Brand Monetization</h3>
-            <p className="text-sm text-foreground/70 mb-2">Brand project launched in 2025 to turn a 400K+ follower gymnastics creator into a business.</p>
-            <p className="text-sm text-foreground/70">Built a custom website, Stripe-powered booking system, and automated funnel that enabled fans to book 1-on-1 coaching calls.</p>
+            <div className="absolute bottom-3 left-3">
+              <span className="bg-purple-500/90 text-white text-xs px-2 py-1 rounded-full font-semibold">📈 Growth Operator</span>
+            </div>
           </div>
+          <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">Brand Monetization</h3>
+          <p className="text-sm text-foreground/70 mb-2">Brand project launched in 2025 to turn a 400K+ follower gymnastics creator into a business.</p>
+          <p className="text-sm text-foreground/70">Built a custom website, Stripe-powered booking system, and automated funnel that enabled fans to book 1-on-1 coaching calls.</p>
         </div>
       </div>
-      </div>
-
+    </div>
 
       <section id="blog" className="py-24">
-        <div className="mb-8">
-          <p className="text-sm text-foreground/60 mb-2">Latest Writing</p>
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-4xl font-bold tracking-tight">Blog & Notes</h2>
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium hover:bg-white/15 transition whitespace-nowrap"
-            >
-              View All Posts
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </div>
-          <p className="text-foreground/80 max-w-2xl">Documenting my journey, sharing learnings, and exploring ideas around AI, automation, and backend systems.</p>
-        </div>
+            <div className="mb-8">
+              <p className="text-sm text-foreground/60 mb-2">Latest Writing</p>
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-4xl font-bold tracking-tight">Blog & Notes</h2>
+                <Link
+                  href="/blog"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium hover:bg-white/15 transition whitespace-nowrap"
+                >
+                  View All Posts
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+              <p className="text-foreground/80 max-w-2xl">Documenting my journey, sharing learnings, and exploring ideas around AI, automation, and backend systems.</p>
+            </div>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="grid gap-8 lg:grid-cols-3">
-            {/* Featured Post */}
-            <div className="lg:col-span-2">
-              <Link href="/blog/building-propflow" className="group cursor-pointer block">
-                <div className="relative overflow-hidden rounded-xl bg-white/5 border border-white/10 aspect-[16/9] mb-6">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid gap-8 lg:grid-cols-3">
+                {/* Featured Post */}
+                <div className="lg:col-span-2">
+                  <Link href="/blog/building-propflow" className="group cursor-pointer block">
+                    <div className="relative overflow-hidden rounded-xl bg-white/5 border border-white/10 aspect-[16/9] mb-6">
+                      <Image
+                        src="https://img.youtube.com/vi/er0cNmZW19Q/maxresdefault.jpg"
+                        alt="PropFlow MVP Demo Video"
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute top-4 left-4">
+                        <span className="bg-white/20 text-white text-xs px-3 py-1 rounded-full">Build Logs</span>
+                      </div>
+                      <div className="absolute top-4 right-4">
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
+                      </div>
+                      {/* Play button overlay */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-16 h-16 bg-red-600/90 rounded-full flex items-center justify-center group-hover:bg-red-600 transition">
+                          <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3 group-hover:text-white/90 transition">Building PropFlow: The Journey from Idea to MVP</h3>
+                    <p className="text-foreground/70 mb-4 text-lg">The challenges, breakthroughs, and lessons learned while building an AI-powered property management platform.</p>
+                    <div className="flex items-center gap-4 text-sm text-foreground/60">
+                      <span>Jan 20, 2026</span>
+                      <span>•</span>
+                      <span>5 min read</span>
+                      <span>•</span>
+                      <span>AI, Startup, PropFlow</span>
+                    </div>
+                  </Link>
+                </div>
+
+                {/* Sidebar */}
+                <div className="lg:col-span-1">
+                  <div className="space-y-6">
+                    {/* Recent Posts */}
+                    <div>
+                      <h3 className="text-lg font-semibold mb-4">Recent Posts</h3>
+                      <div className="space-y-4">
+                        <Link href="/blog/building-with-ai-agents" className="group cursor-pointer block">
+                          <div className="flex gap-3">
+                            <div className="relative overflow-hidden rounded-lg bg-white/5 border border-white/10 w-16 h-12 flex-shrink-0">
+                              <Image
+                                src="/images/blog-hero.png"
+                                alt="AI Agents Blog Post"
+                                fill
+                                className="object-cover"
+                              />
+                            </div>
+                            <div className="flex-1">
+                              <h4 className="font-medium mb-1 group-hover:text-white/90 transition text-sm">Building My Portfolio with AI Agents</h4>
+                              <p className="text-xs text-foreground/70 mb-2">How I used Cursor and AI agents to build this website.</p>
+                              <div className="flex items-center gap-2 text-xs text-foreground/60">
+                                <span>Jan 25, 2024</span>
+                                <span>•</span>
+                                <span>5 min</span>
+                              </div>
+                            </div>
+                          </div>
+                        </Link>
+
+                        <div className="group cursor-not-allowed opacity-50">
+                          <div className="flex gap-3">
+                            <div className="relative overflow-hidden rounded-lg bg-white/5 border border-white/10 w-16 h-12 flex-shrink-0">
+                              <div className="absolute inset-0 flex items-center justify-center">
+                                <svg className="w-4 h-4 text-white/40" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                              </div>
+                            </div>
+                            <div className="flex-1">
+                              <h4 className="font-medium mb-1 text-sm">Coming Soon</h4>
+                              <p className="text-xs text-foreground/70 mb-2">More posts coming soon...</p>
+                              <div className="flex items-center gap-2 text-xs text-foreground/60">
+                                <span>TBD</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="group cursor-not-allowed opacity-50">
+                          <div className="flex gap-3">
+                            <div className="relative overflow-hidden rounded-lg bg-white/5 border border-white/10 w-16 h-12 flex-shrink-0">
+                              <div className="absolute inset-0 flex items-center justify-center">
+                                <svg className="w-4 h-4 text-white/40" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H19V1h-2v1H7V1H5v1H4.5C3.67 2 3 2.67 3 3.5v15c0 .83.67 1.5 1.5 1.5h15c.83 0 1.5-.67 1.5-1.5v-15c0-.83-.67-1.5-1.5-1.5z" />
+                                </svg>
+                              </div>
+                            </div>
+                            <div className="flex-1">
+                              <h4 className="font-medium mb-1 text-sm">Coming Soon</h4>
+                              <p className="text-xs text-foreground/70 mb-2">More posts coming soon...</p>
+                              <div className="flex items-center gap-2 text-xs text-foreground/60">
+                                <span>TBD</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Categories */}
+                    <div>
+                      <h3 className="text-lg font-semibold mb-4">Categories</h3>
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition">
+                          <div className="flex items-center gap-3">
+                            <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                            <span className="text-sm">Build Logs</span>
+                          </div>
+                          <span className="text-xs text-foreground/60">3</span>
+                        </div>
+                        <div className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition">
+                          <div className="flex items-center gap-3">
+                            <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                            <span className="text-sm">Learning Notes</span>
+                          </div>
+                          <span className="text-xs text-foreground/60">2</span>
+                        </div>
+                        <div className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition">
+                          <div className="flex items-center gap-3">
+                            <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                            <span className="text-sm">Ideas & Reflections</span>
+                          </div>
+                          <span className="text-xs text-foreground/60">1</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Tags */}
+                    < div >
+                      <h3 className="text-lg font-semibold mb-4">Popular Tags</h3>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="text-xs bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20 transition">AI</span>
+                        <span className="text-xs bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20 transition">Automation</span>
+                        <span className="text-xs bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20 transition">Microsoft 365</span>
+                        <span className="text-xs bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20 transition">n8n</span>
+                        <span className="text-xs bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20 transition">Backend</span>
+                        <span className="text-xs bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20 transition">Systems</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section >
+
+          <section id="resume" className="py-24">
+            <div className="mb-8">
+              <p className="text-sm text-foreground/60 mb-2">Professional Profile</p>
+              <h2 className="text-4xl font-bold tracking-tight mb-4">Resume</h2>
+              <p className="text-foreground/80 max-w-2xl">Download my resume to learn more about my experience, skills, and certifications.</p>
+            </div>
+
+            <div className="grid gap-8 lg:grid-cols-2 items-center">
+              {/* Resume Preview */}
+              <div className="order-2 lg:order-1">
+                <div className="relative overflow-hidden rounded-xl bg-white/5 border border-white/10 aspect-[3/4] shadow-2xl">
                   <Image
-                    src="https://img.youtube.com/vi/er0cNmZW19Q/maxresdefault.jpg"
-                    alt="PropFlow MVP Demo Video"
+                    src="/images/resume-preview.webp"
+                    alt="Joel Torres Resume Preview"
                     fill
                     className="object-cover"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-white/20 text-white text-xs px-3 py-1 rounded-full">Build Logs</span>
+                    <div className="w-3 h-3 bg-red-400 rounded-full"></div>
                   </div>
-                  <div className="absolute top-4 right-4">
-                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="absolute top-4 left-8">
+                    <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                  </div>
+                  <div className="absolute top-4 left-12">
+                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Download Section */}
+              <div className="order-1 lg:order-2">
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-2xl font-semibold mb-3">Get My Resume</h3>
+                    <p className="text-foreground/80 mb-6">
+                      Download my latest resume to see my full experience, technical skills, and certifications including JT Powerwashing, Door-to-Door Sales, and Microsoft certifications.
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <a
+                      href="/Joel-Torres-resume.pdf"
+                      download
+                      className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
+                    >
+                      <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-white/20 transition">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-medium group-hover:text-white/90 transition">Download PDF</h4>
+                        <p className="text-sm text-foreground/70">Joel-Torres-resume.pdf</p>
+                      </div>
+                      <svg className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </a>
+
+                    <div className="grid grid-cols-2 gap-4">
+                      <a
+                        href="https://learn.microsoft.com/api/credentials/share/en-us/JoelTorres-4643/1D05871E0F5FA109?sharingId=3B9A6A1523B61FA6"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group p-4 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:border-white/20"
+                      >
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                          <span className="text-sm font-medium group-hover:text-white/90 transition">MS-900</span>
+                          <svg className="w-3 h-3 text-white/60 group-hover:text-white group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </div>
+                        <p className="text-xs text-foreground/70 group-hover:text-foreground/80 transition">Microsoft 365 Fundamentals</p>
+                      </a>
+                      <a
+                        href="https://credsverse.com/credentials/fcd425f9-27b9-4d4b-a9e8-c2f1cc32350c"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group p-4 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:border-white/20"
+                      >
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                          <span className="text-sm font-medium group-hover:text-white/90 transition">NAiSS Leadership Academy</span>
+                          <svg className="w-3 h-3 text-white/60 group-hover:text-white group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </div>
+                        <p className="text-xs text-foreground/70 group-hover:text-foreground/80 transition">Nittany AI Student Society</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="contact" className="py-24">
+            <div className="mb-8">
+              <p className="text-sm text-foreground/60 mb-2">Let&apos;s Connect</p>
+              <h2 className="text-4xl font-bold tracking-tight mb-4">Get In Touch</h2>
+              <p className="text-foreground/80 max-w-2xl">If you&apos;d like to work with me or see a business audit of how I can implement my skillset, let&apos;s book a call.</p>
+            </div>
+
+            <div className="grid gap-8 lg:grid-cols-2 items-center">
+              {/* Contact Options */}
+              <div className="space-y-6">
+                <div className="group cursor-pointer">
+                  <a
+                    href="https://calendly.com/joelatorres1305/lets-chat"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <div className="flex items-center gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 group-hover:border-white/20">
+                      <div className="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-white/20 transition">
+                        <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold mb-1 group-hover:text-white/90 transition">Book a Call</h3>
+                        <p className="text-sm text-foreground/70">Schedule a consultation to discuss your automation needs</p>
+                      </div>
+                      <svg className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </div>
-                  </div>
-                  {/* Play button overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 bg-red-600/90 rounded-full flex items-center justify-center group-hover:bg-red-600 transition">
-                      <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
+                  </a>
+                </div>
+
+                <div className="group cursor-pointer">
+                  <a
+                    href="mailto:joelatorres1305@gmail.com"
+                    className="block"
+                  >
+                    <div className="flex items-center gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 group-hover:border-white/20">
+                      <div className="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-white/20 transition">
+                        <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold mb-1 group-hover:text-white/90 transition">Send Email</h3>
+                        <p className="text-sm text-foreground/70">joelatorres1305@gmail.com</p>
+                      </div>
+                      <svg className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </div>
-                  </div>
+                  </a>
                 </div>
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-white/90 transition">Building PropFlow: The Journey from Idea to MVP</h3>
-                <p className="text-foreground/70 mb-4 text-lg">The challenges, breakthroughs, and lessons learned while building an AI-powered property management platform.</p>
-                <div className="flex items-center gap-4 text-sm text-foreground/60">
-                  <span>Jan 20, 2026</span>
-                  <span>•</span>
-                  <span>5 min read</span>
-                  <span>•</span>
-                  <span>AI, Startup, PropFlow</span>
-                </div>
-              </Link>
-            </div>
 
-            {/* Sidebar */}
-            <div className="lg:col-span-1">
+                <div className="group cursor-pointer">
+                  <a
+                    href="https://www.linkedin.com/in/joel-torres-psu/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <div className="flex items-center gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 group-hover:border-white/20">
+                      <div className="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-white/20 transition">
+                        <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M20.45 20.45h-3.56v-5.56c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.13 1.45-2.13 2.94v5.65H9.35V9h3.41v1.56h.05c.47-.9 1.62-1.85 3.33-1.85 3.56 0 4.22 2.35 4.22 5.41v6.33ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.56V9h3.56v11.45Z" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold mb-1 group-hover:text-white/90 transition">Connect on LinkedIn</h3>
+                        <p className="text-sm text-foreground/70">Follow my professional journey and updates</p>
+                      </div>
+                      <svg className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </a>
+                </div>
+
+                <div className="group cursor-pointer">
+                  <a
+                    href="https://github.com/JoelTor1305"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <div className="flex items-center gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 group-hover:border-white/20">
+                      <div className="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-white/20 transition">
+                        <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold mb-1 group-hover:text-white/90 transition">View My GitHub</h3>
+                        <p className="text-sm text-foreground/70">Explore my code repositories and projects</p>
+                      </div>
+                      <svg className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              {/* What I Can Help With */}
               <div className="space-y-6">
-                {/* Recent Posts */}
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">Recent Posts</h3>
-                  <div className="space-y-4">
-                    <Link href="/blog/building-with-ai-agents" className="group cursor-pointer block">
-                      <div className="flex gap-3">
-                        <div className="relative overflow-hidden rounded-lg bg-white/5 border border-white/10 w-16 h-12 flex-shrink-0">
-                          <Image
-                            src="/images/blog-hero.png"
-                            alt="AI Agents Blog Post"
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-medium mb-1 group-hover:text-white/90 transition text-sm">Building My Portfolio with AI Agents</h4>
-                          <p className="text-xs text-foreground/70 mb-2">How I used Cursor and AI agents to build this website.</p>
-                          <div className="flex items-center gap-2 text-xs text-foreground/60">
-                            <span>Jan 25, 2024</span>
-                            <span>•</span>
-                            <span>5 min</span>
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
+                  <h3 className="text-2xl font-semibold mb-4">What I Can Help With</h3>
+                  <p className="text-foreground/80 mb-6">
+                    Whether you&apos;re looking to streamline operations, automate workflows, or implement AI solutions, I can provide a comprehensive audit and implementation plan.
+                  </p>
+                </div>
 
-                    <div className="group cursor-not-allowed opacity-50">
-                      <div className="flex gap-3">
-                        <div className="relative overflow-hidden rounded-lg bg-white/5 border border-white/10 w-16 h-12 flex-shrink-0">
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <svg className="w-4 h-4 text-white/40" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg>
-                          </div>
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-medium mb-1 text-sm">Coming Soon</h4>
-                          <p className="text-xs text-foreground/70 mb-2">More posts coming soon...</p>
-                          <div className="flex items-center gap-2 text-xs text-foreground/60">
-                            <span>TBD</span>
-                          </div>
-                        </div>
-                      </div>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3 p-4 rounded-lg bg-white/5 border border-white/10">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-medium mb-1">AI & Automation Systems</h4>
+                      <p className="text-sm text-foreground/70">Architecting intelligent workflows that eliminate operational bottlenecks and drive efficiency</p>
                     </div>
-
-                    <div className="group cursor-not-allowed opacity-50">
-                      <div className="flex gap-3">
-                        <div className="relative overflow-hidden rounded-lg bg-white/5 border border-white/10 w-16 h-12 flex-shrink-0">
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <svg className="w-4 h-4 text-white/40" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H19V1h-2v1H7V1H5v1H4.5C3.67 2 3 2.67 3 3.5v15c0 .83.67 1.5 1.5 1.5h15c.83 0 1.5-.67 1.5-1.5v-15c0-.83-.67-1.5-1.5-1.5z" />
-                            </svg>
-                          </div>
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-medium mb-1 text-sm">Coming Soon</h4>
-                          <p className="text-xs text-foreground/70 mb-2">More posts coming soon...</p>
-                          <div className="flex items-center gap-2 text-xs text-foreground/60">
-                            <span>TBD</span>
-                          </div>
-                        </div>
-                      </div>
+                  </div>
+                  <div className="flex items-start gap-3 p-4 rounded-lg bg-white/5 border border-white/10">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-medium mb-1">Full-Stack Web Engineering</h4>
+                      <p className="text-sm text-foreground/70">Developing scalable, high-performance applications designed for modern digital ecosystems</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 p-4 rounded-lg bg-white/5 border border-white/10">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-medium mb-1">Bespoke Software Solutions</h4>
+                      <p className="text-sm text-foreground/70">Designing tailored software architectures aligned with complex strategic business objectives</p>
                     </div>
                   </div>
                 </div>
-
-                {/* Categories */}
-                <div>
-                  <h3 className="text-lg font-semibold mb-4">Categories</h3>
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition">
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                        <span className="text-sm">Build Logs</span>
-                      </div>
-                      <span className="text-xs text-foreground/60">3</span>
-                    </div>
-                    <div className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition">
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                        <span className="text-sm">Learning Notes</span>
-                      </div>
-                      <span className="text-xs text-foreground/60">2</span>
-                    </div>
-                    <div className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition">
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                        <span className="text-sm">Ideas & Reflections</span>
-                      </div>
-                      <span className="text-xs text-foreground/60">1</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Tags */}
-                < div >
-                  <h3 className="text-lg font-semibold mb-4">Popular Tags</h3>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20 transition">AI</span>
-                    <span className="text-xs bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20 transition">Automation</span>
-                    <span className="text-xs bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20 transition">Microsoft 365</span>
-                    <span className="text-xs bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20 transition">n8n</span>
-                    <span className="text-xs bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20 transition">Backend</span>
-                    <span className="text-xs bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20 transition">Systems</span>
-                  </div>
-                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section >
-
-      <section id="resume" className="py-24">
-        <div className="mb-8">
-          <p className="text-sm text-foreground/60 mb-2">Professional Profile</p>
-          <h2 className="text-4xl font-bold tracking-tight mb-4">Resume</h2>
-          <p className="text-foreground/80 max-w-2xl">Download my resume to learn more about my experience, skills, and certifications.</p>
-        </div>
-
-        <div className="grid gap-8 lg:grid-cols-2 items-center">
-          {/* Resume Preview */}
-          <div className="order-2 lg:order-1">
-            <div className="relative overflow-hidden rounded-xl bg-white/5 border border-white/10 aspect-[3/4] shadow-2xl">
-              <Image
-                src="/images/resume-preview.webp"
-                alt="Joel Torres Resume Preview"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute top-4 left-4">
-                <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-              </div>
-              <div className="absolute top-4 left-8">
-                <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-              </div>
-              <div className="absolute top-4 left-12">
-                <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-              </div>
-            </div>
-          </div>
-
-          {/* Download Section */}
-          <div className="order-1 lg:order-2">
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-2xl font-semibold mb-3">Get My Resume</h3>
-                <p className="text-foreground/80 mb-6">
-                  Download my latest resume to see my full experience, technical skills, and certifications including JT Powerwashing, Door-to-Door Sales, and Microsoft certifications.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <a
-                  href="/Joel-Torres-resume.pdf"
-                  download
-                  className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
-                >
-                  <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-white/20 transition">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-medium group-hover:text-white/90 transition">Download PDF</h4>
-                    <p className="text-sm text-foreground/70">Joel-Torres-resume.pdf</p>
-                  </div>
-                  <svg className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </a>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <a
-                    href="https://learn.microsoft.com/api/credentials/share/en-us/JoelTorres-4643/1D05871E0F5FA109?sharingId=3B9A6A1523B61FA6"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group p-4 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:border-white/20"
-                  >
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                      <span className="text-sm font-medium group-hover:text-white/90 transition">MS-900</span>
-                      <svg className="w-3 h-3 text-white/60 group-hover:text-white group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </div>
-                    <p className="text-xs text-foreground/70 group-hover:text-foreground/80 transition">Microsoft 365 Fundamentals</p>
-                  </a>
-                  <a
-                    href="https://credsverse.com/credentials/fcd425f9-27b9-4d4b-a9e8-c2f1cc32350c"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group p-4 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:border-white/20"
-                  >
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                      <span className="text-sm font-medium group-hover:text-white/90 transition">NAiSS Leadership Academy</span>
-                      <svg className="w-3 h-3 text-white/60 group-hover:text-white group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </div>
-                    <p className="text-xs text-foreground/70 group-hover:text-foreground/80 transition">Nittany AI Student Society</p>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="py-24">
-        <div className="mb-8">
-          <p className="text-sm text-foreground/60 mb-2">Let&apos;s Connect</p>
-          <h2 className="text-4xl font-bold tracking-tight mb-4">Get In Touch</h2>
-          <p className="text-foreground/80 max-w-2xl">If you&apos;d like to work with me or see a business audit of how I can implement my skillset, let&apos;s book a call.</p>
-        </div>
-
-        <div className="grid gap-8 lg:grid-cols-2 items-center">
-          {/* Contact Options */}
-          <div className="space-y-6">
-            <div className="group cursor-pointer">
-              <a
-                href="https://calendly.com/joelatorres1305/lets-chat"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <div className="flex items-center gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 group-hover:border-white/20">
-                  <div className="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-white/20 transition">
-                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-1 group-hover:text-white/90 transition">Book a Call</h3>
-                    <p className="text-sm text-foreground/70">Schedule a consultation to discuss your automation needs</p>
-                  </div>
-                  <svg className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </a>
-            </div>
-
-            <div className="group cursor-pointer">
-              <a
-                href="mailto:joelatorres1305@gmail.com"
-                className="block"
-              >
-                <div className="flex items-center gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 group-hover:border-white/20">
-                  <div className="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-white/20 transition">
-                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-1 group-hover:text-white/90 transition">Send Email</h3>
-                    <p className="text-sm text-foreground/70">joelatorres1305@gmail.com</p>
-                  </div>
-                  <svg className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </a>
-            </div>
-
-            <div className="group cursor-pointer">
-              <a
-                href="https://www.linkedin.com/in/joel-torres-psu/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <div className="flex items-center gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 group-hover:border-white/20">
-                  <div className="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-white/20 transition">
-                    <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20.45 20.45h-3.56v-5.56c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.13 1.45-2.13 2.94v5.65H9.35V9h3.41v1.56h.05c.47-.9 1.62-1.85 3.33-1.85 3.56 0 4.22 2.35 4.22 5.41v6.33ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.56V9h3.56v11.45Z" />
-                    </svg>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-1 group-hover:text-white/90 transition">Connect on LinkedIn</h3>
-                    <p className="text-sm text-foreground/70">Follow my professional journey and updates</p>
-                  </div>
-                  <svg className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </a>
-            </div>
-
-            <div className="group cursor-pointer">
-              <a
-                href="https://github.com/JoelTor1305"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <div className="flex items-center gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 group-hover:border-white/20">
-                  <div className="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-white/20 transition">
-                    <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-1 group-hover:text-white/90 transition">View My GitHub</h3>
-                    <p className="text-sm text-foreground/70">Explore my code repositories and projects</p>
-                  </div>
-                  <svg className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          {/* What I Can Help With */}
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-2xl font-semibold mb-4">What I Can Help With</h3>
-              <p className="text-foreground/80 mb-6">
-                Whether you&apos;re looking to streamline operations, automate workflows, or implement AI solutions, I can provide a comprehensive audit and implementation plan.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="flex items-start gap-3 p-4 rounded-lg bg-white/5 border border-white/10">
-                <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
-                <div>
-                  <h4 className="font-medium mb-1">AI & Automation Systems</h4>
-                  <p className="text-sm text-foreground/70">Architecting intelligent workflows that eliminate operational bottlenecks and drive efficiency</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 p-4 rounded-lg bg-white/5 border border-white/10">
-                <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                <div>
-                  <h4 className="font-medium mb-1">Full-Stack Web Engineering</h4>
-                  <p className="text-sm text-foreground/70">Developing scalable, high-performance applications designed for modern digital ecosystems</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 p-4 rounded-lg bg-white/5 border border-white/10">
-                <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                <div>
-                  <h4 className="font-medium mb-1">Bespoke Software Solutions</h4>
-                  <p className="text-sm text-foreground/70">Designing tailored software architectures aligned with complex strategic business objectives</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  );
+        </section>
+      );
 }

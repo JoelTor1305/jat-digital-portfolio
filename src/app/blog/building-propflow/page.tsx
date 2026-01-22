@@ -1,5 +1,5 @@
 
-import Image from "next/image";
+
 import Link from "next/link";
 import { Metadata } from "next";
 
@@ -47,7 +47,7 @@ export default function BuildingPropFlowPost() {
                     </p>
 
                     <p>
-                        Creating software seems easy at first until it's time to get into the little details. Details like connecting databases, making real API calls to third-party services, and visualizing that data in a user-friendly way. Not to mention the difficulty of building secure authentication systems that protect user data while remaining valid across sessions.
+                        Creating software seems easy at first until it&apos;s time to get into the little details. Details like connecting databases, making real API calls to third-party services, and visualizing that data in a user-friendly way. Not to mention the difficulty of building secure authentication systems that protect user data while remaining valid across sessions.
                     </p>
 
                     <h2>The Pivot: Taking Control</h2>
@@ -55,10 +55,10 @@ export default function BuildingPropFlowPost() {
                         Through this process, I learned so much about our tech stack. We started small with GitHub and Netlify deployments. But at one point, we knew we had to step up. We wanted more control.
                     </p>
                     <p>
-                        That's when we made the change to <strong>Google Cloud and Firebase</strong>.
+                        That&apos;s when we made the change to <strong>Google Cloud and Firebase</strong>.
                     </p>
                     <p>
-                        The challenge of tearing everything down and building it back up was immense. It was a major pivot; the system before "worked," but not well enough for the scale and reliability we needed.
+                        The challenge of tearing everything down and building it back up was immense. It was a major pivot; the system before &quot;worked,&quot; but not well enough for the scale and reliability we needed.
                     </p>
 
                     <h2>The Deployment Struggle</h2>
@@ -77,7 +77,7 @@ export default function BuildingPropFlowPost() {
                         One breakthrough I had was taking a step back and realizing the real problem: <strong>My IDE did not have enough context.</strong>
                     </p>
                     <p>
-                        Being new to this level of software engineering, I didn't always have the knowledge to even understand the issues I was running into. So, I turned to <strong>NoteLM</strong> (Google's research tool). I dove deep into:
+                        Being new to this level of software engineering, I didn&apos;t always have the knowledge to even understand the issues I was running into. So, I turned to <strong>NoteLM</strong> (Google&apos;s research tool). I dove deep into:
                     </p>
                     <ul className="list-disc pl-6 space-y-2">
                         <li>Best prompting practices</li>
@@ -90,14 +90,14 @@ export default function BuildingPropFlowPost() {
                     </p>
 
                     <div className="bg-white/5 border-l-4 border-blue-500 p-6 my-8 rounded-r-lg">
-                        <h3 className="text-lg font-bold mt-0 text-blue-400">The "Expert Developer" Agent</h3>
+                        <h3 className="text-lg font-bold mt-0 text-blue-400">The &quot;Expert Developer&quot; Agent</h3>
                         <p className="mb-0">
                             I trained my own AI model on all of this gathered knowledge. I created a custom prompting agent that was an expert developer tailored specifically to <em>my</em> tech stack.
                         </p>
                     </div>
 
                     <p>
-                        Now, simple descriptions of issues turned into 10-fold efficiency gains. Instead of guessing why authentication wasn't working, I had an agent telling me exactly <em>"Google Cloud API database isn't synced with passkeys"</em> (hypothetically).
+                        Now, simple descriptions of issues turned into 10-fold efficiency gains. Instead of guessing why authentication wasn&apos;t working, I had an agent telling me exactly <em>&quot;Google Cloud API database isn&apos;t synced with passkeys&quot;</em> (hypothetically).
                     </p>
                     <p>
                         The point is: I now had control. Instead of guesswork, I was learning best practices from an expert I built myself.
@@ -119,7 +119,7 @@ export default function BuildingPropFlowPost() {
                         <li>
                             <strong>Manual Market Research is Time-Consuming</strong>
                             <br />
-                            Landlords spend 15-20 hours per month researching rent prices. Pricing based on "gut feeling" leaves $100-300/month on the table per property.
+                            Landlords spend 15-20 hours per month researching rent prices. Pricing based on &quot;gut feeling&quot; leaves $100-300/month on the table per property.
                         </li>
                         <li>
                             <strong>Tenant Turnover is Costly</strong>

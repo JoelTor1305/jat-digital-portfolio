@@ -479,7 +479,7 @@ export default function Home() {
             <p className="text-sm text-foreground/70">Built a custom website, Stripe-powered booking system, and automated funnel that enabled fans to book 1-on-1 coaching calls.</p>
           </div>
         </div>
-      </div >
+      </div>
 
       <section id="blog" className="py-24">
         <div className="mb-8">

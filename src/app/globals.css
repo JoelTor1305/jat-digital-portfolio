@@ -77,7 +77,7 @@ html {
 .animate-scroll {
   animation: scroll 40s linear infinite;
   display: flex;
-  gap: 1.5rem;
+  width: max-content;
 }
 
 .animate-scroll:hover {

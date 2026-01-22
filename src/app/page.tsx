@@ -669,7 +669,7 @@ export default function Home() {
           <div className="order-2 lg:order-1">
             <div className="relative overflow-hidden rounded-xl bg-white/5 border border-white/10 aspect-[3/4] shadow-2xl">
               <Image
-                src="/images/resume-preview.webp"
+                src="/images/resume-preview.png"
                 alt="Joel Torres Resume Preview"
                 fill
                 className="object-cover"
@@ -698,7 +698,7 @@ export default function Home() {
 
               <div className="space-y-4">
                 <a
-                  href="/Joel-Torres-resume.pdf"
+                  href="/Joel-Torres-Spring-2026-Resume.pdf"
                   download
                   className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
                 >
@@ -709,7 +709,7 @@ export default function Home() {
                   </div>
                   <div className="flex-1">
                     <h4 className="font-medium group-hover:text-white/90 transition">Download PDF</h4>
-                    <p className="text-sm text-foreground/70">Joel-Torres-resume.pdf</p>
+                    <p className="text-sm text-foreground/70">Joel-Torres-Spring-2026-Resume.pdf</p>
                   </div>
                   <svg className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

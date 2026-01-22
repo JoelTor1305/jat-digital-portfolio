@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       authors: ["Joel Torres"],
       images: [
         {
-          url: "/images/profile-headshot.webp",
+          url: post.frontmatter.image || "/images/profile-headshot.webp",
           width: 1200,
           height: 630,
           alt: post.frontmatter.title,
@@ -45,7 +45,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       card: "summary_large_image",
       title: post.frontmatter.title,
       description: post.frontmatter.description || post.frontmatter.excerpt,
-      images: ["/images/profile-headshot.webp"],
+      images: [post.frontmatter.image || "/images/profile-headshot.webp"],
+    },
+    alternates: {
+      canonical: `https://jat.digital/blog/${slug}`,
     },
   };
 }
@@ -56,8 +59,34 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
   if (!post) return notFound();
 
+  const { title, date } = post.frontmatter;
+
+  // JSON-LD for BlogPosting
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": title,
+    "description": post.frontmatter.description || post.frontmatter.excerpt,
+    "author": {
+      "@type": "Person",
+      "name": "Joel Torres",
+      "url": "https://jat.digital"
+    },
+    "datePublished": date,
+    "dateModified": date,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://jat.digital/blog/${slug}`
+    },
+    "image": "https://jat.digital/images/profile-headshot.webp"
+  };
+
   return (
     <div className="min-h-screen py-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="max-w-4xl mx-auto px-4">
         {/* Back to blog */}
         <Link
@@ -109,7 +138,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           <div className="mb-12">
             <div className="relative overflow-hidden rounded-xl bg-white/5 border border-white/10 aspect-[16/9]">
               <Image
-                src="/images/blog-hero.png"
+                src={post.frontmatter.image || "/images/blog-hero.png"}
                 alt={post.frontmatter.title}
                 fill
                 className="object-cover"

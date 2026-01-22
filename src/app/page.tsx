@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import { ScrollCue } from "@/components/ScrollCue";
+import { getRecentPosts } from "@/lib/mdx";
 
 export default function Home() {
   const structuredData = {
@@ -11,8 +12,8 @@ export default function Home() {
     "alternateName": "Joel Torres AI",
     "jobTitle": "BA&IS Student",
     "description": "Joel Torres - Business Analytics & Information Systems (BA&IS) Student at Penn State University exploring AI, automation, and backend systems. Building projects and documenting the journey.",
-    "url": "https://jat-digital.netlify.app",
-    "image": "https://jat-digital.netlify.app/images/profile-headshot.webp",
+    "url": "https://jat.digital",
+    "image": "https://jat.digital/images/profile-headshot.webp",
     "sameAs": [
       "https://www.linkedin.com/in/joel-torres-psu/",
       "https://calendly.com/joelatorres1305/lets-chat"
@@ -549,49 +550,40 @@ export default function Home() {
                 <div>
                   <h3 className="text-lg font-semibold mb-4">Recent Posts</h3>
                   <div className="space-y-4">
-                    <Link href="/blog/career-journey-and-future" className="group cursor-pointer block">
-                      <div className="flex gap-3">
-                        <div className="relative overflow-hidden rounded-lg bg-white/5 border border-white/10 w-16 h-12 flex-shrink-0">
-                          <Image
-                            src="/images/career-pivot.jpg"
-                            alt="Career Pivot"
-                            fill
-                            className="object-cover"
-                            style={{ objectPosition: 'center 20%' }}
-                          />
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-medium mb-1 group-hover:text-white/90 transition text-sm">The Pivot: From Code to Systems</h4>
-                          <p className="text-xs text-foreground/70 mb-2">My journey from entrepreneurship to AI Engineering.</p>
-                          <div className="flex items-center gap-2 text-xs text-foreground/60">
-                            <span>Jan 22, 2026</span>
-                            <span>•</span>
-                            <span>4 min</span>
+                    {getRecentPosts(3).map((post) => (
+                      <Link key={post.slug} href={`/blog/${post.slug}`} className="group cursor-pointer block">
+                        <div className="flex gap-3">
+                          <div className="relative overflow-hidden rounded-lg bg-white/5 border border-white/10 w-16 h-12 flex-shrink-0">
+                            <Image
+                              src={post.frontmatter.image || "/images/blog-hero.png"}
+                              alt={post.frontmatter.title}
+                              fill
+                              className="object-cover"
+                              style={{ objectPosition: 'center 20%' }}
+                            />
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="font-medium mb-1 group-hover:text-white/90 transition text-sm line-clamp-2">
+                              {post.frontmatter.title}
+                            </h4>
+                            <p className="text-xs text-foreground/70 mb-2 line-clamp-1">
+                              {post.frontmatter.description}
+                            </p>
+                            <div className="flex items-center gap-2 text-xs text-foreground/60">
+                              <span>
+                                {new Date(post.frontmatter.date).toLocaleDateString("en-US", {
+                                  month: "short",
+                                  day: "numeric",
+                                  year: "numeric",
+                                })}
+                              </span>
+                              <span>•</span>
+                              <span>{post.readingTimeMinutes} min</span>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </Link>
-                    <Link href="/blog/building-with-ai-agents" className="group cursor-pointer block">
-                      <div className="flex gap-3">
-                        <div className="relative overflow-hidden rounded-lg bg-white/5 border border-white/10 w-16 h-12 flex-shrink-0">
-                          <Image
-                            src="/images/blog-hero.png"
-                            alt="AI Agents Blog Post"
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-medium mb-1 group-hover:text-white/90 transition text-sm">Building My Portfolio with AI Agents</h4>
-                          <p className="text-xs text-foreground/70 mb-2">How I used Cursor and AI agents to build this website.</p>
-                          <div className="flex items-center gap-2 text-xs text-foreground/60">
-                            <span>Jan 25, 2024</span>
-                            <span>•</span>
-                            <span>5 min</span>
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
+                      </Link>
+                    ))}
 
                     <div className="group cursor-not-allowed opacity-50">
                       <div className="flex gap-3">
@@ -599,25 +591,6 @@ export default function Home() {
                           <div className="absolute inset-0 flex items-center justify-center">
                             <svg className="w-4 h-4 text-white/40" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg>
-                          </div>
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-medium mb-1 text-sm">Coming Soon</h4>
-                          <p className="text-xs text-foreground/70 mb-2">More posts coming soon...</p>
-                          <div className="flex items-center gap-2 text-xs text-foreground/60">
-                            <span>TBD</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="group cursor-not-allowed opacity-50">
-                      <div className="flex gap-3">
-                        <div className="relative overflow-hidden rounded-lg bg-white/5 border border-white/10 w-16 h-12 flex-shrink-0">
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <svg className="w-4 h-4 text-white/40" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H19V1h-2v1H7V1H5v1H4.5C3.67 2 3 2.67 3 3.5v15c0 .83.67 1.5 1.5 1.5h15c.83 0 1.5-.67 1.5-1.5v-15c0-.83-.67-1.5-1.5-1.5z" />
                             </svg>
                           </div>
                         </div>

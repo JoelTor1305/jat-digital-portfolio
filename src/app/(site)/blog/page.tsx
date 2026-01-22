@@ -49,7 +49,7 @@ export default function BlogPage() {
                     <div className="flex-shrink-0">
                       <div className="w-32 h-32 rounded-lg overflow-hidden">
                         <Image
-                          src="/images/blog-hero.png"
+                          src={post.frontmatter.image || "/images/blog-hero.png"}
                           alt={post.frontmatter.title}
                           width={128}
                           height={128}

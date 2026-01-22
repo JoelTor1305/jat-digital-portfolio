@@ -585,24 +585,7 @@ export default function Home() {
                       </Link>
                     ))}
 
-                    <div className="group cursor-not-allowed opacity-50">
-                      <div className="flex gap-3">
-                        <div className="relative overflow-hidden rounded-lg bg-white/5 border border-white/10 w-16 h-12 flex-shrink-0">
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <svg className="w-4 h-4 text-white/40" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg>
-                          </div>
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-medium mb-1 text-sm">Coming Soon</h4>
-                          <p className="text-xs text-foreground/70 mb-2">More posts coming soon...</p>
-                          <div className="flex items-center gap-2 text-xs text-foreground/60">
-                            <span>TBD</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+
                   </div>
                 </div>
 

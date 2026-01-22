@@ -549,6 +549,27 @@ export default function Home() {
                 <div>
                   <h3 className="text-lg font-semibold mb-4">Recent Posts</h3>
                   <div className="space-y-4">
+                    <Link href="/blog/career-journey-and-future" className="group cursor-pointer block">
+                      <div className="flex gap-3">
+                        <div className="relative overflow-hidden rounded-lg bg-white/5 border border-white/10 w-16 h-12 flex-shrink-0">
+                          <Image
+                            src="/images/experience.webp"
+                            alt="Career Pivot"
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-medium mb-1 group-hover:text-white/90 transition text-sm">The Pivot: From Code to Systems</h4>
+                          <p className="text-xs text-foreground/70 mb-2">My journey from entrepreneurship to AI Engineering.</p>
+                          <div className="flex items-center gap-2 text-xs text-foreground/60">
+                            <span>Jan 22, 2026</span>
+                            <span>•</span>
+                            <span>4 min</span>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
                     <Link href="/blog/building-with-ai-agents" className="group cursor-pointer block">
                       <div className="flex gap-3">
                         <div className="relative overflow-hidden rounded-lg bg-white/5 border border-white/10 w-16 h-12 flex-shrink-0">
@@ -615,6 +636,13 @@ export default function Home() {
                 <div>
                   <h3 className="text-lg font-semibold mb-4">Categories</h3>
                   <div className="space-y-2">
+                    <div className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition">
+                      <div className="flex items-center gap-3">
+                        <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                        <span className="text-sm">Career</span>
+                      </div>
+                      <span className="text-xs text-foreground/60">1</span>
+                    </div>
                     <div className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition">
                       <div className="flex items-center gap-3">
                         <div className="w-2 h-2 bg-blue-400 rounded-full"></div>

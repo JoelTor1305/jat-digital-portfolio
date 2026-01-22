@@ -553,10 +553,11 @@ export default function Home() {
                       <div className="flex gap-3">
                         <div className="relative overflow-hidden rounded-lg bg-white/5 border border-white/10 w-16 h-12 flex-shrink-0">
                           <Image
-                            src="/images/experience.webp"
+                            src="/images/career-pivot.jpg"
                             alt="Career Pivot"
                             fill
                             className="object-cover"
+                            style={{ objectPosition: 'center 20%' }}
                           />
                         </div>
                         <div className="flex-1">

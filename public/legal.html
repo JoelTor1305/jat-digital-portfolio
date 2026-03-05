@@ -208,8 +208,16 @@
     document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
     document.getElementById(docId).classList.add('active');
     el.classList.add('active');
+    window.location.hash = docId;
     return false;
   }
+  window.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash.replace('#', '');
+    if (hash === 'tos') {
+      var tosLink = document.querySelector('nav a:last-child');
+      show('tos', tosLink);
+    }
+  });
 </script>
 </body>
 </html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sidekick — Legal</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --surface: #141414;
+      --border: #222;
+      --accent: #c8f135;
+      --text: #e8e8e8;
+      --muted: #666;
+      --mono: 'IBM Plex Mono', monospace;
+      --sans: 'IBM Plex Sans', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .logo {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .logo span {
+      color: var(--muted);
+    }
+    nav {
+      margin-left: auto;
+      display: flex;
+      gap: 2rem;
+    }
+    nav a {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    nav a:hover, nav a.active { color: var(--accent); }
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    .doc { display: none; }
+    .doc.active { display: block; }
+    .doc-header {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .tag {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+    .meta {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    h2 {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin: 2.5rem 0 0.75rem;
+    }
+    p {
+      color: #b0b0b0;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+    ul {
+      color: #b0b0b0;
+      font-size: 0.95rem;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    li { margin-bottom: 0.4rem; }
+    .highlight {
+      background: var(--surface);
+      border-left: 2px solid var(--accent);
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .highlight p {
+      margin: 0;
+      color: var(--text);
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 3rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">Sidekick <span>/ Legal</span></div>
+  <nav>
+    <a href="#" class="active" onclick="show('privacy', this)">Privacy Policy</a>
+    <a href="#" onclick="show('tos', this)">Terms of Service</a>
+  </nav>
+</header>
+<div class="container">
+  <!-- PRIVACY POLICY -->
+  <div class="doc active" id="privacy">
+    <div class="doc-header">
+      <span class="tag">Document 01</span>
+      <h1>Privacy Policy</h1>
+      <p class="meta">Effective date: March 5, 2026 &nbsp;·&nbsp; Sidekick Personal AI Agent</p>
+    </div>
+    <div class="highlight">
+      <p>Sidekick is a personal AI agent built for internal use. It does not collect, store, or sell your personal data to any third party.</p>
+    </div>
+    <h2>What Sidekick Accesses</h2>
+    <p>Sidekick connects to your Notion workspace solely to retrieve contextual information (pages, databases, notes) to assist in completing tasks. This access is read-only or write-only as directed by you.</p>
+    <h2>What We Do With Your Data</h2>
+    <ul>
+      <li>Notion data is accessed in real time to generate responses — it is not stored on any external server beyond your own VPS.</li>
+      <li>No data is shared with third parties, advertisers, or analytics platforms.</li>
+      <li>No user profiles are created or maintained.</li>
+    </ul>
+    <h2>Data Storage</h2>
+    <p>Any data persisted by Sidekick (e.g., conversation memory, context) is stored on infrastructure you own and control. Sidekick does not maintain independent databases outside your environment.</p>
+    <h2>Third-Party Services</h2>
+    <p>Sidekick may route requests through third-party AI APIs (e.g., Anthropic Claude API) to generate responses. These providers have their own privacy policies. No personally identifiable information is intentionally transmitted beyond what is required to complete your request.</p>
+    <h2>Your Rights</h2>
+    <p>Since you are both the operator and sole user of Sidekick, you have complete control over all data. You may revoke Notion access at any time via your Notion workspace integration settings.</p>
+    <h2>Changes to This Policy</h2>
+    <p>This policy may be updated as Sidekick's functionality evolves. The effective date above reflects the most recent revision.</p>
+    <h2>Contact</h2>
+    <p>Questions? Reach out directly to the operator of this integration.</p>
+  </div>
+  <!-- TERMS OF SERVICE -->
+  <div class="doc" id="tos">
+    <div class="doc-header">
+      <span class="tag">Document 02</span>
+      <h1>Terms of Service</h1>
+      <p class="meta">Effective date: March 5, 2026 &nbsp;·&nbsp; Sidekick Personal AI Agent</p>
+    </div>
+    <div class="highlight">
+      <p>Sidekick is a private, internal tool. These terms exist to satisfy integration requirements — this is not a public-facing service.</p>
+    </div>
+    <h2>Acceptance</h2>
+    <p>By using Sidekick, you agree to these terms. As this is a personal internal tool, "you" refers to the sole authorized operator.</p>
+    <h2>Permitted Use</h2>
+    <ul>
+      <li>Sidekick is authorized for personal productivity and internal workflow automation only.</li>
+      <li>It is not licensed for redistribution, resale, or use by unauthorized third parties.</li>
+      <li>Use must comply with Notion's own Terms of Service and API usage policies.</li>
+    </ul>
+    <h2>Notion Integration</h2>
+    <p>Sidekick accesses Notion solely to retrieve and write context as instructed by the authorized user. This integration does not circumvent, manipulate, or misuse Notion's platform in any way.</p>
+    <h2>No Warranties</h2>
+    <p>Sidekick is provided as-is for personal use. No guarantees are made regarding uptime, accuracy, or fitness for any particular purpose beyond personal productivity assistance.</p>
+    <h2>Limitation of Liability</h2>
+    <p>The operator of Sidekick is not liable for any data loss, errors, or unintended actions resulting from the use of this integration. You are responsible for reviewing and confirming any actions Sidekick takes on your behalf.</p>
+    <h2>Termination</h2>
+    <p>Access may be revoked at any time by removing the integration from your Notion workspace settings.</p>
+    <h2>Governing Terms</h2>
+    <p>These terms are supplementary to and do not supersede Notion's platform Terms of Service or Anthropic's API usage policies.</p>
+  </div>
+</div>
+<footer>
+  <span>Sidekick — Personal AI Agent</span>
+  <span>Internal Use Only</span>
+</footer>
+<script>
+  function show(docId, el) {
+    document.querySelectorAll('.doc').forEach(d => d.classList.remove('active'));
+    document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+    document.getElementById(docId).classList.add('active');
+    el.classList.add('active');
+    return false;
+  }
+</script>
+</body>
+</html>

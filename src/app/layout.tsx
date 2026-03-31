@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://jat.digital"),
   title: {
     default: "JAT Digital - Joel Torres Portfolio",
     template: "%s | JAT Digital"
@@ -65,7 +66,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://jat-digital.netlify.app",
+    url: "https://jat.digital",
     title: "JAT Digital - Joel Torres Portfolio",
     description: "Joel Torres - BA&IS Student exploring AI, automation, and backend systems. Building projects and documenting the journey.",
     siteName: "JAT Digital",
@@ -89,7 +90,7 @@ export const metadata: Metadata = {
     google: "your-google-verification-code", // You can add this later
   },
   alternates: {
-    canonical: "https://jat-digital.netlify.app",
+    canonical: "https://jat.digital",
   },
   category: "Portfolio",
   classification: "Joel Torres Portfolio - AI Automation Developer",

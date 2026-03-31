@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllPostSlugs } from "@/lib/mdx";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
+  const base = process.env.NEXT_PUBLIC_SITE_URL || "https://jat.digital";
   const now = new Date().toISOString();
   const posts = getAllPostSlugs().map((slug) => ({ url: `${base}/blog/${slug}`, lastModified: now }));
   return [

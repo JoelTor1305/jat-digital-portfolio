@@ -4,6 +4,7 @@
   --background: #082126;
   /* cyan-dark */
   --foreground: #ededed;
+  --accent: #0fd4e4;
 }
 
 @theme inline {
@@ -43,6 +44,45 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #a8f0f6 50%, #0fd4e4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #0fd4e4, #0aa8b5);
+  color: #071a1d;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 20px rgba(15, 212, 228, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 32px rgba(15, 212, 228, 0.45);
+  transform: translateY(-1px);
+}
+
+.section-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
 }
 
 @keyframes blink {

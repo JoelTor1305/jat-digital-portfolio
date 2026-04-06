@@ -49,24 +49,39 @@ export default function Home() {
       <section id="home" className="relative min-h-[calc(100vh-80px)] flex items-center justify-center py-8">
         <div className="grid gap-10 lg:grid-cols-2 items-center w-full">
           <div className="flex justify-center lg:justify-start">
-            <div className="rounded-full overflow-hidden w-64 h-64 sm:w-80 sm:h-80 lg:w-[440px] lg:h-[440px]">
-              <Image
-                src="/images/profile-headshot.webp"
-                alt="Joel Torres headshot"
-                width={880}
-                height={880}
-                className="h-full w-full object-cover"
-                priority
-              />
+            <div className="relative">
+              <div className="absolute -inset-[3px] rounded-full bg-gradient-to-br from-cyan-400/60 via-teal-300/20 to-cyan-600/50 blur-[2px]" />
+              <div className="absolute -inset-[3px] rounded-full bg-gradient-to-br from-cyan-400/40 via-transparent to-cyan-600/40" />
+              <div className="relative rounded-full overflow-hidden w-64 h-64 sm:w-80 sm:h-80 lg:w-[440px] lg:h-[440px]">
+                <Image
+                  src="/images/profile-headshot.webp"
+                  alt="Joel Torres headshot"
+                  width={880}
+                  height={880}
+                  className="h-full w-full object-cover"
+                  priority
+                />
+              </div>
             </div>
           </div>
           <div className="text-center lg:text-left">
             <p className="text-foreground/70">Hi, I&apos;m Joel Torres,</p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">BA&IS Student</h1>
+            <h1 className="text-gradient text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">BA&IS Student</h1>
             <p className="mt-6 text-foreground/80 text-base lg:text-lg max-w-prose mx-auto lg:mx-0">
               Joel Torres is exploring how AI, automation, and backend systems can streamline the way organizations work. As a Business Analytics & Information Systems (BA&IS) student at Penn State University, I&apos;m focused on learning, building projects, and documenting the journey.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+              <a
+                href="https://calendly.com/joelatorres1305/lets-chat"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+                Book a Call
+              </a>
               <a
                 href="mailto:joelatorres1305@gmail.com"
                 className="inline-flex items-center justify-center gap-2 rounded-2xl border px-5 py-3 text-sm font-medium hover:bg-white/5 dark:hover:bg-white/10 transition min-h-[48px]"
@@ -271,7 +286,8 @@ export default function Home() {
       </section>
 
       <div id="projects" className="max-w-6xl mx-auto px-4 mb-8 scroll-mt-24">
-        <h2 className="text-3xl font-bold tracking-tight">Featured Projects</h2>
+        <p className="section-eyebrow">Work</p>
+        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight">Featured Projects</h2>
       </div>
 
       {/* Auto-scrolling projects banner */}
@@ -482,9 +498,32 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Skills ticker */}
+      <div className="relative overflow-hidden py-10 mb-8 border-y border-white/8">
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background z-10 pointer-events-none" />
+        <div className="animate-scroll gap-0">
+          {[
+            "Next.js", "React", "TypeScript", "Python", "Tailwind CSS",
+            "Claude API", "n8n", "Node.js", "Supabase", "PostgreSQL",
+            "Vercel", "Microsoft 365", "OpenAI", "REST APIs", "Git",
+            "Next.js", "React", "TypeScript", "Python", "Tailwind CSS",
+            "Claude API", "n8n", "Node.js", "Supabase", "PostgreSQL",
+            "Vercel", "Microsoft 365", "OpenAI", "REST APIs", "Git",
+          ].map((skill, i) => (
+            <span
+              key={i}
+              className="inline-flex items-center gap-2 mx-4 text-sm font-medium text-foreground/50 whitespace-nowrap"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400/60 inline-block" />
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+
       <section id="blog" className="py-24">
         <div className="mb-8">
-          <p className="text-sm text-foreground/60 mb-2">Latest Writing</p>
+          <p className="section-eyebrow">Latest Writing</p>
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-4xl font-bold tracking-tight">Blog & Notes</h2>
             <Link
@@ -644,7 +683,7 @@ export default function Home() {
 
       <section id="resume" className="py-24">
         <div className="mb-8">
-          <p className="text-sm text-foreground/60 mb-2">Professional Profile</p>
+          <p className="section-eyebrow">Professional Profile</p>
           <h2 className="text-4xl font-bold tracking-tight mb-4">Resume</h2>
           <p className="text-foreground/80 max-w-2xl">Download my resume to learn more about my experience, skills, and certifications.</p>
         </div>
@@ -741,7 +780,7 @@ export default function Home() {
 
       <section id="contact" className="py-24">
         <div className="mb-8">
-          <p className="text-sm text-foreground/60 mb-2">Let&apos;s Connect</p>
+          <p className="section-eyebrow">Let&apos;s Connect</p>
           <h2 className="text-4xl font-bold tracking-tight mb-4">Get In Touch</h2>
           <p className="text-foreground/80 max-w-2xl">If you&apos;d like to work with me or see a business audit of how I can implement my skillset, let&apos;s book a call.</p>
         </div>

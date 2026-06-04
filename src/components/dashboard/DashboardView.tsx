@@ -12,6 +12,7 @@ type Lead = {
   priority_reason: string;
   transcript: string;
   call_time: string;
+  recording_url: string | null;
   created_at: Date;
 };
 
@@ -220,6 +221,34 @@ function LeadCard({ lead }: { lead: Lead }) {
           >
             {lead.summary}
           </p>
+        )}
+
+        {/* Call recording */}
+        {lead.recording_url && (
+          <div style={{ marginBottom: "14px" }}>
+            <div
+              style={{
+                fontFamily: "var(--font-geist-mono), monospace",
+                fontSize: "10px",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: "#444",
+                marginBottom: "8px",
+              }}
+            >
+              Call Recording
+            </div>
+            <audio
+              controls
+              src={lead.recording_url}
+              style={{
+                width: "100%",
+                height: "36px",
+                accentColor: "#ff5436",
+                borderRadius: "6px",
+              }}
+            />
+          </div>
         )}
 
         {/* Transcript toggle */}

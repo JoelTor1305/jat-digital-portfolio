@@ -27,7 +27,7 @@ export default async function DashboardPage() {
     pool.query(
       `SELECT id, parent_name, phone, child_age, program_name,
               callback_datetime, summary, priority, priority_reason,
-              transcript, call_time, created_at
+              transcript, call_time, recording_url, created_at
        FROM leads
        WHERE client_id = $1
        ORDER BY created_at DESC

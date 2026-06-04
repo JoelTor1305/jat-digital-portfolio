@@ -225,29 +225,26 @@ function LeadCard({ lead }: { lead: Lead }) {
 
         {/* Call recording */}
         {lead.recording_url && (
-          <a
-            href={lead.recording_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "6px",
-              marginBottom: "14px",
-              padding: "7px 14px",
-              background: "rgba(255,84,54,0.08)",
-              border: "1px solid rgba(255,84,54,0.25)",
-              borderRadius: "6px",
-              fontFamily: "var(--font-geist-mono), monospace",
-              fontSize: "11px",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              color: "#ff5436",
-              textDecoration: "none",
-            }}
-          >
-            ▶ Listen to Call
-          </a>
+          <div style={{ marginBottom: "14px" }}>
+            <div
+              style={{
+                fontFamily: "var(--font-geist-mono), monospace",
+                fontSize: "10px",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: "#444",
+                marginBottom: "8px",
+              }}
+            >
+              Call Recording
+            </div>
+            <audio
+              controls
+              preload="none"
+              src={`/api/dashboard/recording?url=${encodeURIComponent(lead.recording_url)}`}
+              style={{ width: "100%", borderRadius: "6px" }}
+            />
+          </div>
         )}
 
         {/* Transcript toggle */}

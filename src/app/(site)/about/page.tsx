@@ -1,33 +1,618 @@
-export const metadata = {
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { Reveal } from "@/components/Reveal";
+import { getRecentPosts } from "@/lib/mdx";
+
+export const metadata: Metadata = {
   title: "About",
 };
 
-import Image from "next/image";
-
 export default function AboutPage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Joel Torres",
+    "alternateName": "Joel Torres AI",
+    "jobTitle": "BA&IS Student",
+    "description": "Joel Torres - Business Analytics & Information Systems student at Penn State University building AI systems, automation, and real products.",
+    "url": "https://jat.digital",
+    "image": "https://jat.digital/images/profile-headshot.webp",
+    "sameAs": [
+      "https://www.linkedin.com/in/joel-torres-psu/",
+      "https://calendly.com/joelatorres1305/lets-chat"
+    ],
+    "knowsAbout": [
+      "AI Automation",
+      "Backend Systems",
+      "Web Development",
+      "Business Automation",
+      "AI Agents",
+      "MIS",
+      "Penn State University"
+    ],
+    "alumniOf": "Pennsylvania State University",
+    "email": "joelatorres1305@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pennsylvania",
+      "addressCountry": "US"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "JAT Digital"
+    }
+  };
+
   return (
-    <section className="py-10 space-y-4">
-      <h1 className="text-3xl font-bold tracking-tight">About</h1>
-      <div className="flex items-center gap-6">
-        <div className="h-28 w-28 rounded-full overflow-hidden border">
-          <Image src="/profile.jpg" alt="Joel Torres" width={224} height={224} className="h-full w-full object-cover" />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
+      {/* HERO */}
+      <section id="home" className="relative min-h-[calc(100vh-80px)] flex items-center justify-center py-8">
+        <div className="grid gap-10 lg:grid-cols-2 items-center w-full">
+          <div className="flex justify-center lg:justify-start">
+            <div className="relative">
+              <div className="absolute -inset-[3px] rounded-full bg-gradient-to-br from-cyan-400/60 via-teal-300/20 to-cyan-600/50 blur-[2px]" />
+              <div className="absolute -inset-[3px] rounded-full bg-gradient-to-br from-cyan-400/40 via-transparent to-cyan-600/40" />
+              <div className="relative rounded-full overflow-hidden w-64 h-64 sm:w-80 sm:h-80 lg:w-[440px] lg:h-[440px]">
+                <Image
+                  src="/images/profile-headshot.webp"
+                  alt="Joel Torres headshot"
+                  width={880}
+                  height={880}
+                  className="h-full w-full object-cover"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+          <div className="text-center lg:text-left">
+            <p className="text-foreground/70">Hi, I&apos;m Joel Torres,</p>
+            <h1 className="text-gradient text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">BA&IS Student</h1>
+            <p className="mt-6 text-foreground/80 text-base lg:text-lg max-w-prose mx-auto lg:mx-0">
+              Joel Torres is exploring how AI, automation, and backend systems can streamline the way organizations work. As a Business Analytics & Information Systems (BA&IS) student at Penn State University, I&apos;m focused on learning, building projects, and documenting the journey.
+            </p>
+            <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+              <a
+                href="https://calendly.com/joelatorres1305/lets-chat"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+                Book a Call
+              </a>
+              <a
+                href="mailto:joelatorres1305@gmail.com"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl border px-5 py-3 text-sm font-medium hover:bg-white/5 dark:hover:bg-white/10 transition min-h-[48px]"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2v.01L12 12 4 6.01V6h16ZM4 18V8.14l8 5.85 8-5.85V18H4Z" />
+                </svg>
+                Email
+              </a>
+              <a
+                href="https://www.linkedin.com/in/joel-torres-psu/"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl border px-5 py-3 text-sm font-medium hover:bg-white/5 dark:hover:bg-white/10 transition min-h-[48px]"
+                aria-label="Connect on LinkedIn"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path d="M20.45 20.45h-3.56v-5.56c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.13 1.45-2.13 2.94v5.65H9.35V9h3.41v1.56h.05c.47-.9 1.62-1.85 3.33-1.85 3.56 0 4.22 2.35 4.22 5.41v6.33ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.56V9h3.56v11.45Z" />
+                </svg>
+                Connect
+              </a>
+              <a
+                href="https://github.com/JoelTor1305"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl border px-5 py-3 text-sm font-medium hover:bg-white/5 dark:hover:bg-white/10 transition min-h-[48px]"
+                aria-label="View on GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+                GitHub
+              </a>
+            </div>
+          </div>
         </div>
-        <p className="text-foreground/80 max-w-2xl">
-          I’m Joel Torres — MIS student and backend automation builder. I moved from sales
-          into tech and now run JAT Digital, focusing on AI automation and Microsoft 365.
-          This site documents my journey and work, including the FFC case study.
-        </p>
+      </section>
+
+      {/* ABOUT */}
+      <section id="about" className="py-16 sm:py-20 lg:py-28">
+        <Reveal>
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="mb-12 sm:mb-16 text-center">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[0.95] mb-4 sm:mb-6">About me</h2>
+              <p className="text-foreground/80 text-base sm:text-lg max-w-3xl mx-auto">
+                Hi, I&apos;m Joel Torres — an entrepreneurial Business Analytics & Information Systems student at Penn State with a growing interest in AI, automation, and backend systems.
+              </p>
+            </div>
+
+            <div className="space-y-12 sm:space-y-16 lg:space-y-20">
+              {/* Experience */}
+              <div className="grid gap-8 sm:gap-10 lg:gap-12 lg:grid-cols-2 items-center">
+                <div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
+                    <h3 className="text-2xl font-bold">Experience</h3>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                      <h4 className="font-semibold mb-2">Powerwashing & Door-to-Door Sales</h4>
+                      <p className="text-foreground/80 text-sm">
+                        Started with powerwashing services and moved into door-to-door sales internships. This experience taught me resilience, communication skills, and how to handle rejection while building persistence.
+                      </p>
+                    </div>
+                    <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                      <h4 className="font-semibold mb-2">COD Sharpened Sales Skills</h4>
+                      <p className="text-foreground/80 text-sm">
+                        The challenging environment of door-to-door sales sharpened and retaught me the fundamentals of sales. It was one of the hardest things I&apos;ve ever done, but it built discipline and the ability to perform under pressure.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex justify-center order-2 lg:order-2">
+                  <div className="relative group">
+                    <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-blue-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                    <div className="relative w-80 h-80 rounded-2xl overflow-hidden bg-white/10 border border-white/20 shadow-2xl group-hover:shadow-blue-500/25 transition-all duration-500 group-hover:scale-105">
+                      <Image
+                        src="/images/experience.webp"
+                        alt="Joel Torres powerwashing experience"
+                        width={320}
+                        height={320}
+                        className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        style={{ objectPosition: "center 20%" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-xs font-medium text-white/90 whitespace-nowrap">
+                      Building Resilience
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Ventures */}
+              <div className="grid gap-8 sm:gap-10 lg:gap-12 lg:grid-cols-2 items-center">
+                <div className="flex justify-center order-1 lg:order-1">
+                  <div className="relative group">
+                    <div className="absolute -inset-4 bg-gradient-to-r from-green-500/20 via-emerald-500/20 to-green-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                    <div className="relative w-80 h-80 rounded-2xl overflow-hidden bg-white/10 border border-white/20 shadow-2xl group-hover:shadow-green-500/25 transition-all duration-500 group-hover:scale-105">
+                      <Image
+                        src="/images/ventures.webp"
+                        alt="Ventures and current projects"
+                        width={320}
+                        height={320}
+                        className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-xs font-medium text-white/90 whitespace-nowrap">
+                      Penn State
+                    </div>
+                  </div>
+                </div>
+                <div className="order-2 lg:order-2">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                    <h3 className="text-2xl font-bold">Ventures</h3>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                      <h4 className="font-semibold mb-2">Studying BA&IS at Penn State</h4>
+                      <p className="text-foreground/80 text-sm">
+                        Currently pursuing Business Analytics & Information Systems at the Smeal College of Business, focusing on how data and technology can drive business decisions and create efficient systems.
+                      </p>
+                    </div>
+                    <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                      <h4 className="font-semibold mb-2">AI Co-op Experiences</h4>
+                      <p className="text-foreground/80 text-sm">
+                        Working on AI-powered solutions and automation systems, applying classroom knowledge to real-world problems and building practical experience in the field.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Goals */}
+              <div className="grid gap-8 sm:gap-10 lg:gap-12 lg:grid-cols-2 items-center">
+                <div className="order-1 lg:order-1">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full"></div>
+                    <h3 className="text-2xl font-bold">Goals</h3>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                      <h4 className="font-semibold mb-2">Future Goals</h4>
+                      <p className="text-foreground/80 text-sm">
+                        I plan to complete my BA&IS degree and continue building hands-on experience with AI and automation tools. My long-term vision is to help organizations implement systems that remove friction and deliver measurable results.
+                      </p>
+                    </div>
+                    <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                      <h4 className="font-semibold mb-2">Personal Goals</h4>
+                      <p className="text-foreground/80 text-sm">
+                        Staying physically fit and disciplined is an important goal for me. With 17 years of gymnastics experience, I&apos;ve built consistency, hard work, and balance into my daily life.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex justify-center order-2 lg:order-2">
+                  <div className="relative group">
+                    <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-purple-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                    <div className="relative w-80 h-80 rounded-2xl overflow-hidden bg-white/10 border border-white/20 shadow-2xl group-hover:shadow-purple-500/25 transition-all duration-500 group-hover:scale-105">
+                      <Image
+                        src="/images/goals.webp"
+                        alt="Future goals and vision"
+                        width={320}
+                        height={320}
+                        className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-xs font-medium text-white/90 whitespace-nowrap">
+                      Future Impact
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* PROJECTS */}
+      <div id="projects" className="max-w-6xl mx-auto px-4 mb-8 scroll-mt-24">
+        <p className="section-eyebrow">Work</p>
+        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight">Featured Projects</h2>
       </div>
-      <div className="mt-8 space-y-2">
-        <h2 className="font-semibold">Milestones</h2>
-        <ul className="list-disc pl-6 space-y-1 text-foreground/80">
-          <li>Transitioned from Sales to Tech</li>
-          <li>Founded JAT Digital</li>
-          <li>Built FFC AI Onboarding Automation</li>
-        </ul>
+
+      <div className="relative overflow-hidden mb-16">
+        <div className="animate-scroll">
+          {[0, 1].map((dupe) => (
+            <div key={dupe} className="contents">
+              <div className="group cursor-pointer w-[400px] flex-shrink-0 mr-6">
+                <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 border border-white/10 aspect-video mb-4">
+                  <Image src="/images/project-1.webp" alt="Dan and Robin Ives A.I. Innovation Day Competition Winner" fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <div className="absolute bottom-3 left-3">
+                    <span className="bg-yellow-500/90 text-black text-xs px-2 py-1 rounded-full font-semibold">Competition Winner</span>
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">FFC AI Onboarding System</h3>
+                <p className="text-sm text-foreground/70 mb-2">Dan and Robin Ives A.I. Innovation Day - Competition Winner (March 2025)</p>
+                <p className="text-sm text-foreground/70">Developed a solo project addressing Free For Charity&apos;s 45+ client onboarding backlog using AI agents, APIs, and automation tools.</p>
+              </div>
+
+              <div className="group cursor-pointer w-[400px] flex-shrink-0 mr-6">
+                <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-green-500/20 via-teal-500/20 to-cyan-500/20 border border-white/10 aspect-video mb-4">
+                  <Image src="/images/project-2.webp" alt="JAT Digital Automations" fill className="object-cover object-[center_top] group-hover:scale-105 transition-transform duration-300" />
+                  <div className="absolute bottom-3 left-3">
+                    <span className="bg-blue-500/90 text-white text-xs px-2 py-1 rounded-full font-semibold">AI Systems Consulting</span>
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">FFC – Technical Volunteer (2025)</h3>
+                <p className="text-sm text-foreground/70 mb-2">Served as a technical volunteer for Free For Charity, focusing on learning the landscape of AI tools.</p>
+                <p className="text-sm text-foreground/70">Implemented prototypes using LLMs, vibe coding, n8n, and Microsoft 365 that supported the foundation for the FFC onboarding automation system.</p>
+              </div>
+
+              <div className="group cursor-pointer w-[400px] flex-shrink-0 mr-6">
+                <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-600/20 via-indigo-500/20 to-purple-500/20 border border-white/10 aspect-video mb-4">
+                  <Image src="/images/propflow-win.jpg" alt="Nittany AI Competition" fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <div className="absolute bottom-3 left-3">
+                    <span className="bg-blue-600/90 text-white text-xs px-2 py-1 rounded-full font-semibold">$900K Raised (Competition Funds)</span>
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">Nittany AI Competition</h3>
+                <p className="text-sm text-foreground/70 mb-2">Shark Tank NAiSS Competition - 3rd Place & Most Money Raised (Nov 2025)</p>
+                <p className="text-sm text-foreground/70">Co-founded a real estate app bridging tenant-owner communication gaps. Validated market needs, built AI-driven solutions, and secured simulated funding from industry judges.</p>
+              </div>
+
+              <div className="group cursor-pointer w-[400px] flex-shrink-0 mr-6">
+                <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-orange-500/20 via-red-500/20 to-pink-500/20 border border-white/10 aspect-video mb-4">
+                  <Image src="/images/project-3.webp" alt="Brand Monetization" fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <div className="absolute bottom-3 left-3">
+                    <span className="bg-purple-500/90 text-white text-xs px-2 py-1 rounded-full font-semibold">Growth Operator</span>
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold mb-2 group-hover:text-white/90 transition">Brand Monetization</h3>
+                <p className="text-sm text-foreground/70 mb-2">Brand project launched in 2025 to turn a 400K+ follower gymnastics creator into a business.</p>
+                <p className="text-sm text-foreground/70">Built a custom website, Stripe-powered booking system, and automated funnel that enabled fans to book 1-on-1 coaching calls.</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </section>
+
+      {/* SKILLS */}
+      <div className="relative overflow-hidden py-10 mb-8 border-y border-white/8">
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background z-10 pointer-events-none" />
+        <div className="animate-scroll gap-0">
+          {[
+            "Next.js", "React", "TypeScript", "Python", "Tailwind CSS",
+            "Claude API", "n8n", "Node.js", "Supabase", "PostgreSQL",
+            "Vercel", "Microsoft 365", "OpenAI", "REST APIs", "Git",
+            "Next.js", "React", "TypeScript", "Python", "Tailwind CSS",
+            "Claude API", "n8n", "Node.js", "Supabase", "PostgreSQL",
+            "Vercel", "Microsoft 365", "OpenAI", "REST APIs", "Git",
+          ].map((skill, i) => (
+            <span key={i} className="inline-flex items-center gap-2 mx-4 text-sm font-medium text-foreground/50 whitespace-nowrap">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400/60 inline-block" />
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* BLOG */}
+      <section id="blog" className="py-24">
+        <div className="mb-8">
+          <p className="section-eyebrow">Latest Writing</p>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-4xl font-bold tracking-tight">Blog & Notes</h2>
+            <Link href="/blog" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium hover:bg-white/15 transition whitespace-nowrap">
+              View All Posts
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+          <p className="text-foreground/80 max-w-2xl">Documenting my journey, sharing learnings, and exploring ideas around AI, automation, and backend systems.</p>
+        </div>
+
+        <div className="max-w-6xl mx-auto">
+          <div className="grid gap-8 lg:grid-cols-3">
+            <div className="lg:col-span-2">
+              <Link href="/blog/building-propflow" className="group cursor-pointer block">
+                <div className="relative overflow-hidden rounded-xl bg-white/5 border border-white/10 aspect-[16/9] mb-6">
+                  <Image src="https://img.youtube.com/vi/er0cNmZW19Q/maxresdefault.jpg" alt="PropFlow MVP Demo Video" fill className="object-cover" />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-white/20 text-white text-xs px-3 py-1 rounded-full">Build Logs</span>
+                  </div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-red-600/90 rounded-full flex items-center justify-center group-hover:bg-red-600 transition">
+                      <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-white/90 transition">Building PropFlow: The Journey from Idea to MVP</h3>
+                <p className="text-foreground/70 mb-4 text-lg">The challenges, breakthroughs, and lessons learned while building an AI-powered property management platform.</p>
+                <div className="flex items-center gap-4 text-sm text-foreground/60">
+                  <span>Jan 20, 2026</span>
+                  <span>•</span>
+                  <span>5 min read</span>
+                  <span>•</span>
+                  <span>AI, Startup, PropFlow</span>
+                </div>
+              </Link>
+            </div>
+
+            <div className="lg:col-span-1">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-lg font-semibold mb-4">Recent Posts</h3>
+                  <div className="space-y-4">
+                    {getRecentPosts(3).map((post) => (
+                      <Link key={post.slug} href={`/blog/${post.slug}`} className="group cursor-pointer block">
+                        <div className="flex gap-3">
+                          <div className="relative overflow-hidden rounded-lg bg-white/5 border border-white/10 w-16 h-12 flex-shrink-0">
+                            <Image src={post.frontmatter.image || "/images/blog-hero.png"} alt={post.frontmatter.title} fill className="object-cover" style={{ objectPosition: "center 20%" }} />
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="font-medium mb-1 group-hover:text-white/90 transition text-sm line-clamp-2">{post.frontmatter.title}</h4>
+                            <p className="text-xs text-foreground/70 mb-2 line-clamp-1">{post.frontmatter.description}</p>
+                            <div className="flex items-center gap-2 text-xs text-foreground/60">
+                              <span>{new Date(post.frontmatter.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span>
+                              <span>•</span>
+                              <span>{post.readingTimeMinutes} min</span>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-4">Categories</h3>
+                  <div className="space-y-2">
+                    {[
+                      { color: "bg-yellow-400", label: "Career", count: 1 },
+                      { color: "bg-blue-400", label: "Build Logs", count: 3 },
+                      { color: "bg-green-400", label: "Learning Notes", count: 2 },
+                      { color: "bg-purple-400", label: "Ideas & Reflections", count: 1 },
+                    ].map(({ color, label, count }) => (
+                      <div key={label} className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition">
+                        <div className="flex items-center gap-3">
+                          <div className={`w-2 h-2 ${color} rounded-full`}></div>
+                          <span className="text-sm">{label}</span>
+                        </div>
+                        <span className="text-xs text-foreground/60">{count}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-4">Popular Tags</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {["AI", "Automation", "Microsoft 365", "n8n", "Backend", "Systems"].map((tag) => (
+                      <span key={tag} className="text-xs bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20 transition">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* RESUME */}
+      <section id="resume" className="py-24">
+        <div className="mb-8">
+          <p className="section-eyebrow">Professional Profile</p>
+          <h2 className="text-4xl font-bold tracking-tight mb-4">Resume</h2>
+          <p className="text-foreground/80 max-w-2xl">Download my resume to learn more about my experience, skills, and certifications.</p>
+        </div>
+
+        <div className="grid gap-8 lg:grid-cols-2 items-center">
+          <div className="order-2 lg:order-1">
+            <div className="relative overflow-hidden rounded-xl bg-white/5 border border-white/10 aspect-[3/4] shadow-2xl">
+              <Image src="/images/resume-preview.png" alt="Joel Torres Resume Preview" fill className="object-cover" />
+              <div className="absolute top-4 left-4 flex gap-1.5">
+                <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+              </div>
+            </div>
+          </div>
+
+          <div className="order-1 lg:order-2">
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-2xl font-semibold mb-3">Get My Resume</h3>
+                <p className="text-foreground/80 mb-6">
+                  Download my latest resume to see my full experience, technical skills, and certifications.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <a href="/Joel-Torres-Spring-2026-Resume.pdf" download className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                  <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-white/20 transition">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-medium group-hover:text-white/90 transition">Download PDF</h4>
+                    <p className="text-sm text-foreground/70">Joel-Torres-Spring-2026-Resume.pdf</p>
+                  </div>
+                  <svg className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
+                <div className="grid grid-cols-2 gap-4">
+                  <a href="https://learn.microsoft.com/api/credentials/share/en-us/JoelTorres-4643/1D05871E0F5FA109?sharingId=3B9A6A1523B61FA6" target="_blank" rel="noopener noreferrer" className="group p-4 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:border-white/20">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                      <span className="text-sm font-medium group-hover:text-white/90 transition">MS-900</span>
+                    </div>
+                    <p className="text-xs text-foreground/70">Microsoft 365 Fundamentals</p>
+                  </a>
+                  <a href="https://credsverse.com/credentials/fcd425f9-27b9-4d4b-a9e8-c2f1cc32350c" target="_blank" rel="noopener noreferrer" className="group p-4 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:border-white/20">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                      <span className="text-sm font-medium group-hover:text-white/90 transition">NAiSS Leadership</span>
+                    </div>
+                    <p className="text-xs text-foreground/70">Nittany AI Student Society</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact" className="py-24">
+        <div className="mb-8">
+          <p className="section-eyebrow">Let&apos;s Connect</p>
+          <h2 className="text-4xl font-bold tracking-tight mb-4">Get In Touch</h2>
+          <p className="text-foreground/80 max-w-2xl">If you&apos;d like to work with me or see a business audit of how I can implement my skillset, let&apos;s book a call.</p>
+        </div>
+
+        <div className="grid gap-8 lg:grid-cols-2 items-center">
+          <div className="space-y-6">
+            {[
+              {
+                href: "https://calendly.com/joelatorres1305/lets-chat",
+                external: true,
+                title: "Book a Call",
+                desc: "Schedule a consultation to discuss your automation needs",
+                icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />,
+              },
+              {
+                href: "mailto:joelatorres1305@gmail.com",
+                external: false,
+                title: "Send Email",
+                desc: "joelatorres1305@gmail.com",
+                icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />,
+              },
+              {
+                href: "https://www.linkedin.com/in/joel-torres-psu/",
+                external: true,
+                title: "Connect on LinkedIn",
+                desc: "Follow my professional journey and updates",
+                icon: null,
+                linkedin: true,
+              },
+              {
+                href: "https://github.com/JoelTor1305",
+                external: true,
+                title: "View My GitHub",
+                desc: "Explore my code repositories and projects",
+                icon: null,
+                github: true,
+              },
+            ].map(({ href, external, title, desc, icon, linkedin, github }) => (
+              <div key={href} className="group">
+                <a href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="block">
+                  <div className="flex items-center gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 group-hover:border-white/20">
+                    <div className="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-white/20 transition">
+                      {linkedin ? (
+                        <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M20.45 20.45h-3.56v-5.56c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.13 1.45-2.13 2.94v5.65H9.35V9h3.41v1.56h.05c.47-.9 1.62-1.85 3.33-1.85 3.56 0 4.22 2.35 4.22 5.41v6.33ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.56V9h3.56v11.45Z" />
+                        </svg>
+                      ) : github ? (
+                        <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                      ) : (
+                        <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">{icon}</svg>
+                      )}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-semibold mb-1 group-hover:text-white/90 transition">{title}</h3>
+                      <p className="text-sm text-foreground/70">{desc}</p>
+                    </div>
+                    <svg className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
+
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-2xl font-semibold mb-4">What I Can Help With</h3>
+              <p className="text-foreground/80 mb-6">
+                Whether you&apos;re looking to streamline operations, automate workflows, or implement AI solutions, I can provide a comprehensive audit and implementation plan.
+              </p>
+            </div>
+            <div className="space-y-4">
+              {[
+                { color: "bg-purple-400", title: "AI & Automation Systems", desc: "Architecting intelligent workflows that eliminate operational bottlenecks and drive efficiency" },
+                { color: "bg-blue-400", title: "Full-Stack Web Engineering", desc: "Developing scalable, high-performance applications designed for modern digital ecosystems" },
+                { color: "bg-green-400", title: "Bespoke Software Solutions", desc: "Designing tailored software architectures aligned with complex strategic business objectives" },
+              ].map(({ color, title, desc }) => (
+                <div key={title} className="flex items-start gap-3 p-4 rounded-lg bg-white/5 border border-white/10">
+                  <div className={`w-2 h-2 ${color} rounded-full mt-2 flex-shrink-0`}></div>
+                  <div>
+                    <h4 className="font-medium mb-1">{title}</h4>
+                    <p className="text-sm text-foreground/70">{desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
-
-

@@ -36,7 +36,7 @@ export function Footer() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-foreground/40 mb-4">Navigation</p>
             <ul className="space-y-2">
-              {[["/#about", "About"], ["/#projects", "Projects"], ["/#blog", "Blog"], ["/#resume", "Resume"], ["/#contact", "Contact"]].map(([href, label]) => (
+              {[["/about", "About"], ["/about#projects", "Projects"], ["/blog", "Blog"], ["/about#resume", "Resume"], ["/about#contact", "Contact"]].map(([href, label]) => (
                 <li key={href}>
                   <a href={href} className="text-sm text-foreground/60 hover:text-white transition">{label}</a>
                 </li>

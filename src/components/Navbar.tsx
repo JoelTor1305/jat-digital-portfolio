@@ -12,20 +12,15 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   const links = isHomePage ? [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About" },
-    { href: "#projects", label: "Projects" },
-    { href: "#blog", label: "Blog" },
-    { href: "#resume", label: "Resume" },
-    { href: "#contact", label: "Contacts" },
+    { href: "/about", label: "About" },
+    { href: "/blog", label: "Blog" },
   ] : [
     { href: "/", label: "Home" },
-    { href: "/#about", label: "About" },
-    { href: "/#projects", label: "Projects" },
-    { href: "/#blog", label: "Blog" },
-    { href: "/#resume", label: "Resume" },
-    { href: "/#contact", label: "Contacts" },
+    { href: "/about", label: "About" },
+    { href: "/blog", label: "Blog" },
   ];
+
+  if (isHomePage) return null;
 
   return (
     <header className="w-full sticky top-0 z-30 bg-transparent">
@@ -62,9 +57,8 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex flex-1 items-center justify-center gap-6">
             {links.map(({ href, label }) => {
-              const isActive = (isHomePage && href.startsWith("#")) || 
-                              (!isHomePage && href === "/" && pathname === "/");
-              
+              const isActive = pathname === href || (href !== "/" && pathname.startsWith(href));
+
               return (
                 <Link
                   key={href}
@@ -72,7 +66,6 @@ export function Navbar() {
                   className={`text-sm transition-colors hover:underline underline-offset-4 ${
                     isActive ? "text-white font-semibold" : "text-foreground/80"
                   }`}
-                  scroll
                 >
                   {label}
                 </Link>
@@ -106,8 +99,7 @@ export function Navbar() {
           <div className="md:hidden mt-4 rounded-2xl border border-white/15 bg-white/8 backdrop-blur-xl shadow-[0_2px_20px_rgba(0,0,0,0.15)] p-4">
             <div className="flex flex-col space-y-3">
               {links.map(({ href, label }) => {
-                const isActive = (isHomePage && href.startsWith("#")) || 
-                                (!isHomePage && href === "/" && pathname === "/");
+                const isActive = pathname === href || (href !== "/" && pathname.startsWith(href));
                 
                 return (
                   <Link

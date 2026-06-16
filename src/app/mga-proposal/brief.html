@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MGA Growth &amp; Call Automation Pilot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:          #000000;
+    --bg-surface:  #0d0d0d;
+    --bg-card:     #111111;
+    --ink:         #e0e0e0;
+    --muted:       rgba(255,255,255,0.40);
+    --hint:        rgba(255,255,255,0.22);
+    --line:        rgba(255,255,255,0.08);
+    --line-strong: rgba(255,255,255,0.13);
+    --accent:      #ff3c00;
+    --blue:        #0057FF;
+    --blue-light:  #4d8fff;
+    --green:       #28c840;
+    --green-bg:    rgba(40,200,64,0.10);
+    --blue-bg:     rgba(0,87,255,0.10);
+    --red-bg:      rgba(255,60,0,0.10);
+    --radius:      8px;
+    --radius-lg:   12px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.7;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 28px 100px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Typography ─────────────────────────────────── */
+  h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin: 0 0 10px;
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0 0 14px;
+    display: flex;
+    align-items: baseline;
+  }
+
+  p { margin: 0 0 12px; font-size: 15px; }
+
+  .eyebrow {
+    font-family: monospace;
+    font-size: 11px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin: 0 0 12px;
+  }
+
+  .sub {
+    font-family: monospace;
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.8;
+  }
+
+  .muted { color: var(--muted); }
+  strong { font-weight: 600; color: var(--ink); }
+
+  /* ── Layout ─────────────────────────────────────── */
+  header {
+    border-bottom: 1px solid var(--line-strong);
+    padding-bottom: 28px;
+    margin-bottom: 44px;
+  }
+
+  section { margin-bottom: 44px; }
+
+  .num {
+    font-family: monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-right: 10px;
+    flex-shrink: 0;
+    position: relative;
+    top: -1px;
+  }
+
+  /* ── Panel ──────────────────────────────────────── */
+  .panel {
+    background: var(--bg-surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 24px 28px;
+  }
+
+  /* ── Grid ───────────────────────────────────────── */
+  .two-col   { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+  .three-col { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 14px; }
+  @media (max-width: 560px) {
+    .two-col   { grid-template-columns: 1fr; }
+    .three-col { grid-template-columns: 1fr; }
+  }
+
+  /* ── Cards ──────────────────────────────────────── */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+  }
+
+  .card .label {
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    margin: 0 0 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .card .label.info         { color: var(--blue-light); }
+  .card .label.success      { color: var(--green); }
+  .card .label.danger-label { color: var(--accent); }
+  .card p { font-size: 13px; color: rgba(255,255,255,0.65); margin: 0; line-height: 1.7; }
+  .ref { color: var(--hint); font-size: 12px; }
+
+  /* ── Table ──────────────────────────────────────── */
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  table td {
+    padding: 11px 0;
+    vertical-align: top;
+    border-bottom: 1px solid var(--line);
+  }
+  table tr:last-child td { border-bottom: none; }
+  .td-key { font-weight: 600; width: 42%; padding-right: 16px; color: var(--ink); }
+  .td-val { color: var(--muted); }
+
+  /* ── Section 3 example box ─────────────────────── */
+  .example-box {
+    margin-top: 18px;
+    border: 1px dashed rgba(255,255,255,0.12);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.02);
+  }
+  .example-label {
+    font-family: monospace;
+    font-size: 10px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--hint);
+    margin: 0 0 12px;
+  }
+  .example-grid { display: grid; gap: 6px; }
+  .example-row {
+    display: grid;
+    grid-template-columns: 175px 140px 1fr;
+    align-items: baseline;
+    gap: 10px;
+    font-size: 13px;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .example-row:last-child { border-bottom: none; }
+  .ex-metric { color: var(--hint); font-family: monospace; font-size: 11px; letter-spacing: 0.04em; }
+  .ex-value  { color: var(--ink); font-weight: 600; }
+  .ex-note   { color: var(--muted); font-size: 12px; }
+  @media (max-width: 560px) {
+    .example-row { grid-template-columns: 1fr; gap: 2px; }
+    .ex-note { display: none; }
+  }
+
+  /* ── Log table ──────────────────────────────────── */
+  .log-table { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin-top: 14px; }
+  .log-table table { font-size: 13px; }
+  .log-table th {
+    text-align: left;
+    background: var(--bg-surface);
+    padding: 10px 16px;
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--hint);
+  }
+  .log-table td { padding: 10px 16px; border-top: 1px solid var(--line); border-bottom: none; vertical-align: top; }
+  .log-table .col-name { font-weight: 600; width: 38%; color: var(--ink); }
+
+  /* ── Category pills ─────────────────────────────── */
+  .cat-pill {
+    display: inline-block;
+    font-family: monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: var(--radius);
+    margin-right: 4px;
+  }
+  .cat-info    { background: var(--blue-bg);  color: var(--blue-light); border: 1px solid rgba(0,87,255,0.20); }
+  .cat-success { background: var(--green-bg); color: var(--green);      border: 1px solid rgba(40,200,64,0.20); }
+  .cat-danger  { background: var(--red-bg);   color: var(--accent);     border: 1px solid rgba(255,60,0,0.20); }
+
+  /* ── Data asset block ───────────────────────────── */
+  .data-asset {
+    background: rgba(0,87,255,0.06);
+    border: 1px solid rgba(0,87,255,0.15);
+    border-radius: var(--radius-lg);
+    padding: 22px 26px;
+    margin-top: 20px;
+  }
+  .data-asset h3 {
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin: 0 0 8px;
+  }
+  .data-asset > p { font-size: 13px; color: var(--muted); margin: 0 0 16px; line-height: 1.8; }
+
+  .asset-grid { display: grid; gap: 8px; }
+  .asset-row {
+    display: grid;
+    grid-template-columns: 175px 22px 1fr;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 10px 14px;
+  }
+  @media (max-width: 560px) {
+    .asset-row { grid-template-columns: 1fr; gap: 4px; }
+    .asset-arrow { display: none; }
+  }
+  .asset-know  { font-weight: 600; font-size: 13px; color: var(--blue-light); }
+  .asset-arrow { color: var(--hint); font-size: 13px; text-align: center; }
+  .asset-do    { font-size: 13px; color: var(--muted); }
+
+  /* ── Scope blocks ───────────────────────────────── */
+  .scope-block { border-radius: var(--radius-lg); padding: 22px 26px; margin-bottom: 14px; }
+  .scope-in  { background: rgba(0,87,255,0.06); border: 1px solid rgba(0,87,255,0.15); }
+  .scope-out { background: var(--bg-surface);   border: 1px solid var(--line); }
+
+  .scope-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .scope-title {
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .scope-title.info  { color: var(--blue-light); }
+  .scope-title.muted { color: var(--hint); }
+
+  .line-item { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; margin-bottom: 9px; color: var(--ink); }
+  .line-item:last-child { margin-bottom: 0; }
+  .line-item .mark { margin-top: 1px; font-weight: 700; flex-shrink: 0; font-family: monospace; }
+  .mark-in { color: var(--blue-light); }
+  .scope-out .line-item { color: var(--muted); }
+  .scope-out .mark { color: var(--hint); }
+
+  /* ── Calculator ─────────────────────────────────── */
+  .calc-box {
+    background: var(--bg-surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 24px 28px;
+  }
+  .calc-row { margin-bottom: 22px; }
+  .calc-row:last-child { margin-bottom: 0; }
+  .calc-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+  .calc-head label {
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .calc-out {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .calc-row input[type=range] { width: 100%; accent-color: var(--accent); margin: 2px 0; cursor: pointer; }
+  .calc-hint { font-family: monospace; font-size: 11px; color: var(--hint); margin: 5px 0 0; letter-spacing: 0.04em; line-height: 1.6; }
+
+  /* Flow */
+  .flow { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 13px; margin: 16px 0; }
+  .pill {
+    padding: 6px 13px;
+    border-radius: var(--radius);
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .pill-info    { background: var(--blue-bg);  color: var(--blue-light); border: 1px solid rgba(0,87,255,0.20); }
+  .pill-success { background: var(--green-bg); color: var(--green);      border: 1px solid rgba(40,200,64,0.20); }
+  .arrow { color: var(--hint); font-size: 14px; }
+
+  /* Result cards */
+  .calc-results { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 560px) { .calc-results { grid-template-columns: 1fr; } }
+
+  .result-card { border-radius: var(--radius-lg); padding: 18px 22px; }
+  .result-revenue { background: rgba(255,60,0,0.08); border: 1px solid rgba(255,60,0,0.18); }
+  .result-roi     { background: var(--bg-surface);   border: 1px solid var(--line); }
+
+  .result-label {
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 6px;
+    color: rgba(255,60,0,0.7);
+  }
+  .result-label.muted-label { color: var(--hint); }
+  .result-num {
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.03em;
+    color: var(--accent);
+  }
+  .result-roi .result-num { color: var(--ink); }
+
+  .calc-summary {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    font-family: monospace;
+    font-size: 12px;
+    color: var(--muted);
+    margin: 14px 0 0;
+    letter-spacing: 0.02em;
+    line-height: 1.8;
+  }
+
+  .fineprint {
+    font-family: monospace;
+    font-size: 12px;
+    color: var(--hint);
+    margin: 0;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── Tiers ──────────────────────────────────────── */
+  .tiers { display: grid; gap: 8px; margin-top: 14px; }
+  .tier {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 13px 16px;
+  }
+  .tier .badge {
+    font-family: monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: var(--radius);
+    white-space: nowrap;
+  }
+  .badge-success { background: var(--green-bg); color: var(--green);  border: 1px solid rgba(40,200,64,0.20); }
+  .badge-warning { background: rgba(254,188,46,0.10); color: #febc2e; border: 1px solid rgba(254,188,46,0.20); }
+  .badge-danger  { background: var(--red-bg);   color: var(--accent); border: 1px solid rgba(255,60,0,0.20); }
+  .tier span.desc { font-size: 13px; color: var(--muted); }
+
+  /* ── Timeline ───────────────────────────────────── */
+  .timeline { position: relative; padding-left: 28px; margin-top: 20px; }
+  .timeline::before { content: ""; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 2px; background: var(--line-strong); }
+  .tl-item { position: relative; margin-bottom: 24px; }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-dot { position: absolute; left: -28px; top: 3px; width: 16px; height: 16px; border-radius: 50%; border: 3px solid var(--bg); }
+  .tl-dot.next  { background: var(--green); }
+  .tl-dot.later { background: var(--line-strong); }
+  .tl-item .tl-title { font-weight: 600; font-size: 14px; margin: 0 0 4px; color: var(--ink); }
+  .tl-item .tl-desc  { font-size: 13px; color: var(--muted); margin: 0; line-height: 1.7; }
+
+  /* ── Decision cards ─────────────────────────────── */
+  .decision { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 14px; }
+  @media (max-width: 560px) { .decision { grid-template-columns: 1fr; } }
+  .dec-card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    text-align: center;
+  }
+  .dec-card .dec-word {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    margin: 0 0 5px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .dec-card .dec-sub {
+    font-family: monospace;
+    font-size: 11px;
+    color: var(--hint);
+    letter-spacing: 0.07em;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  /* ── Footer ─────────────────────────────────────── */
+  footer {
+    border-top: 1px solid var(--line);
+    padding-top: 24px;
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  footer p {
+    font-family: monospace;
+    font-size: 11px;
+    color: var(--hint);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  footer .brand { color: rgba(255,255,255,0.30); }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="eyebrow">JAT Digital &middot; MGA</p>
+  <h1>MGA growth &amp; call automation pilot</h1>
+  <p class="sub">How we&rsquo;ll measure service improvements, lead recovery, and ROI. Prepared for Roger, before any build begins.</p>
+</header>
+
+<section>
+  <h2><span class="num">01</span>The goal</h2>
+  <p>The goal is a measurable return, with data that backs whether the system is actually useful. Before MGA commits to a wider build, the pilot has to show real numbers: how many calls it handled, how many became trials, and what that&rsquo;s worth. If the data shows it works, we expand. If it doesn&rsquo;t, we know exactly why.</p>
+  <p style="font-size:14px; color:var(--muted);">We&rsquo;re starting deliberately small: a few things done well, with low risk, so the results are clean and easy to judge.</p>
+</section>
+
+<section class="panel">
+  <h2><span class="num">02</span>What we measure</h2>
+  <p>Not every call is a sale. A parent asking for directions was never a trial, so judging the agent on &ldquo;did it convert&rdquo; would punish it for doing its job well. Instead, every call gets sorted into one of three types, and each type is measured differently:</p>
+  <div class="three-col">
+    <div class="card">
+      <p class="label info">Service</p>
+      <p>Routine questions: pricing, schedules, directions, policies. Measured on speed and how many it resolves without staff. <span class="ref">See section 3.</span></p>
+    </div>
+    <div class="card">
+      <p class="label success">Revenue</p>
+      <p>Lead capture and trial scheduling. Measured on how many turn into trials, enrollments, and dollars. <span class="ref">See section 4.</span></p>
+    </div>
+    <div class="card">
+      <p class="label danger-label">Escalation</p>
+      <p>Not for the agent: billing, cancellations, policy exceptions, upset parents. Measured on how cleanly it hands these to staff.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">03</span>Service quality metrics</h2>
+  <p style="font-size:14px; color:var(--muted); margin-bottom:16px;">For service calls, &ldquo;better, faster, more efficient&rdquo; turned into numbers we track:</p>
+  <table>
+    <tr><td class="td-key">Calls answered</td><td class="td-val">Live answers vs. going to voicemail</td></tr>
+    <tr><td class="td-key">Response time</td><td class="td-val">Answered now vs. a callback hours later</td></tr>
+    <tr><td class="td-key">FAQ resolution</td><td class="td-val">Routine questions fully handled, no staff needed</td></tr>
+    <tr><td class="td-key">Staff follow-up volume</td><td class="td-val">How often a human was still required</td></tr>
+    <tr><td class="td-key">Missed-call recovery</td><td class="td-val">Calls saved that would otherwise have been lost</td></tr>
+  </table>
+
+  <div class="example-box">
+    <p class="example-label">Example &mdash; what this looks like with real data</p>
+    <div class="example-grid">
+      <div class="example-row">
+        <span class="ex-metric">Calls answered</span>
+        <span class="ex-value">94% live</span>
+        <span class="ex-note">was ~60% before the agent</span>
+      </div>
+      <div class="example-row">
+        <span class="ex-metric">Response time</span>
+        <span class="ex-value">Immediate</span>
+        <span class="ex-note">was avg. 2-hour callback</span>
+      </div>
+      <div class="example-row">
+        <span class="ex-metric">FAQ resolution</span>
+        <span class="ex-value">68% fully handled</span>
+        <span class="ex-note">no staff needed on those calls</span>
+      </div>
+      <div class="example-row">
+        <span class="ex-metric">Staff follow-up volume</span>
+        <span class="ex-value">32% still needed a human</span>
+        <span class="ex-note">down from 100% before the agent</span>
+      </div>
+      <div class="example-row">
+        <span class="ex-metric">Missed-call recovery</span>
+        <span class="ex-value">14 calls saved</span>
+        <span class="ex-note">first month, would have gone to voicemail</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">04</span>Revenue impact: the money the agent makes</h2>
+  <p style="font-size:14px; color:var(--muted); margin-bottom:18px;">For revenue calls, every recovered call flows toward enrollment. Adjust the inputs to see the revenue attributable to the agent. During the pilot, each input gets replaced with MGA&rsquo;s real measured data.</p>
+
+  <div class="calc-box">
+    <div class="calc-row">
+      <div class="calc-head"><label>Recovered calls / month</label><span id="out-calls" class="calc-out">10</span></div>
+      <input type="range" id="calls" min="0" max="150" value="10" step="1">
+      <p class="calc-hint">Calls the agent caught that would have hit voicemail and been lost</p>
+    </div>
+    <div class="calc-row">
+      <div class="calc-head"><label>Recovered call &rarr; trial</label><span id="out-trial" class="calc-out">30%</span></div>
+      <input type="range" id="trial" min="0" max="100" value="30" step="1">
+      <p class="calc-hint">Share of recovered calls that book a trial</p>
+    </div>
+    <div class="calc-row">
+      <div class="calc-head"><label>Trial &rarr; enrollment</label><span id="out-enroll" class="calc-out">40%</span></div>
+      <input type="range" id="enroll" min="0" max="100" value="40" step="1">
+      <p class="calc-hint">Share of trials that convert to enrollment</p>
+    </div>
+    <div class="calc-row">
+      <div class="calc-head"><label>Value per enrollment</label><span id="out-value" class="calc-out">$600</span></div>
+      <input type="range" id="value" min="100" max="5000" value="600" step="50">
+      <p class="calc-hint">What one enrolled child is worth (e.g. a season of tuition)</p>
+    </div>
+  </div>
+
+  <div class="flow">
+    <span id="chip-calls"  class="pill pill-info">10 calls</span>
+    <span class="arrow">&rarr;</span>
+    <span id="chip-trials" class="pill pill-info">3 trials</span>
+    <span class="arrow">&rarr;</span>
+    <span id="chip-enroll" class="pill pill-success">1 enrolled</span>
+  </div>
+
+  <div class="calc-results">
+    <div class="result-card result-revenue">
+      <p class="result-label">Revenue / month from the agent</p>
+      <p id="out-revenue" class="result-num">$720</p>
+    </div>
+    <div class="result-card result-roi">
+      <p class="result-label muted-label">Return on the $600 pilot</p>
+      <p id="out-roi" class="result-num">1.2&times;</p>
+    </div>
+  </div>
+
+  <p class="calc-summary">At these numbers, the agent pays for its $600 pilot with roughly <strong id="sum-calls">1</strong> enrollment. Everything beyond that is profit.</p>
+
+  <p class="fineprint" style="margin-top:14px;">These are illustrative inputs. The pilot&rsquo;s job is to replace each one with MGA&rsquo;s real measured data: recovered calls logged by the agent, actual trial and enrollment rates, and your true enrollment value. Enrollment tracking depends on access to Jackrabbit data, confirmed during the systems audit.</p>
+</section>
+
+<section>
+  <h2><span class="num">05</span>How we capture the data</h2>
+  <p>Every call the agent handles gets logged as one row in a single tracking sheet. The category column is what makes the whole thing measurable: it sorts each call into service, revenue, or escalation, so the numbers in sections 3 and 4 can be pulled straight from the log. These are the columns we capture on each call:</p>
+
+  <div class="log-table">
+    <table>
+      <thead>
+        <tr><th>Column</th><th>What it captures</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="col-name">Date / time</td><td>When the call came in</td></tr>
+        <tr><td class="col-name">Caller</td><td>Name and contact, if given</td></tr>
+        <tr><td class="col-name">Category</td><td><span class="cat-pill cat-info">Service</span><span class="cat-pill cat-success">Revenue</span><span class="cat-pill cat-danger">Escalation</span></td></tr>
+        <tr><td class="col-name">Question / need</td><td>What the caller actually wanted</td></tr>
+        <tr><td class="col-name">Outcome</td><td>Answered, lead captured, trial link sent, trial booked, or escalated to staff</td></tr>
+        <tr><td class="col-name">Trial requested</td><td>Yes / no</td></tr>
+        <tr><td class="col-name">Trial booked</td><td>Yes / no</td></tr>
+        <tr><td class="col-name">Staff follow-up</td><td>Whether a human still had to step in</td></tr>
+        <tr><td class="col-name">Recovered call</td><td>Whether this call would have gone to voicemail otherwise</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="font-size:14px; color:var(--muted); margin-top:14px;">That single sheet becomes the dashboard: calls answered, trials scheduled, and conversions in one place, instead of scattered across five systems. The &ldquo;category&rdquo; and &ldquo;recovered call&rdquo; columns are what let us separate routine service from real revenue activity, and tell which results the agent is actually responsible for.</p>
+
+  <div class="data-asset">
+    <h3>The part that keeps paying after the pilot</h3>
+    <p>Answering the phone is the easy half. The real asset is that every call becomes structured data, and after 60 to 90 days that data shows you things most gyms never get to see. Data only matters if it changes a decision, so here is the decision each one drives:</p>
+    <div class="asset-grid">
+      <div class="asset-row">
+        <span class="asset-know">Most common questions</span>
+        <span class="asset-arrow">&rarr;</span>
+        <span class="asset-do">Put the answers on the website and kill those calls entirely</span>
+      </div>
+      <div class="asset-row">
+        <span class="asset-know">Best lead sources</span>
+        <span class="asset-arrow">&rarr;</span>
+        <span class="asset-do">Move ad spend toward what actually brings enrollments</span>
+      </div>
+      <div class="asset-row">
+        <span class="asset-know">Missed-call volume</span>
+        <span class="asset-arrow">&rarr;</span>
+        <span class="asset-do">Know exactly how many leads were leaking before, in dollars</span>
+      </div>
+      <div class="asset-row">
+        <span class="asset-know">Staff workload</span>
+        <span class="asset-arrow">&rarr;</span>
+        <span class="asset-do">Free the team from repetitive calls for higher-value work</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">06</span>What the pilot covers</h2>
+
+  <div class="scope-block scope-in">
+    <div class="scope-head">
+      <span class="scope-title info">What the agent does</span>
+    </div>
+    <div class="line-item"><span class="mark mark-in">+</span><span>Morning coverage to start, limited hours</span></div>
+    <div class="line-item"><span class="mark mark-in">+</span><span>Answers repetitive FAQs: pricing, schedules, directions, camp, birthday parties, registration fees, makeup policies</span></div>
+    <div class="line-item"><span class="mark mark-in">+</span><span>Captures lead information from callers</span></div>
+    <div class="line-item"><span class="mark mark-in">+</span><span>Sends a post-call email automatically, at minimum the trial request form link</span></div>
+    <div class="line-item"><span class="mark mark-in">+</span><span>Notifies staff and logs notes for follow-up</span></div>
+    <div class="line-item"><span class="mark mark-in">+</span><span>Logs call info into one spreadsheet so everything is in one place</span></div>
+  </div>
+
+  <div class="scope-block scope-out">
+    <div class="scope-head">
+      <span class="scope-title muted">What it deliberately leaves out</span>
+    </div>
+    <div class="line-item"><span class="mark">&minus;</span><span>No automatic Jackrabbit booking. A human verifies before anything is booked</span></div>
+    <div class="line-item"><span class="mark">&minus;</span><span>No billing disputes, cancellations, policy exceptions, upset parents, or competitive concerns</span></div>
+    <div class="line-item"><span class="mark">&minus;</span><span>Not always-on, and not a full front-desk replacement</span></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">07</span>Where it can go later</h2>
+  <p style="font-size:14px; color:var(--muted);">Once the pilot proves out, these are the natural next steps, each built only after the last is working and trusted:</p>
+  <div class="timeline">
+    <div class="tl-item">
+      <span class="tl-dot next"></span>
+      <p class="tl-title">Direct class booking</p>
+      <p class="tl-desc">The system sees open classes and books the right option into Jackrabbit, with <strong>staff approval before any booking goes through</strong>. The agent stops just capturing leads and starts placing kids into classes.</p>
+    </div>
+    <div class="tl-item">
+      <span class="tl-dot later"></span>
+      <p class="tl-title">After-hours &amp; weekend coverage</p>
+      <p class="tl-desc">Extends beyond mornings once the core is proven.</p>
+    </div>
+    <div class="tl-item">
+      <span class="tl-dot later"></span>
+      <p class="tl-title">Connected dashboards &amp; data systems</p>
+      <p class="tl-desc">Broader reporting across the gym&rsquo;s systems, one place to see everything, once the underlying data flows are clean.</p>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <h2><span class="num">08</span>What success means</h2>
+  <p>The bar is the <strong>$600 break-even line</strong> from the calculator above. The pilot only needs to recover its own cost to be worth keeping, and as the calculator shows, that&rsquo;s a low bar to clear. We set these tiers up front so the September call is straightforward:</p>
+  <div class="tiers">
+    <div class="tier"><span class="badge badge-success">Successful</span><span class="desc">Attributed revenue clears the $600 cost several times over, a clear positive ROI &rarr; expand</span></div>
+    <div class="tier"><span class="badge badge-warning">Average</span><span class="desc">Roughly breaks even, and visibly improves service &amp; response speed &rarr; revise and continue</span></div>
+    <div class="tier"><span class="badge badge-danger">Mediocre</span><span class="desc">Doesn&rsquo;t recover its cost and shows no service gain &rarr; stop</span></div>
+  </div>
+  <p class="fineprint" style="margin-top:14px;">Exact revenue figures fill in once the pilot logs real data; the break-even bar itself ($600) is fixed and known today.</p>
+</section>
+
+<section>
+  <h2><span class="num">09</span>September decision point</h2>
+  <p>At the end of summer we put the logged numbers against the tiers above and pick one path.</p>
+  <div class="decision">
+    <div class="dec-card"><p class="dec-word">Continue</p><p class="dec-sub">Expand hours &amp; scope</p></div>
+    <div class="dec-card"><p class="dec-word">Revise</p><p class="dec-sub">Adjust and run longer</p></div>
+    <div class="dec-card"><p class="dec-word">Stop</p><p class="dec-sub">Numbers don&rsquo;t justify it</p></div>
+  </div>
+</section>
+
+<footer>
+  <p class="brand">JAT_DIGITAL</p>
+  <p>Prepared for MGA &middot; Voice agent pilot &middot; June 2026</p>
+</footer>
+
+<script>
+(function(){
+  var fmt = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+  var ids = ['calls','trial','enroll','value'];
+  var el = {};
+  ids.forEach(function(id){ el[id] = document.getElementById(id); });
+  if (!el.calls) return;
+
+  function calc(){
+    var calls      = +el.calls.value;
+    var trialRate  = +el.trial.value  / 100;
+    var enrollRate = +el.enroll.value / 100;
+    var value      = +el.value.value;
+    var trials     = Math.round(calls * trialRate);
+    var enrolls    = Math.round(trials * enrollRate);
+    var revenue    = enrolls * value;
+    var roi        = revenue / 600;
+
+    document.getElementById('out-calls').textContent  = Math.round(calls);
+    document.getElementById('out-trial').textContent  = Math.round(el.trial.value) + '%';
+    document.getElementById('out-enroll').textContent = Math.round(el.enroll.value) + '%';
+    document.getElementById('out-value').textContent  = fmt.format(value);
+    document.getElementById('chip-calls').textContent  = Math.round(calls) + ' calls';
+    document.getElementById('chip-trials').textContent = trials  + ' trials';
+    document.getElementById('chip-enroll').textContent = enrolls + ' enrolled';
+    document.getElementById('out-revenue').textContent = fmt.format(revenue);
+    document.getElementById('out-roi').innerHTML = revenue > 0
+      ? roi.toFixed(1).replace(/\.0$/, '') + '&times;'
+      : '&mdash;';
+    var needed = value > 0 ? Math.ceil(600 / value) : 0;
+    document.getElementById('sum-calls').textContent = needed;
+  }
+
+  ids.forEach(function(id){ el[id].addEventListener('input', calc); });
+  calc();
+})();
+</script>
+
+</body>
+</html>
